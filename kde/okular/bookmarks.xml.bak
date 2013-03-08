@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xbel>
+<xbel xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info" xmlns:kdepriv="http://www.kde.org/kdepriv" dbusName="okular">
+ <folder href="file:///media/sda3/Dropbox/image_proc_docs/computer_vision_algorithm_and_application.pdf">
+  <title>/media/sda3/Dropbox/image_proc_docs/computer_vision_algorithm_and_application.pdf</title>
+  <bookmark href="file:///media/sda3/Dropbox/image_proc_docs/computer_vision_algorithm_and_application.pdf#137;C2:0.499646:0.820568:1">
+   <title>#138</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name="application-pdf"/>
+    </metadata>
+   </info>
+  </bookmark>
+ </folder>
+</xbel>

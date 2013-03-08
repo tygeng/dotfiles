@@ -1,0 +1,11 @@
+[user]
+	name = Tianyu Geng
+	email = g.tyu90@gmail.com
+[color]
+	status = auto
+
+[color "status"]
+	added = green
+	changed = blue
+	untracked = magenta
+	deleted = red

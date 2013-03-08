@@ -1,0 +1,17 @@
+map k 10j
+map i 10k
+map h H
+map ; L
+map j gT
+map l gt
+map o t
+map m D
+set useletters=1
+set hintkeys=hjkluionmp
+map <Space> f
+map <Enter> F
+map , [[
+map . ]]
+unmap <M-d>
+unmap <C-f>
+

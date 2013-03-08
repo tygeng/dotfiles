@@ -1,0 +1,16 @@
+keymap	j    MOVE_LEFT
+keymap	k    MOVE_DOWN
+keymap	i    MOVE_UP
+keymap	l    MOVE_RIGHT
+keymap	h   LINE_BEGIN
+keymap	";"	LINE_END
+keymap	o	NEXT_PAGE
+keymap	u	PREV_PAGE
+keymap	b	BACK
+keymap	SPC	GOTO_LINK
+keymap	O	OPTIONS
+keymap	c	EXTERN
+keymap	C	EXTERN_LINK
+keymap	p	PEEK	
+
+
