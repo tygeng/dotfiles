@@ -38,7 +38,6 @@ cl()
 	cd $1 && ls --color=auto $2
 }
 #alias vim='gvim'
-alias cdd='cl /media/sda3/Dropbox'
 alias sus='sudo pm-suspend'
 alias shut='sudo shutdown -h 0'
 # alias fan='sudo -S thinkfan <<<z1x2c3v4
@@ -58,10 +57,12 @@ mysdcv()
 	fi
 }
 
-alias cds='cl /media/sda3/Dropbox/VT_CS/Semester_8/'
+alias cdd='cl /media/sda3/Dropbox'
+alias cddl='cl ~/Dropbox'
+alias cds='cl ~/Dropbox/Semester_8/'
 alias cdf='cl /media/sda3/Dropbox/FINANCE/'
-alias cdi='cl /media/sda3/Dropbox/ideas/'
-alias cdg='cl /media/sda3/Dropbox/git/'
+alias cdi='cl ~/Dropbox/ideas/'
+alias cdg='cl ~/Dropbox/git/'
 alias mv='mv -i'
 alias cp='cp -i'
 alias gc='gcalcli'
