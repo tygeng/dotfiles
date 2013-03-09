@@ -68,7 +68,7 @@ alias cp='cp -i'
 alias gc='gcalcli'
 #export LANG=C
 submit() {
-	/media/sda3/Dropbox/VT_CS/Semester_8/cs3214/submit.pl $1 $2
+	~/Dropbox/Semester_8/cs3214/submit.pl $1 $2
 }
 zmodload -i zsh/complist
 zstyle ':completion:*' menu select=2
