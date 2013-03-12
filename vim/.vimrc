@@ -1,3 +1,7 @@
+" set file make program according to file type
+au FileType markdown set makeprg=multimarkdown\ %\ -o\ %.html
+
+
 " tell it to use an undo file
 set undofile
 " " set a directory to store the undo history
@@ -17,7 +21,7 @@ augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
-set ai nowrap nu tabstop=4 shiftwidth=4
+set ai nowrap nu tabstop=4 shiftwidth=4 expandtab
 setlocal spelllang=en_us
 " for vundle
 set nocompatible
@@ -73,12 +77,12 @@ noremap <F12> :%!astyle --style=java<CR>
 nnoremap S :%!ctags *.c<CR>:w<CR>
 imap <F12> <Esc><F12>
 
-imap <F5> <Esc><F5>
+imap <F5> <Esc><F5>a
 inoremap <F1> <C-x><C-f>
 cnoremap <F1> <C-x><C-f>
 nnoremap > :cn<CR>
 nnoremap < :cp<CR>
-noremap <F5> :w<CR>:make<CR>
+noremap <F5> :w<CR>:make<CR><CR>
 nnoremap <silent> <C-i> :wincmd k<CR>
 nnoremap <silent> <C-k> :wincmd j<CR>
 nnoremap <silent> <C-j> :wincmd h<CR>

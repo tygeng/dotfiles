@@ -34,7 +34,9 @@ floating_modifier $mod
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -2%
 bindsym XF86AudioMute exec ~/bin/toggle-mute
-bindsym $mod+c exec google-chrome
+bindsym $mod+c split h; exec google-chrome
+bindsym $mod+Shift+C split v; exec google-chrome
+bindsym $mod+t exec thunar
 bindsym Mod1+F3 exec xfce4-appfinder
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
@@ -140,7 +142,7 @@ bindsym $mod+Shift+parenleft move workspace 9
 bindsym $mod+Shift+parenright move workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+C reload
+# bindsym $mod+Shift+C reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+r restart
 # exit i3 (logs you out of your X session)

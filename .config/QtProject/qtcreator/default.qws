@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorSession>
-<!-- Written by Qt Creator 2.6.2, 2013-02-05T19:31:43. -->
+<!-- Written by Qt Creator 2.6.2, 2013-03-11T16:36:12. -->
 <qtcreator>
  <data>
   <variable>EditorSettings</variable>
-  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNAAAAAIAAABWAC8AbQBlAGQAaQBhAC8AcwBkAGEAMwAvAEQAcgBvAHAAYgBvAHgALwBxAHQAdABlAHMAdABzAC8AdABlAHMAdAAxAC8AdABlAHMAdAAxAC4AcAByAG8AAAAMAAAAABgAAAABAAAAAAAAAAAAAAALAAAAEAAAAAAAAABUAC8AbQBlAGQAaQBhAC8AcwBkAGEAMwAvAEQAcgBvAHAAYgBvAHgALwBxAHQAdABlAHMAdABzAC8AdABlAHMAdAAxAC8AbQBhAGkAbgAuAGMAcABwAAAADAAAAAAYAAAAAQAAAAAAAAAAAAAADAAAABcAAAAAAAAAAgAAAFQALwBtAGUAZABpAGEALwBzAGQAYQAzAC8ARAByAG8AcABiAG8AeAAvAHEAdAB0AGUAcwB0AHMALwB0AGUAcwB0ADEALwBtAGEAaQBuAC4AYwBwAHAAAAAQAG0AYQBpAG4ALgBjAHAAcAAAABNDcHBQbHVnaW4uQysrRWRpdG9yAAAAVgAvAG0AZQBkAGkAYQAvAHMAZABhADMALwBEAHIAbwBwAGIAbwB4AC8AcQB0AHQAZQBzAHQAcwAvAHQAZQBzAHQAMQAvAHQAZQBzAHQAMQAuAHAAcgBvAAAAEgB0AGUAcwB0ADEALgBwAHIAbwAAABFRdDQucHJvRmlsZUVkaXRvcgAAAK8AAAANY3VycmVudGVkaXRvcgAAAFQALwBtAGUAZABpAGEALwBzAGQAYQAzAC8ARAByAG8AcABiAG8AeAAvAHEAdAB0AGUAcwB0AHMALwB0AGUAcwB0ADEALwBtAGEAaQBuAC4AYwBwAHAAAAAmAEMAcABwAFAAbAB1AGcAaQBuAC4AQwArACsARQBkAGkAdABvAHIAAAAYAAAAAQAAAAAAAAAAAAAADAAAABcAAAAA</value>
+  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNAAAAAEAAABSAC8AaABvAG0AZQAvAHQAbwBuAHkAMQAvAHEAdAB0AGUAcwB0AC8AdABlAHMAdABBAHIAbQBhAGQAaQBsAGwAbwAvAG0AYQBpAG4ALgBjAHAAcAAAAAwAAAAAGAAAAAEAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAAEAAABSAC8AaABvAG0AZQAvAHQAbwBuAHkAMQAvAHEAdAB0AGUAcwB0AC8AdABlAHMAdABBAHIAbQBhAGQAaQBsAGwAbwAvAG0AYQBpAG4ALgBjAHAAcAAAABAAbQBhAGkAbgAuAGMAcABwAAAAE0NwcFBsdWdpbi5DKytFZGl0b3IAAACtAAAADWN1cnJlbnRlZGl0b3IAAABSAC8AaABvAG0AZQAvAHQAbwBuAHkAMQAvAHEAdAB0AGUAcwB0AC8AdABlAHMAdABBAHIAbQBhAGQAaQBsAGwAbwAvAG0AYQBpAG4ALgBjAHAAcAAAACYAQwBwAHAAUABsAHUAZwBpAG4ALgBDACsAKwBFAGQAaQB0AG8AcgAAABgAAAABAAAAAAAAAAAAAAAIAAAABAAAAAA=</value>
  </data>
  <data>
   <variable>OpenEditors</variable>
@@ -17,12 +17,12 @@
  <data>
   <variable>ProjectList</variable>
   <valuelist type="QVariantList">
-   <value type="QString">/media/sda3/Dropbox/qttests/test1/test1.pro</value>
+   <value type="QString">/home/tony1/qttest/testArmadillo/testArmadillo.pro</value>
   </valuelist>
  </data>
  <data>
   <variable>StartupProject</variable>
-  <value type="QString">/media/sda3/Dropbox/qttests/test1/test1.pro</value>
+  <value type="QString">/home/tony1/qttest/testArmadillo/testArmadillo.pro</value>
  </data>
  <data>
   <variable>value-ActiveMode</variable>
@@ -44,9 +44,8 @@
   <variable>value-ProjectTree.ExpandData</variable>
   <valuelist type="QVariantList">
    <value type="QString">session</value>
-   <value type="QString">/media/sda3/Dropbox/qttests/test1/test1.pro</value>
-   <value type="QString">/media/sda3/Dropbox/qttests/test1/test1.pro</value>
-   <value type="QString">/media/sda3/Dropbox/qttests/test1</value>
+   <value type="QString">/home/tony1/qttest/testArmadillo/testArmadillo.pro</value>
+   <value type="QString">/home/tony1/qttest/testArmadillo</value>
   </valuelist>
  </data>
  <data>

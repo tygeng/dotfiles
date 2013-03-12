@@ -36,6 +36,14 @@ alias SS='echo \(  `sselp`  \);eval `sselp`'
 cl()
 {
 	cd $1 && ls --color=auto $2
+    echo $PWD>~/.current_pwd
+}
+cdlast() {
+    current_pwd=`cat ~/.current_pwd`
+    cl $current_pwd
+}
+sside() {
+    ssid $@&&exit
 }
 #alias vim='gvim'
 alias sus='sudo pm-suspend'
