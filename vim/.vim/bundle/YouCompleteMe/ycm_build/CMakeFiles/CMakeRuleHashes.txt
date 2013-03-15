@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-88d0c226e3e420a6cf3536b134ec2ba9 ycm/tests/CMakeFiles/copy_testdata

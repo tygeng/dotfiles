@@ -22,3 +22,9 @@ if [ -d "$HOME/bin" ] ; then
 	PATH="/usr/local/Trolltech/Qt-4.8.4/bin:$PATH:."
 	export PATH
 fi
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+export PKG_CONFIG_PATH
+CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/local/include
+export CPLUS_INCLUDE_PATH
+
+

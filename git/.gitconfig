@@ -9,3 +9,5 @@
 	changed = blue
 	untracked = magenta
 	deleted = red
+[core]
+	editor = vim
