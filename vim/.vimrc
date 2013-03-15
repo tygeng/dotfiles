@@ -30,7 +30,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on
 " end for vundle
@@ -74,7 +74,7 @@ map <silent> ,p :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>p
 map <silent> ,P :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>P
 
 noremap <F12> :%!astyle --style=java<CR>
-nnoremap S :%!ctags *.c<CR>:w<CR>
+nnoremap S :w<CR>:!ctags *.c *.cpp<CR>
 imap <F12> <Esc><F12>
 
 imap <F5> <Esc><F5>a
