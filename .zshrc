@@ -78,6 +78,7 @@ alias gc='gcalcli'
 submit() {
 	~/Dropbox/Semester_8/cs3214/submit.pl $1 $2
 }
+# zsh completion
 zmodload -i zsh/complist
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ''
@@ -101,8 +102,9 @@ or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:\
 *.jpg=01;35:*.gif=01;35:*.bmp=01;35:*.ppm=01;35:\ 
 *.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:\ 
 *.mpg=01;37:*.avi=01;37:*.gl=01;37:*.dl=01;37:"
+# end of zsh completion
 
-g() {
+google() {
     search=""
     echo "Googling: $@"
     for term in $@; do
@@ -122,3 +124,5 @@ getr() {
 	fi
 	scp -r tony1@rlogin.cs.vt.edu:$1 $rlogin_dir
 }
+
+source ~/bin/bashmarks.sh 
