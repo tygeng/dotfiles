@@ -23,17 +23,18 @@ augroup resCur
 augroup END
 set ai nowrap nu tabstop=4 shiftwidth=4 expandtab
 setlocal spelllang=en_us
-" for vundle
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'Valloric/YouCompleteMe'
-
+" for pathogen
+execute pathogen#infect()
+syntax on
 filetype plugin indent on
-" end for vundle
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+" syntastic
+let g:syntastic_auto_loc_list=1
+let g:syntastic_disabled_filetypes=['html']
+let g:syntastic_enable_signs=1
+set statusline=%<\ %n:%f\ %m%r%y%{SyntasticStatuslineFlag()}%=line:\ %l\ of\ %L,\ col:\ %c%V\ 
+" end for syntastic
 noremap h <Home>
 noremap i <Up>
 noremap j <Left>
@@ -62,9 +63,12 @@ set pastetoggle=<F2>
 set showmode
 nmap <F9> <C-T>
 imap <F9> <Esc><F9>a
-nmap <A-F10> :vsp <CR>:wincmd l<CR>:exec("tag ".expand("<cword>"))<CR>:wincmd h<CR>
+map <A-F10> :vsp<CR>:wincmd l<CR>:exec("tag ".expand("<cword>"))<CR>:wincmd h<CR>
 nmap <F10> <C-]>
 imap <F10> <Esc><F10>a
+nmap <F8> :w<CR>:FSHere<CR>
+imap <F8> <Esc><F8>a
+map <A-F8> :w<CR>:vsp<CR>:FSRight<CR>:wincmd h<CR>
 set tags=./tags;/
 
 
@@ -74,7 +78,7 @@ map <silent> ,p :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>p
 map <silent> ,P :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>P
 
 noremap <F12> :%!astyle --style=java<CR>
-nnoremap S :w<CR>:!ctags *.c *.cpp<CR>
+nnoremap S :w<CR>:silent !ctags *.c* *.h* --extra=+f<CR>
 imap <F12> <Esc><F12>
 
 imap <F5> <Esc><F5>a
@@ -83,14 +87,14 @@ cnoremap <F1> <C-x><C-f>
 nnoremap > :cn<CR>
 nnoremap < :cp<CR>
 noremap <F5> :w<CR>:make<CR><CR>
-nnoremap <silent> <C-i> :wincmd k<CR>
-nnoremap <silent> <C-k> :wincmd j<CR>
-nnoremap <silent> <C-j> :wincmd h<CR>
-nnoremap <silent> <C-l> :wincmd l<CR>
-inoremap <silent> <C-i> <Esc>:wincmd k<CR>a
-inoremap <silent> <C-k> <Esc>:wincmd j<CR>a
-inoremap <silent> <C-j> <Esc>:wincmd h<CR>a
-inoremap <silent> <C-l> <Esc>:wincmd l<CR>a
+nnoremap <silent> <A-i> :wincmd k<CR>
+nnoremap <silent> <A-k> :wincmd j<CR>
+nnoremap <silent> <A-j> :wincmd h<CR>
+nnoremap <silent> <A-l> :wincmd l<CR>
+inoremap <silent> <A-i> <Esc>:wincmd k<CR>a
+inoremap <silent> <A-k> <Esc>:wincmd j<CR>a
+inoremap <silent> <A-j> <Esc>:wincmd h<CR>a
+inoremap <silent> <A-l> <Esc>:wincmd l<CR>a
 
 nnoremap <F4> :set spell!<CR>
 inoremap <F4>  <Esc>:set spell!<CR>a
@@ -113,6 +117,7 @@ colorscheme koehler
 :set guioptions-=T  "remove toolbar
 " :set guioptions-=r  "remove right-hand scroll bar
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
+:set guioptions=m  
 highlight PmenuSel ctermfg=black ctermbg=white
 highlight Pmenu ctermfg=grey ctermbg=blue
 " let g:ycm_autoclose_preview_window_after_completion=1
