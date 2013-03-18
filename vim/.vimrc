@@ -124,7 +124,9 @@ nnoremap P "+P
 nmap Q <Nop>
 "=========================
 colorscheme koehler_mod
-:set guioptions-=T  "remove toolbar
-" :set guioptions-=r  "remove right-hand scroll bar
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
-:set guioptions=m  
+set guioptions=m  
+set cursorline cursorcolumn
+hi CursorLine   cterm=NONE ctermbg=NONE  guibg=grey20 
+hi CursorColumn cterm=NONE ctermbg=NONE  guibg=grey20 
+
