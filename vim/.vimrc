@@ -33,8 +33,6 @@ syntax on
 filetype plugin indent on
 "YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-" let g:ycm_autoclose_preview_window_after_completion=1
-set completeopt-=preview
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_autoclose_preview_window_after_insertion=1
 " syntastic
@@ -43,9 +41,12 @@ let g:syntastic_enable_signs=1
 let g:syntastic_loc_list_height=5
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['c'],
-                           \ 'passive_filetypes': ['cpp'] }
+                           \ 'passive_filetypes': [] }
 
 set statusline=%<\ %n:%f\ %m%r%y%{SyntasticStatuslineFlag()}%=(%l\ ,\ %c%V)\ Total:\ %L\ 
+" work around for the location list bug
+nnoremap ZQ :lcl<bar>q!<CR>
+nnoremap ZZ :lcl<bar>w<bar>lcl<bar>q<CR>
 " end for syntastic
 " =========================
 " remap keys
@@ -56,6 +57,24 @@ noremap k <Down>
 noremap ; <End>
 noremap <Space> <Insert>
 nnoremap <Delete> daw
+inoremap <S-Left> <Esc>v<Left>
+inoremap <S-Right> <Esc>v<Right>
+inoremap <S-Up> <Esc>v<Up>
+inoremap <S-Down> <Esc>v<Down>
+inoremap <S-Home> <Esc>v<Home>
+inoremap <S-End> <Esc>v<End>
+nnoremap <S-Left> v<Left>
+nnoremap <S-Right> v<Right>
+nnoremap <S-Up> v<Up>
+nnoremap <S-Down> v<Down>
+nnoremap <S-Home> v<Home>
+nnoremap <S-End> v<End>
+vnoremap <S-Up> <Up>
+vnoremap <S-Down> <Down>
+vnoremap <S-Left> <Left>
+vnoremap <S-Right> <Right>
+vnoremap <S-Home> <Home>
+vnoremap <S-End> <End> 
 "=========================
 filetype on
 filetype plugin on
@@ -82,7 +101,7 @@ nmap <F8> :w<CR>:FSHere<CR>
 imap <F8> <Esc><F8>a
 map <A-F8> :w<CR>:vsp<CR>:FSRight<CR>:wincmd h<CR>
 set tags=./tags;/
-nnoremap S :w<CR>:silent !ctags $(find . -name '*.[ch]') --extra=+f<CR>:redraw!<CR>
+nnoremap S :w<CR>:silent !ctags -R --fields=+iaS --extra=+f .<CR>:redraw!<CR>
 nmap <S-F10> gf
 imap <S-F10> <Esc><S-F10>a
 nmap <F9> <C-o>
