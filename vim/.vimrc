@@ -46,6 +46,9 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['cpp'] }
 
 set statusline=%<\ %n:%f\ %m%r%y%{SyntasticStatuslineFlag()}%=(%l\ ,\ %c%V)\ Total:\ %L\ 
+" work around for the location list bug
+nnoremap ZQ :lcl<bar>q<CR>
+nnoremap ZZ :lcl<bar>w<bar>lcl<bar>q<CR>
 " end for syntastic
 " =========================
 " remap keys
