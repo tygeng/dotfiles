@@ -33,13 +33,19 @@ syntax on
 filetype plugin indent on
 "YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_autoclose_preview_window_after_completion=1
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt=1
+let g:ycm_autoclose_preview_window_after_insertion=1
 " syntastic
 let g:syntastic_auto_loc_list=1
-let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
 let g:syntastic_loc_list_height=5
-set statusline=%<\ %n:%f\ %m%r%y%{SyntasticStatuslineFlag()}%=line:\ %l\ of\ %L,\ col:\ %c%V\ 
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': ['c'],
+                           \ 'passive_filetypes': ['cpp'] }
+
+set statusline=%<\ %n:%f\ %m%r%y%{SyntasticStatuslineFlag()}%=(%l\ ,\ %c%V)\ Total:\ %L\ 
 " end for syntastic
 " =========================
 " remap keys
@@ -67,8 +73,8 @@ set pastetoggle=<F2>
 set showmode
 "=========================
 "c support for jump among files
-nmap <F9> <C-T>
-imap <F9> <Esc><F9>a
+" nmap <F9> <C-T>
+" imap <F9> <Esc><F9>a
 map <A-F10> :vsp<CR>:wincmd l<CR>:exec("tag ".expand("<cword>"))<CR>:wincmd h<CR>
 nmap <F10> <C-]>
 imap <F10> <Esc><F10>a
@@ -76,12 +82,15 @@ nmap <F8> :w<CR>:FSHere<CR>
 imap <F8> <Esc><F8>a
 map <A-F8> :w<CR>:vsp<CR>:FSRight<CR>:wincmd h<CR>
 set tags=./tags;/
-nnoremap S :w<CR>:silent !ctags *.c* *.h* --extra=+f<CR>
+nnoremap S :w<CR>:silent !ctags $(find . -name '*.[ch]') --extra=+f<CR>:redraw!<CR>
+nmap <S-F10> gf
+imap <S-F10> <Esc><S-F10>a
+nmap <F9> <C-o>
+imap <F9> <Esc><S-F9>a
+
 "=========================
 noremap <F12> :%!astyle --style=java<CR>
 imap <F12> <Esc><F12>
-"=========================
-imap <F5> <Esc><F5>a
 "=========================
 inoremap <F1> <C-x><C-f>
 cnoremap <F1> <C-x><C-f>
@@ -90,7 +99,8 @@ cnoremap <F1> <C-x><C-f>
 nnoremap > :cn<CR>
 nnoremap < :cp<CR>
 "=========================
-noremap <F5> :w<CR>:silent make<CR>
+noremap <F5> :w<CR>:silent make<CR>:redraw!<CR>
+imap <F5> <Esc><F5>a
 nmap <A-F5> :SyntasticCheck<CR>
 imap <A-F5> <Esc><A-F5>a
 nmap <A-F6> :SyntasticToggleMode<CR>

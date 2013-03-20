@@ -28,10 +28,10 @@ hi Title		  term=bold  cterm=bold  ctermfg=darkmagenta  gui=bold	guifg=Magenta
 hi Visual		  term=reverse	cterm=reverse  gui=reverse
 hi WarningMsg	  term=standout  cterm=bold  ctermfg=darkred guifg=Red
 hi Cursor		  guifg=bg	guibg=Green
-hi Comment		  term=bold  cterm=bold ctermfg=cyan  guifg=#80a0ff
+hi Comment		  term=bold  cterm=bold ctermfg=cyan  guifg=#00ffff gui=bold
 hi Constant		  term=underline  cterm=bold ctermfg=magenta  guifg=#ffa0a0
 hi Special		  term=bold  cterm=bold ctermfg=red  guifg=Orange
-hi Identifier	  term=underline   ctermfg=brown  guifg=#40ffff
+hi Identifier	  term=underline   ctermfg=brown  guifg=#a0ffff
 hi Statement	  term=bold  cterm=bold ctermfg=yellow	gui=bold  guifg=#ffff60
 hi PreProc		  term=underline  ctermfg=darkmagenta   guifg=#ff80ff
 hi Type			  term=underline  cterm=bold ctermfg=lightgreen  gui=bold  guifg=#60ff60
@@ -43,6 +43,8 @@ hi MatchParen	  term=reverse  ctermfg=blue guibg=Blue
 hi TabLine		  term=bold,reverse  cterm=bold ctermfg=lightblue ctermbg=white gui=bold guifg=blue guibg=white
 hi TabLineFill	  term=bold,reverse  cterm=bold ctermfg=lightblue ctermbg=white gui=bold guifg=blue guibg=white
 hi TabLineSel	  term=reverse	ctermfg=white ctermbg=lightblue guifg=white guibg=blue
+hi SpellCap       ctermbg=brown guisp=orange
+hi SpellBad       ctermbg=red 
 hi link IncSearch		Visual
 hi link String			Constant
 hi link Character		Constant

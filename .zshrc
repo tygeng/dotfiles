@@ -14,7 +14,7 @@ setopt EXTENDED_HISTORY
 export PYTHONSTARTUP='/media/sda3/Dropbox/productivity/python/pythonstartup'
 #PATH="/usr/java/jdk1.7.0_09/bin:$PATH:/home/tony1/bin:." 
 alias ls='ls --color=auto'
-alias go='gnome-open'
+alias go='ssid gnome-open'
 alias lgn='ssh rlogin.cs.vt.edu'
 alias lgng='ssh tincan6.cs.vt.edu'
 # alias lgnb='ssh CS4414S13@bio.cs.vt.edu'
@@ -33,6 +33,10 @@ alias tree='tree -C'
 alias treel='tree -C|less -R'
 alias ll='ls -l --color=auto -h'
 alias SS='echo \(  `sselp`  \);eval `sselp`'
+ffo()
+{
+    ssid firefox `pwd`/$@
+}
 cl()
 {
 	cd $1 && ls --color=auto $2
@@ -117,12 +121,12 @@ putr() {
 }
 getr() {
 	if [[ $2 == "" ]]; then
-		rlogin_dir=".";
+		local_dir=".";
 	else
-		rlogin_dir=$2;
+		local_dir=$2;
 
 	fi
-	scp -r tony1@rlogin.cs.vt.edu:$1 $rlogin_dir
+	scp -r tony1@rlogin.cs.vt.edu:$1 $local_dir
 }
 
 source ~/bin/bashmarks.sh 
