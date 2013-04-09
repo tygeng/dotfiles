@@ -72,3 +72,5 @@ hi link SpecialComment	Special
 hi link Debug			Special
 highlight PmenuSel ctermfg=black ctermbg=white guifg=black guibg=grey
 highlight Pmenu ctermfg=grey ctermbg=blue guifg=grey guibg=RoyalBlue3
+hi CursorLine   cterm=NONE ctermbg=NONE  guibg=grey15 
+hi CursorColumn cterm=NONE ctermbg=NONE  guibg=grey15 

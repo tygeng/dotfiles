@@ -16,7 +16,7 @@ exec zsh /home/tony1/startup.sh
 exec feh --bg-fill ~/Pictures/wallpaper.jpg
 exec HOME=$HOME/.dropbox-linux /usr/bin/dropbox start -i
 exec xcompmgr
-exec pidgin
+#exec pidgin
 exec guake
 set $mod Mod4
 set border none

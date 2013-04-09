@@ -75,6 +75,7 @@ alias cds='cl ~/Dropbox/Semester_8/'
 alias cdf='cl /media/sda3/Dropbox/FINANCE/'
 alias cdi='cl ~/Dropbox/ideas/'
 alias cdg='cl ~/Dropbox/git/'
+alias cdq='cl /media/sda3/Dropbox/思琪/'
 alias mv='mv -i'
 alias cp='cp -i'
 alias gc='gcalcli'
@@ -128,5 +129,16 @@ getr() {
 	fi
 	scp -r tony1@rlogin.cs.vt.edu:$1 $local_dir
 }
+putb() {
+	scp -r $1 CS4414S13@bio.cs.vt.edu:$2
+}
+getb() {
+	if [[ $2 == "" ]]; then
+		local_dir=".";
+	else
+		local_dir=$2;
 
+	fi
+	scp -r CS4414S13@bio.cs.vt.edu:~/SVD1/$1 $local_dir
+}
 source ~/bin/bashmarks.sh 

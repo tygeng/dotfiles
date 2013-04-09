@@ -31,7 +31,7 @@ setlocal spelllang=en_us
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-"YouCompleteMe
+" YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_autoclose_preview_window_after_insertion=1
@@ -48,6 +48,10 @@ set statusline=%<\ %n:%f\ %m%r%y%{SyntasticStatuslineFlag()}%=(%l\ ,\ %c%V)\ Tot
 nnoremap ZQ :lcl<bar>q!<CR>
 nnoremap ZZ :lcl<bar>w<bar>lcl<bar>q<CR>
 " end for syntastic
+" powerline
+" let g:Powerline_symbols = 'fancy'
+let g:Powerline_stl_path_style = 'short'
+set laststatus=2
 " =========================
 " remap keys
 noremap h <Home>
@@ -151,11 +155,10 @@ vnoremap d "+d
 nnoremap P "+P
 "=========================
 nmap Q <Nop>
+nmap <C-e> :vsp<bar>e 
 "=========================
 colorscheme koehler_mod
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 set guioptions=m  
 set cursorline cursorcolumn
-hi CursorLine   cterm=NONE ctermbg=NONE  guibg=grey20 
-hi CursorColumn cterm=NONE ctermbg=NONE  guibg=grey20 
 
