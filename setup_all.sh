@@ -20,8 +20,10 @@ do
 		cd ..
 	fi
 done
-rm -r ~/.ssh
-ln -sd `pwd`/../.ssh ~/
-rm -r ~/.thunderbird
-ln -sd /media/sda2/thunderbird_cache/.thunderbird ~/
+rm ~/.Xmodmap
+ln `pwd`/x1.Xmodmap ~/.Xmodmap
+# rm -r ~/.ssh
+# ln -sd `pwd`/../.ssh ~/
+# rm -r ~/.thunderbird
+# ln -sd /media/sda2/thunderbird_cache/.thunderbird ~/
 

@@ -16,7 +16,7 @@ exec zsh /home/tony1/startup.sh
 exec feh --bg-fill ~/Pictures/wallpaper.jpg
 exec HOME=$HOME/.dropbox-linux /usr/bin/dropbox start -i
 exec xcompmgr
-#exec pidgin
+
 exec guake
 set $mod Mod4
 set border none
@@ -38,6 +38,7 @@ bindsym $mod+c split h; exec google-chrome
 bindsym $mod+Shift+C split v; exec google-chrome
 bindsym $mod+t exec thunar
 bindsym Mod1+F3 exec xfce4-appfinder
+bindsym XF86LaunchA exec sh ~/.toggle_touchpad.sh
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return split h; exec xfce4-terminal
@@ -64,7 +65,7 @@ bindsym $mod+Shift+Q kill
 bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
-bindsym XF86LaunchA exec dmenu_run
+bindsym Insert exec dmenu_run
 
 # change focus
 bindsym $mod+j focus left

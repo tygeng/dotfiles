@@ -1,0 +1,25 @@
+
+keycode 0x1E =	u		U		Prior
+keycode 0x1F =	i		I		Up
+keycode 0x20 =	o		O		Next
+keycode 0x42 =	Mode_switch
+keycode 0x2B =	h		H		Home
+keycode 0x2C =	j		J		Left
+keycode 0x2D =	k		K		Down
+keycode 0x2E =	l		L		Right
+keycode 0x28 =	d		D		Delete
+keycode 0x2f =	semicolon	colon		End
+keycode 0x17 =	Tab	NoSymbol	Caps_Lock
+keycode 0x12 =	9		parenleft	parenleft
+keycode 0x13 =	0		parenright	parenright
+keycode 0x22 =	bracketleft	braceleft	braceleft
+keycode 0x23 =	bracketright	braceright	braceright
+keycode 0x3B =	comma		less		less
+keycode 0x3C =	period		greater		greater
+keycode 0x30 =	apostrophe	quotedbl	quotedbl
+keycode 0x3A =	m		M		Menu
+keycode 0x41 =	space	NoSymbol	Escape
+keycode 156	=	XF86LaunchA
+keycode 107 =	Super_R
+keycode 110 =   Pause
+
