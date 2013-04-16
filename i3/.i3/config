@@ -16,6 +16,8 @@ exec zsh /home/tony1/startup.sh
 exec feh --bg-fill ~/Pictures/wallpaper.jpg
 exec HOME=$HOME/.dropbox-linux /usr/bin/dropbox start -i
 exec xcompmgr
+exec blueman-applet
+exec xfsettingsd
 
 exec guake
 set $mod Mod4
@@ -31,9 +33,10 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # my customization keys:
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -2%
-bindsym XF86AudioMute exec ~/bin/toggle-mute
+bindsym XF86AudioRaiseVolume exec sh ~/bin/increase_volume.sh
+bindsym XF86AudioLowerVolume exec sh ~/bin/decrease_volume.sh
+# bindsym XF86AudioMute exec sh ~/bin/toggle_mute.sh
+bindsym XF86WebCam exec sh ~/bin/play_through_bluetooth.sh
 bindsym $mod+c split h; exec google-chrome
 bindsym $mod+Shift+C split v; exec google-chrome
 bindsym $mod+t exec thunar
@@ -65,7 +68,7 @@ bindsym $mod+Shift+Q kill
 bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
-bindsym Insert exec dmenu_run
+bindsym Break exec dmenu_run
 
 # change focus
 bindsym $mod+j focus left
@@ -207,6 +210,6 @@ bindsym Mod4+Control+l resize grow   right 5 px or 5 ppt
 bar {
         status_command i3status
 }
-exec thunderbird
+exec sleep 8 && thunderbird
 assign [class="Thunderbird"] 10
 for_window [class="Thunderbird" ] border 1pixel

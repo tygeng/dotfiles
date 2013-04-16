@@ -14,7 +14,13 @@ setopt EXTENDED_HISTORY
 export PYTHONSTARTUP='/media/sda3/Dropbox/productivity/python/pythonstartup'
 #PATH="/usr/java/jdk1.7.0_09/bin:$PATH:/home/tony1/bin:." 
 alias ls='ls --color=auto'
-alias go='ssid gnome-open'
+# alias go='ssid gnome-open'
+go()
+{
+    ssid gnome-open $@ 12> /dev/null
+    sleep 0.5
+
+}
 alias lgn='ssh rlogin.cs.vt.edu'
 alias lgng='ssh tincan6.cs.vt.edu'
 # alias lgnb='ssh CS4414S13@bio.cs.vt.edu'

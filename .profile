@@ -19,7 +19,7 @@ fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
-	PATH="/usr/local/Trolltech/Qt-4.8.4/bin:$PATH:."
+	PATH="/usr/local/Trolltech/Qt-4.8.4/bin:$PATH:/home/tony1/dev/scheme/racket/bin:."
 	export PATH
 fi
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
