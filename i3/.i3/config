@@ -62,6 +62,10 @@ assign [title="DDD"] 4
 for_window [class="^Google-chrome$" ] border none
 for_window [class="Firefox$" ] border 1pixel
 for_window [title="^Terminal$" ] border 1pixel
+assign [class="Gmusicbrowser"] 9
+bindsym XF86AudioPlay exec udisks --mount /dev/disk/by-uuid/86D20279D2026DAD; exec gmusicbrowser -cmd PlayPause
+bindsym XF86AudioNext exec gmusicbrowser -cmd NextSong
+bindsym XF86AudioPrev exec gmusicbrowser -cmd PrevSong
 # for_window [class="^Terminator" ] border none
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -212,4 +216,5 @@ bar {
 }
 exec sleep 8 && thunderbird
 assign [class="Thunderbird"] 10
+
 for_window [class="Thunderbird" ] border 1pixel

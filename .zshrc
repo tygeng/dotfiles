@@ -39,6 +39,15 @@ alias tree='tree -C'
 alias treel='tree -C|less -R'
 alias ll='ls -l --color=auto -h'
 alias SS='echo \(  `sselp`  \);eval `sselp`'
+alias mm='sudo fdisk -l | grep "sd[bcde]" && echo "================= MOUNTED =================" &&  mount|grep "sd[bcde]"|awk "{print \$1 \" ==> \" \$3}"'
+m()
+{
+    udisks --mount /dev/sd$1
+}
+um()
+{
+    udisks --unmount /dev/sd$1
+}
 ffo()
 {
     ssid firefox `pwd`/$@

@@ -1,0 +1,7 @@
+#!/bin/bash
+for file in `find . -name "*.java"` 
+do
+    if [ -n "`cat $file |grep "$1"`" ]; then
+        echo $file
+    fi
+done
