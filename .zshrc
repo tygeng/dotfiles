@@ -40,6 +40,8 @@ alias treel='tree -C|less -R'
 alias ll='ls -l --color=auto -h'
 alias SS='echo \(  `sselp`  \);eval `sselp`'
 alias mm='sudo fdisk -l | grep "sd[bcde]" && echo "================= MOUNTED =================" &&  mount|grep "sd[bcde]"|awk "{print \$1 \" ==> \" \$3}"'
+alias mat='matlab -nodesktop'
+alias -g xclip='xclip -selection c'
 m()
 {
     udisks --mount /dev/sd$1

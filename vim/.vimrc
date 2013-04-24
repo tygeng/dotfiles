@@ -54,6 +54,10 @@ let g:Powerline_stl_path_style = 'short'
 set laststatus=2
 " =========================
 " remap keys
+noremap <M-Right> 20<Right> 
+noremap <M-Left> 20<Left> 
+noremap <M-Down> 10<Down> 
+noremap <M-Up> 10<Up> 
 noremap h <Home>
 noremap i <Up>
 noremap j <Left>
