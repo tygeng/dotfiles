@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorQtVersions>
-<!-- Written by Qt Creator 2.6.2, 2013-03-15T15:00:02. -->
+<!-- Written by QtCreator 2.7.0, 2013-04-27T21:11:38. -->
 <qtcreator>
  <data>
   <variable>QtVersion.0</variable>
@@ -15,11 +15,11 @@
  <data>
   <variable>QtVersion.1</variable>
   <valuemap type="QVariantMap">
-   <value type="int" key="Id">4</value>
-   <value type="QString" key="Name">Qt 5.0.1 GCC 64bit</value>
-   <value type="QString" key="QMakePath">/home/tony1/dev/Qt5.0.1/5.0.1/gcc_64/bin/qmake</value>
+   <value type="int" key="Id">5</value>
+   <value type="QString" key="Name">Qt 5.0.2 GCC 64bit</value>
+   <value type="QString" key="QMakePath">/home/tony1/dev/Qt5.0.2/5.0.2/gcc_64/bin/qmake</value>
    <value type="QString" key="QtVersion.Type">Qt4ProjectManager.QtVersion.Desktop</value>
-   <value type="QString" key="autodetectionSource">SDK.qt.501.gcc_64.essentials</value>
+   <value type="QString" key="autodetectionSource">SDK.qt.502.gcc_64.essentials</value>
    <value type="bool" key="isAutodetected">true</value>
   </valuemap>
  </data>

@@ -11,7 +11,8 @@
 exec --no-startup-id nm-applet
 exec dropbox start
 exec autokey-gtk
-exec ibus-daemon
+# exec ibus-daemon
+exec fcitx
 exec zsh /home/tony1/startup.sh
 exec feh --bg-fill ~/Pictures/wallpaper.jpg
 exec HOME=$HOME/.dropbox-linux /usr/bin/dropbox start -i
@@ -62,6 +63,7 @@ assign [title="DDD"] 4
 for_window [class="^Google-chrome$" ] border none
 for_window [class="Firefox$" ] border 1pixel
 for_window [title="^Terminal$" ] border 1pixel
+for_window [title="^WPS" ] border none
 assign [class="Gmusicbrowser"] 9
 bindsym XF86AudioPlay exec udisks --mount /dev/disk/by-uuid/86D20279D2026DAD && gmusicbrowser -cmd PlayPause
 bindsym XF86AudioNext exec gmusicbrowser -cmd NextSong

@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProfiles>
-<!-- Written by Qt Creator 2.6.2, 2013-03-11T16:32:01. -->
+<!-- Written by QtCreator 2.7.0, 2013-04-27T21:11:38. -->
 <qtcreator>
  <data>
   <variable>Profile.0</variable>
   <valuemap type="QVariantMap">
+   <value type="bool" key="PE.Profile.AutoDetected">true</value>
+   <valuemap type="QVariantMap" key="PE.Profile.Data">
+    <value type="QString" key="Android.GdbServer.Information"></value>
+    <valuemap type="QVariantMap" key="Debugger.Information">
+     <value type="QString" key="Binary">auto</value>
+     <value type="uint" key="EngineType">1</value>
+    </valuemap>
+    <value type="QString" key="PE.Profile.Device">Desktop Device</value>
+    <value type="QByteArray" key="PE.Profile.DeviceType">Desktop</value>
+    <value type="QString" key="PE.Profile.SysRoot"></value>
+    <value type="QString" key="PE.Profile.ToolChain">ProjectExplorer.ToolChain.Gcc:{123a5e3b-ad29-4055-9b63-b3c129767063}</value>
+    <value type="QString" key="QtPM4.mkSpecInformation"></value>
+    <value type="QString" key="QtSupport.QtInformation">SDK.qt.502.gcc_64.essentials</value>
+   </valuemap>
+   <value type="QString" key="PE.Profile.Icon">:///DESKTOP///</value>
+   <value type="QString" key="PE.Profile.Id">qt.502.gcc_64.essentials_kit</value>
+   <value type="QString" key="PE.Profile.Name">Desktop Qt 5.0.2 GCC 64bit</value>
+   <value type="bool" key="PE.Profile.SDK">true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>Profile.1</variable>
+  <valuemap type="QVariantMap">
    <value type="bool" key="PE.Profile.AutoDetected">false</value>
    <valuemap type="QVariantMap" key="PE.Profile.Data">
+    <value type="QString" key="Android.GdbServer.Information"></value>
     <valuemap type="QVariantMap" key="Debugger.Information">
      <value type="QString" key="Binary">/usr/bin/gdb</value>
      <value type="int" key="EngineType">1</value>
@@ -21,13 +45,15 @@
    <value type="QString" key="PE.Profile.Icon">:///DESKTOP///</value>
    <value type="QString" key="PE.Profile.Id">{a55d4e35-40cb-4e6b-b6b0-960a9b23da56}</value>
    <value type="QString" key="PE.Profile.Name">Desktop</value>
+   <value type="bool" key="PE.Profile.SDK">false</value>
   </valuemap>
  </data>
  <data>
-  <variable>Profile.1</variable>
+  <variable>Profile.2</variable>
   <valuemap type="QVariantMap">
    <value type="bool" key="PE.Profile.AutoDetected">false</value>
    <valuemap type="QVariantMap" key="PE.Profile.Data">
+    <value type="QString" key="Android.GdbServer.Information"></value>
     <valuemap type="QVariantMap" key="Debugger.Information">
      <value type="QString" key="Binary">/usr/bin/gdb</value>
      <value type="int" key="EngineType">1</value>
@@ -42,11 +68,12 @@
    <value type="QString" key="PE.Profile.Icon">:///DESKTOP///</value>
    <value type="QString" key="PE.Profile.Id">{a5e06a31-eca9-4771-a23c-e7d08f08813a}</value>
    <value type="QString" key="PE.Profile.Name">Qt 4.8.3 (System)</value>
+   <value type="bool" key="PE.Profile.SDK">false</value>
   </valuemap>
  </data>
  <data>
   <variable>Profile.Count</variable>
-  <value type="int">2</value>
+  <value type="int">3</value>
  </data>
  <data>
   <variable>Profile.Default</variable>

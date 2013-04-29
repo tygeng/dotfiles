@@ -7,4 +7,3 @@ for INPUT in `pacmd list-sink-inputs |grep index|awk '{print $2}'`
 do
     pacmd move-sink-input $INPUT $NEW_DEFAULT_SINK
 done
-

@@ -19,10 +19,13 @@ Format 1
 \unbind "M-p b" "layout Itemize"
 \unbind "M-p n" "layout Enumerate"
 \unbind "M-p space" "drop-layouts-choice"
+\unbind "M-p asterisk 4" "layout Subsubsection*"
+\unbind "M-p 4" "layout Subsubsection"
 \unbind "M-S-Left" "depth-decrement"
 \unbind "M-S-Right" "depth-increment"
 \unbind "C-S-r" "buffer-update"
 \unbind "C-r" "buffer-view"
+\unbind "C-i" "inset-toggle"
 
 \bind "M-space" "math-mode"
 \bind "F12 t" "layout Theorem*"
@@ -44,6 +47,8 @@ Format 1
 \bind "F12 i" "layout Itemize"
 \bind "F12 n" "layout Enumerate"
 \bind "F12 m" "math-mutate align"
+\bind "F12 4" "layout Subsubsection*"
+\bind "F12 S-dollar" "layout Subsubsection"
 \bind "S-Return" "inset-modify tabular append-row"
 \bind "M-S-Return" "inset-modify tabular delete-row"
 \bind "S-space" "inset-modify tabular append-column"
@@ -78,4 +83,5 @@ Format 1
 \bind "F1 t" "math-insert \\theta"
 \bind "F1 S-t" "math-insert \\Theta"
 \bind "C-S-c" "copy-label-as-reference"
+\bind "C-i" "label-insert"
 

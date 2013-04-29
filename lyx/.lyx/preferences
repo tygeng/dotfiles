@@ -1,4 +1,4 @@
-# LyX 2.0.6dev generated this file. If you want to make your own
+# LyX 2.0.3 generated this file. If you want to make your own
 # modifications you should do them from inside LyX and save.
 
 Format 1
@@ -97,6 +97,8 @@ Format 1
 # CONVERTERS SECTION ##########################
 #
 
+\converter "eps" "pdf5" "epspdf $$i $$o\"" ""
+\converter "eps" "pdf" "epspdf $$i $$o\"" ""
 
 #
 # COPIERS SECTION ##########################

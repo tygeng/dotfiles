@@ -2,12 +2,15 @@
 ## Editing this file manually may cause lyx to crash.
 
 [recent files]
+/home/tony1/Dropbox/Semester_8/CS4414/proj/report/report_tony.lyx
+/home/tony1/Dropbox/Semester_8/CS4414/hw4/hw4_report.lyx
+/home/tony1/Dropbox/Semester_8/CS3304/hw4.lyx
+/home/tony1/Dropbox/Semester_8/Math4134/hw11.lyx
 /home/tony1/Dropbox/Semester_8/Math4134/notes.lyx
 /home/tony1/Dropbox/Semester_8/phys2306/prep.lyx
 /home/tony1/Dropbox/Semester_8/Math4134/hw6.lyx
 /home/tony1/Dropbox/Semester_8/Math4134/hw10.lyx
 /home/tony1/Dropbox/Semester_8/Math4134/hw9.lyx
-/home/tony1/Dropbox/Semester_8/CS3304/hw4.lyx
 /home/tony1/Dropbox/Semester_8/Math4134/hw8.lyx
 /home/tony1/Dropbox/Semester_8/CS3304/hw6.lyx
 /home/tony1/Dropbox/Semester_8/Math4134/hw7.lyx
@@ -15,21 +18,24 @@
 /usr/share/lyx/examples/splash.lyx
 
 [last opened files]
-1, /home/tony1/Dropbox/Semester_8/Math4134/notes.lyx
+1, /home/tony1/Dropbox/Semester_8/CS4414/proj/report/report_tony.lyx
 
 [cursor positions]
 29, 4, /home/tony1/Dropbox/Semester_8/CS3304/hw4.lyx
 1, 1, /home/tony1/Dropbox/Semester_8/CS3304/hw5.lyx
 1, 1, /home/tony1/Dropbox/Semester_8/CS3304/hw6.lyx
+31, 0, /home/tony1/Dropbox/Semester_8/CS4414/hw4/hw4_report.lyx
+26, 0, /home/tony1/Dropbox/Semester_8/CS4414/proj/report/report_tony.lyx
 32, 41, /home/tony1/Dropbox/Semester_8/Math4134/hw10.lyx
+18, 0, /home/tony1/Dropbox/Semester_8/Math4134/hw11.lyx
 0, 0, /home/tony1/Dropbox/Semester_8/Math4134/hw6.lyx
 20, 196, /home/tony1/Dropbox/Semester_8/Math4134/hw7.lyx
 45, 90, /home/tony1/Dropbox/Semester_8/Math4134/hw8.lyx
 22, 3, /home/tony1/Dropbox/Semester_8/Math4134/hw9.lyx
-387, 16, /home/tony1/Dropbox/Semester_8/Math4134/notes.lyx
+401, 80, /home/tony1/Dropbox/Semester_8/Math4134/notes.lyx
 10, 60, /home/tony1/Dropbox/Semester_8/phys2306/prep.lyx
-0, 0, /tmp/lyx_tmpdir.MT4059.SL4059_embedded.internal
-0, 0, /tmp/lyx_tmpdir.MT4059.hX4059_embedded.internal
+0, 0, /tmp/lyx_tmpdir.T15708.S15708_embedded.internal
+0, 0, /tmp/lyx_tmpdir.T15708.n15708_embedded.internal
 1, 15, /usr/share/lyx/doc/Intro.lyx
 120, 13, /usr/share/lyx/doc/Math.lyx
 122, 36, /usr/share/lyx/doc/Tutorial.lyx
@@ -39,4 +45,4 @@
 [last commands]
 
 [bookmarks]
-0, 387, 1, /home/tony1/Dropbox/Semester_8/Math4134/notes.lyx
+0, 16, 692, /home/tony1/Dropbox/Semester_8/CS4414/proj/report/report_tony.lyx

@@ -9,6 +9,7 @@
 \renewcommand\labelenumi{\theenumi}
 \usepackage{qtree}
 \usepackage{datetime}
+\usepackage[labelformat=empty]{caption}
 
 
 \renewcommand{\headrulewidth}{0pt}
