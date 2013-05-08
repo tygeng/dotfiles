@@ -21,6 +21,6 @@ keycode 0x3A =	m		M		Menu
 keycode 0x41 =	space	NoSymbol	Escape
 keycode 156	=	XF86LaunchA
 keycode 107 =	Super_R
-keycode 110 =   Pause
+keycode 110 =   Find
 keycode 115 =   Break
 

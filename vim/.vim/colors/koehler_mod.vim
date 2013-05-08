@@ -10,7 +10,7 @@ if exists("syntax_on")
   syntax reset
 endif
 let g:colors_name = "koehler"
-hi Normal		  guifg=white  guibg=black
+hi Normal		  guifg=white  guibg=black gui=underline guisp=#333333
 hi Scrollbar	  guifg=darkcyan guibg=cyan
 hi Menu			  guifg=black guibg=cyan
 hi SpecialKey	  term=bold  cterm=bold  ctermfg=darkred  guifg=#cc0000
@@ -20,7 +20,8 @@ hi ErrorMsg		  term=standout  cterm=bold  ctermfg=grey  ctermbg=red  guifg=White
 hi Search		  term=reverse  ctermfg=white  ctermbg=red      guifg=white  guibg=Red
 hi MoreMsg		  term=bold  cterm=bold  ctermfg=darkgreen	gui=bold  guifg=SeaGreen
 hi ModeMsg		  term=bold  cterm=bold  gui=bold  guifg=White	guibg=Blue
-hi LineNr		  term=underline  cterm=bold  ctermfg=darkcyan	guifg=Yellow
+hi LineNr		  term=underline  cterm=bold  ctermfg=darkcyan	guifg=cyan
+hi CursorLineNr   guifg=yellow
 hi Question		  term=standout  cterm=bold  ctermfg=darkgreen	gui=bold  guifg=Green
 hi StatusLine	  term=bold,reverse  cterm=bold ctermfg=lightblue ctermbg=white gui=bold guifg=blue guibg=white
 hi StatusLineNC   term=reverse	ctermfg=white ctermbg=lightblue guifg=white guibg=blue
@@ -37,8 +38,6 @@ hi PreProc		  term=underline  ctermfg=darkmagenta   guifg=#ff80ff
 hi Type			  term=underline  cterm=bold ctermfg=lightgreen  gui=bold  guifg=#60ff60
 hi Error		  term=reverse	ctermfg=darkcyan  ctermbg=black  guifg=Red	guibg=Black
 hi Todo			  term=standout  ctermfg=black	ctermbg=darkcyan  guifg=Blue  guibg=Yellow
-hi CursorLine	  term=underline  guibg=#555555 cterm=underline
-hi CursorColumn	  term=underline  guibg=#555555 cterm=underline
 hi MatchParen	  term=reverse  ctermfg=blue guibg=Blue
 hi TabLine		  term=bold,reverse  cterm=bold ctermfg=lightblue ctermbg=white gui=bold guifg=blue guibg=white
 hi TabLineFill	  term=bold,reverse  cterm=bold ctermfg=lightblue ctermbg=white gui=bold guifg=blue guibg=white
@@ -72,5 +71,5 @@ hi link SpecialComment	Special
 hi link Debug			Special
 highlight PmenuSel ctermfg=black ctermbg=white guifg=black guibg=grey
 highlight Pmenu ctermfg=grey ctermbg=blue guifg=grey guibg=RoyalBlue3
-hi CursorLine   cterm=NONE ctermbg=NONE  guibg=grey15 
-hi CursorColumn cterm=NONE ctermbg=NONE  guibg=grey15 
+hi CursorLine   cterm=NONE ctermbg=NONE  guibg=NONE gui=underline guisp=#999999 cterm=underline
+hi CursorColumn cterm=NONE ctermbg=NONE  guibg=#333333 

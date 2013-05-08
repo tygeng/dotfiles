@@ -8,7 +8,7 @@
 " boisvertmaxime@gmail.com
 
 fun! Co(ft)
-    let dic = {'cpp':'//','tex':'%','java':'//','haskell':'--','c':'//', 'cuda':'//', 'ruby':'#', 'vim':'"', 'perl':'#', 'sh':'#', 'zsh':'#', 'python':'#', 'lua':'--', 'markdown':'>', 'scheme':';', 'conf':'#'}
+    let dic = {'cpp':'//','tex':'%','java':'//','haskell':'--','c':'//', 'cuda':'//', 'ruby':'#', 'vim':'"', 'perl':'#', 'sh':'#', 'zsh':'#', 'python':'#', 'lua':'--', 'markdown':'>', 'scheme':';', 'conf':'#', 'make':'#'}
     if has_key(dic, a:ft)
         let c = dic[a:ft]
         exe "s@^@".c." @ | s@^".c." ".c." @@e"

@@ -5,7 +5,7 @@ map ; L
 map j gT
 map l gt
 map o t
-map m D
+map n D
 set useletters=1
 set hintkeys=hjkluionmp
 map <Space> f

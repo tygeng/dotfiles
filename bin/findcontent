@@ -1,5 +1,5 @@
 #!/bin/bash
-for file in `find . -name "*.java"` 
+for file in `find . -type f`
 do
     if [ -n "`cat $file |grep "$1"`" ]; then
         echo $file
