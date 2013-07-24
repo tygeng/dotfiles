@@ -20,8 +20,8 @@ hi ErrorMsg		  term=standout  cterm=bold  ctermfg=grey  ctermbg=red  guifg=White
 hi Search		  term=reverse  ctermfg=white  ctermbg=red      guifg=white  guibg=Red
 hi MoreMsg		  term=bold  cterm=bold  ctermfg=darkgreen	gui=bold  guifg=SeaGreen
 hi ModeMsg		  term=bold  cterm=bold  gui=bold  guifg=White	guibg=Blue
-hi LineNr		  term=underline  cterm=bold  ctermfg=darkcyan	guifg=cyan
-hi CursorLineNr   guifg=yellow
+hi LineNr		  term=underline  cterm=bold  ctermfg=darkcyan	guifg=cyan guibg=#303030
+hi CursorLineNr   guifg=yellow guibg=#303030
 hi Question		  term=standout  cterm=bold  ctermfg=darkgreen	gui=bold  guifg=Green
 hi StatusLine	  term=bold,reverse  cterm=bold ctermfg=lightblue ctermbg=white gui=bold guifg=blue guibg=white
 hi StatusLineNC   term=reverse	ctermfg=white ctermbg=lightblue guifg=white guibg=blue
@@ -71,5 +71,5 @@ hi link SpecialComment	Special
 hi link Debug			Special
 highlight PmenuSel ctermfg=black ctermbg=white guifg=black guibg=grey
 highlight Pmenu ctermfg=grey ctermbg=blue guifg=grey guibg=RoyalBlue3
-hi CursorLine   cterm=NONE ctermbg=NONE  guibg=NONE gui=underline guisp=#999999 cterm=underline
-hi CursorColumn cterm=NONE ctermbg=NONE  guibg=#333333 
+hi CursorLine   cterm=NONE ctermbg=NONE  guibg=NONE gui=underline  cterm=underline
+hi CursorColumn cterm=NONE ctermbg=NONE  guibg=#505050 

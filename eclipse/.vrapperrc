@@ -1,0 +1,66 @@
+nnoremap h ^
+nnoremap i k
+nnoremap j h
+nnoremap k j
+nnoremap ; $
+nnoremap <Space> i
+nnoremap <Up> <C-y>
+nnoremap <Down> <C-e>
+nnoremap <Right> *
+nnoremap <Left> #
+
+vnoremap h ^
+vnoremap i k
+vnoremap j h
+vnoremap k j
+vnoremap ; $
+
+nnoremap U :redo<CR>
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+nnoremap w viw
+nnoremap W viW
+nnoremap D diw
+nnoremap C ciw
+nnoremap Y yiw
+nnoremap v( vi(
+nnoremap v) va(
+nnoremap v" vi"
+nnoremap v' vi'
+nnoremap v< vi<
+nnoremap v> va>
+nnoremap v{ vi{
+nnoremap v} va}
+nnoremap v[ vi[
+nnoremap v] va]
+
+
+# noremap <M-Right> 20<Right> 
+# inoremap <M-Right> <Esc>20<Right>a
+# noremap <M-Left> 20<Left> 
+# inoremap <M-Left> <Esc>20<Left>a
+# noremap <M-Down> 10<Down> 
+# inoremap <M-Down> <Esc>10<Down>a
+# noremap <M-Up> 10<Up> 
+# inoremap <M-Up> <Esc>10<Up>a
+# 
+inoremap <C-p> <Esc>pa
+nnoremap x "xx
+inoremap <C-P> <Esc>Pa
+
+nnoremap S :w<CR>
+
+set clipboard=unnamed
+set incsearch
+set ic
+
+eclipseaction toggleJavaComment org.eclipse.jdt.ui.edit.text.java.toggle.comment
+
+nnoremap s :toggleJavaComment<enter>
+
+eclipseaction findref org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace
+nnoremap gr :findref<enter>
+eclipseaction refactorName org.eclipse.jdt.ui.edit.text.java.rename.element
+nnoremap R :refactorName<enter>
+vnoremap R :refactorName<enter>
+

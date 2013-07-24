@@ -2,6 +2,10 @@
 #zsh below
 setopt extendedglob
 autoload -U colors && colors
+autoload -U compinit promptinit
+compinit
+promptinit
+setopt completealiases
 eval `dircolors /media/sda3/Dropbox/productivity/colors`
 PS1="%{$fg_bold[green]%}%T %{$fg_bold[yellow]%}%~%{$fg[green]%} $%{$reset_color%} "
 # PS1="[%{$fg_bold[green]%}%T%{$reset_color%}] %{$fg_bold[yellow]%}%~%{$fg[green]%} $%{$fg[red]%} "
@@ -42,6 +46,7 @@ alias SS='echo \(  `sselp`  \);eval `sselp`'
 alias mm='sudo fdisk -l | grep "sd[bcde]" && echo "================= MOUNTED =================" &&  mount|grep "sd[bcde]"|awk "{print \$1 \" ==> \" \$3}"'
 alias mat='matlab -nodesktop'
 alias -g xclip='xclip -selection c'
+alias pig='~/dev/pig/pig-0.11.1/bin/pig -x local'
 m()
 {
     udisks --mount /dev/sd$1
@@ -116,6 +121,12 @@ then
         function zle-line-finish () {
         }
 fi
+[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
+[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
+## case-insensitive (all),partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
+    'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 ZLS_COLORS="no=00:fi=00:di=01;34:ln=01;36:\ 
 pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:\ 
 or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:\ 

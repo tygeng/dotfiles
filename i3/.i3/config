@@ -14,7 +14,7 @@ exec autokey-gtk
 # exec ibus-daemon
 exec fcitx
 exec zsh /home/tony1/startup.sh
-exec feh --bg-fill ~/Pictures/wallpaper.jpg
+exec feh --bg-fill ~/Pictures/wallpaper.png
 exec HOME=$HOME/.dropbox-linux /usr/bin/dropbox start -i
 exec xcompmgr
 exec blueman-applet
@@ -40,7 +40,7 @@ bindsym XF86AudioLowerVolume exec sh ~/bin/decrease_volume.sh
 bindsym XF86WebCam exec sh ~/bin/play_through_bluetooth.sh
 bindsym $mod+c split h; exec google-chrome
 bindsym $mod+Shift+C split v; exec google-chrome
-bindsym $mod+t exec thunar
+bindsym $mod+t exec nautilus
 bindsym Mod1+F3 exec xfce4-appfinder
 bindsym XF86LaunchA exec sh ~/.toggle_touchpad.sh
 # start a terminal
@@ -55,6 +55,7 @@ for_window [title="^cv:"] floating enable
 for_window [title=".*Preference.*"] floating enable
 for_window [class="Pidgin"] floating enable
 for_window [title="File Operation Progress"] floating enable
+for_window [title="File Operations"] floating enable
 for_window [title="^Volume Control"] floating enable
 for_window [title="^xfce4-notifyd$"] floating enable border none
 for_window [title="^Yakuake"] floating enable
@@ -81,6 +82,7 @@ bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+i focus up
 bindsym $mod+l focus right
+bindsym Mod1+Tab focus left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left

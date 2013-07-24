@@ -27,6 +27,8 @@ augroup END
 " set tab
 set ai nowrap nu tabstop=4 shiftwidth=4 expandtab
 setlocal spelllang=en_us
+set incsearch
+set smartcase ignorecase
 "=========================
 " for pathogen
 execute pathogen#infect()
@@ -36,6 +38,7 @@ filetype plugin indent on
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_autoclose_preview_window_after_insertion=1
+let g:EclimCompletionMethod = 'omnifunc'
 " syntastic
 " let g:syntastic_c_checkers=['make']
 let g:syntastic_auto_loc_list=1
@@ -57,43 +60,42 @@ set laststatus=2
 " =========================
 " remap keys
 " :set virtualedit=all
-noremap <Right> *
-noremap <Left> #
-noremap <M-Right> 20<Right> 
-inoremap <M-Right> <Esc>20<Right>a
-noremap <M-Left> 20<Left> 
-inoremap <M-Left> <Esc>20<Left>a
-noremap <M-Down> 10<Down> 
-inoremap <M-Down> <Esc>10<Down>a
-noremap <M-Up> 10<Up> 
-inoremap <M-Up> <Esc>10<Up>a
-noremap h g<Home>
-noremap i gk
-noremap j h
-noremap k gj
-noremap ; g<End>
-noremap <Space> <Insert>
-noremap <Up> <C-y>
-noremap <Down> <C-e>
-nnoremap <Delete> daw
-inoremap <S-Left> <Esc>v<Left>
-inoremap <S-Right> <Esc>v<Right>
-inoremap <S-Up> <Esc>v<Up>
-inoremap <S-Down> <Esc>v<Down>
-inoremap <S-Home> <Esc>v<Home>
-inoremap <S-End> <Esc>v<End>
-nnoremap <S-Left> v<Left>
-nnoremap <S-Right> v<Right>
-nnoremap <S-Up> v<Up>
-nnoremap <S-Down> v<Down>
-nnoremap <S-Home> v<Home>
-nnoremap <S-End> v<End>
-vnoremap <S-Up> <Up>
-vnoremap <S-Down> <Down>
-vnoremap <S-Left> <Left>
-vnoremap <S-Right> <Right>
-vnoremap <S-Home> <Home>
-vnoremap <S-End> <End> 
+nnoremap <Right> *
+nnoremap <Left> #
+nnoremap h g^
+nnoremap i gk
+nnoremap j h
+nnoremap k gj
+nnoremap ; g$
+nnoremap <Space> i
+nnoremap <Right> *
+nnoremap <Left> #
+vnoremap h g^
+vnoremap i gk
+vnoremap j h
+vnoremap k gj
+vnoremap ; g$
+vnoremap <Space> c
+nnoremap <Up> <C-y>
+nnoremap <Down> <C-e>
+" inoremap <S-Left> <Esc>v<Left>
+" inoremap <S-Right> <Esc>v<Right>
+" inoremap <S-Up> <Esc>v<Up>
+" inoremap <S-Down> <Esc>v<Down>
+" inoremap <S-Home> <Esc>v<Home>
+" inoremap <S-End> <Esc>v<End>
+" nnoremap <S-Left> v<Left>
+" nnoremap <S-Right> v<Right>
+" nnoremap <S-Up> v<Up>
+" nnoremap <S-Down> v<Down>
+" nnoremap <S-Home> v<Home>
+" nnoremap <S-End> v<End>
+" vnoremap <S-Up> <Up>
+" vnoremap <S-Down> <Down>
+" vnoremap <S-Left> <Left>
+" vnoremap <S-Right> <Right>
+" vnoremap <S-Home> <Home>
+" vnoremap <S-End> <End> 
 "=========================
 filetype on
 filetype plugin on
@@ -120,7 +122,8 @@ nmap <F8> :w<CR>:FSHere<CR>
 imap <F8> <Esc><F8>a
 map <A-F8> :w<CR>:vsp<CR>:FSRight<CR>:wincmd h<CR>
 set tags=./tags;/
-nnoremap S :w<CR>:silent !ctags -R --fields=+iaS --extra=+f .<CR>:redraw!<CR>
+nnoremap S :w<CR>
+autocmd FileType c,cpp,python nnoremap S :w<CR>:silent !ctags -R --fields=+iaS --extra=+f .<CR>:redraw!<CR>
 nmap <S-F10> gf
 imap <S-F10> <Esc><S-F10>a
 nmap <F9> <C-o>
@@ -135,8 +138,9 @@ inoremap <F1> <Esc><F1>a
 cnoremap <F1> <C-x><C-f>
 "=========================
 "next error for errormarker
-nnoremap > :cn<CR>
-nnoremap < :cp<CR>
+" let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
+" nnoremap > :cn<CR>
+" nnoremap < :cp<CR>
 "=========================
 noremap <F5> :w<CR>:silent make<CR>:redraw!<CR>
 imap <F5> <Esc><F5>a
@@ -146,46 +150,102 @@ nmap <A-F6> :SyntasticToggleMode<CR>
 imap <A-F6> <Esc><A-F6>
 "=========================
 "switch among opened windows
-nnoremap <silent> <A-i> :wincmd k<CR>
-nnoremap <silent> <A-k> :wincmd j<CR>
-nnoremap <silent> <A-j> :wincmd h<CR>
-nnoremap <silent> <A-l> :wincmd l<CR>
-inoremap <silent> <A-i> <Esc>:wincmd k<CR>a
-inoremap <silent> <A-k> <Esc>:wincmd j<CR>a
-inoremap <silent> <A-j> <Esc>:wincmd h<CR>a
-inoremap <silent> <A-l> <Esc>:wincmd l<CR>a
+nnoremap <silent> <S-Up> :wincmd k<CR>
+nnoremap <silent> <S-Down> :wincmd j<CR>
+nnoremap <silent> <S-Left> :wincmd h<CR>
+nnoremap <silent> <S-Right> :wincmd l<CR>
+inoremap <silent> <S-Up> <Esc>:wincmd k<CR>a
+inoremap <silent> <S-Down> <Esc>:wincmd j<CR>a
+inoremap <silent> <S-Left> <Esc>:wincmd h<CR>a
+inoremap <silent> <S-Right> <Esc>:wincmd l<CR>a
 "=========================
 nnoremap <F4> :set spell!<CR>
 inoremap <F4>  <Esc>:set spell!<CR>a
 nnoremap U :redo<CR>
-nnoremap R bdwi
+" nnoremap R bdwi
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
+nnoremap w viw
+nnoremap W viW
+nnoremap D diw
+nnoremap C ciw
+nnoremap Y yiw
+nnoremap v( vi(
+nnoremap v) va(
+nnoremap v" vi"
+nnoremap v' vi'
+nnoremap v< vi<
+nnoremap v> va>
+nnoremap v{ vi{
+nnoremap v} va}
+nnoremap v[ vi[
+nnoremap v] va]
+nnoremap d( di(
+nnoremap d) da(
+nnoremap d" di"
+nnoremap d' di'
+nnoremap d< di<
+nnoremap d> da>
+nnoremap d{ di{
+nnoremap d} da}
+nnoremap d[ di[
+nnoremap d] da]
+nnoremap c( ci(
+nnoremap c) ca(
+nnoremap c" ci"
+nnoremap c' ci'
+nnoremap c< ci<
+nnoremap c> ca>
+nnoremap c{ ci{
+nnoremap c} ca}
+nnoremap c[ ci[
+nnoremap c] ca]
+nnoremap y( yi(
+nnoremap y) ya(
+nnoremap y" yi"
+nnoremap y' yi'
+nnoremap y< yi<
+nnoremap y> ya>
+nnoremap y{ yi{
+nnoremap y} ya}
+nnoremap y[ yi[
+nnoremap y] ya]
+
+nnoremap R :%s/\<<C-r><C-w>\>/
 "=========================
 "yank and paste to system clipboard
 " autocmd CursorHold * :set number
 " autocmd InsertEnter * :set number
-set rnu
-au BufEnter * :set rnu
-au BufLeave * :set nu
-au WinEnter * :set rnu
-au WinLeave * :set nu
-au InsertEnter * :set nu
-au InsertLeave * :set rnu
-au FocusLost * :set nu
-au FocusGained * :set rnu
-nnoremap y "+y
-vnoremap y "+y
-nnoremap p "+p
-nnoremap d "+d
-vnoremap d "+d
-nnoremap P "+P
+" set rnu
+" au BufEnter * :set rnu
+" au BufLeave * :set nu
+" au WinEnter * :set rnu
+" au WinLeave * :set nu
+" au InsertEnter * :set nu
+" au InsertLeave * :set rnu
+" au FocusLost * :set nu
+" au FocusGained * :set rnu
+" nnoremap : :set nu<CR>:
+" cnoremap <silent> <CR> <CR>:set rnu<CR>
+" cnoremap <silent> <Esc> <Esc>:set rnu<CR>
+inoremap <C-p> <Esc>pa
+nnoremap x "xx
+inoremap <C-P> <Esc>Pa
+set clipboard=unnamedplus
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
 "=========================
-nmap Q <Nop>
+nnoremap Q {gq}
+vnoremap Q gq
 nmap <C-e> :vsp<bar>e 
 "=========================
 colorscheme koehler_mod
-let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
-set guioptions=m  
+set guioptions=  
 set cursorline cursorcolumn
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Monospace\ 9
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
 "=======================
