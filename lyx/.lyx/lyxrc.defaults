@@ -14,16 +14,49 @@ Format 1
 \Format agr        agr     Grace                  "" "auto"	"auto"	"vector"
 \Format fen        fen     FEN                    "" "auto"	"auto"	""
 \Format svg        svg     SVG                    "" "auto" "auto"	"vector"
-\Format bmp        bmp     BMP                    "" "auto"	"auto"	""
-\Format gif        gif     GIF                    "" "auto"	"auto"	""
-\Format jpg        jpg     JPEG                   "" "auto"	"auto"	""
-\Format pbm        pbm     PBM                    "" "auto"	"auto"	""
-\Format pgm        pgm     PGM                    "" "auto"	"auto"	""
-\Format png        png     PNG                    "" "auto"	"auto"	""
-\Format ppm        ppm     PPM                    "" "auto"	"auto"	""
-\Format tiff       tif     TIFF                   "" "auto"	"auto"	""
-\Format xbm        xbm     XBM                    "" "auto"	"auto"	""
-\Format xpm        xpm     XPM                    "" "auto"	"auto"	""
+\viewer_alternatives bmp "xdg-open"
+\viewer_alternatives gif "xdg-open"
+\viewer_alternatives jpg "xdg-open"
+\viewer_alternatives pbm "xdg-open"
+\viewer_alternatives pgm "xdg-open"
+\viewer_alternatives png "xdg-open"
+\viewer_alternatives ppm "xdg-open"
+\viewer_alternatives tiff "xdg-open"
+\viewer_alternatives xbm "xdg-open"
+\viewer_alternatives xpm "xdg-open"
+\Format bmp        bmp     BMP                    "" "xdg-open"	"auto"	""
+\Format gif        gif     GIF                    "" "xdg-open"	"auto"	""
+\Format jpg        jpg     JPEG                   "" "xdg-open"	"auto"	""
+\Format pbm        pbm     PBM                    "" "xdg-open"	"auto"	""
+\Format pgm        pgm     PGM                    "" "xdg-open"	"auto"	""
+\Format png        png     PNG                    "" "xdg-open"	"auto"	""
+\Format ppm        ppm     PPM                    "" "xdg-open"	"auto"	""
+\Format tiff       tif     TIFF                   "" "xdg-open"	"auto"	""
+\Format xbm        xbm     XBM                    "" "xdg-open"	"auto"	""
+\Format xpm        xpm     XPM                    "" "xdg-open"	"auto"	""
+\editor_alternatives asciichess gvim
+\editor_alternatives asciiimage gvim
+\editor_alternatives asciixfig gvim
+\editor_alternatives dateout gvim
+\editor_alternatives docbook gvim
+\editor_alternatives docbook-xml gvim
+\editor_alternatives dot gvim
+\editor_alternatives platex gvim
+\editor_alternatives literate gvim
+\editor_alternatives sweave gvim
+\editor_alternatives r gvim
+\editor_alternatives knitr gvim
+\editor_alternatives lilypond gvim
+\editor_alternatives lilypond-book gvim
+\editor_alternatives latex gvim
+\editor_alternatives luatex gvim
+\editor_alternatives pdflatex gvim
+\editor_alternatives xetex gvim
+\editor_alternatives text gvim
+\editor_alternatives text2 gvim
+\editor_alternatives text3 gvim
+\editor_alternatives text4 gvim
+\editor_alternatives textparagraph gvim
 \editor_alternatives asciichess gedit
 \editor_alternatives asciiimage gedit
 \editor_alternatives asciixfig gedit
@@ -41,64 +74,58 @@ Format 1
 \editor_alternatives latex gedit
 \editor_alternatives luatex gedit
 \editor_alternatives pdflatex gedit
-\editor_alternatives dviluatex gedit
 \editor_alternatives xetex gedit
 \editor_alternatives text gedit
 \editor_alternatives text2 gedit
 \editor_alternatives text3 gedit
 \editor_alternatives text4 gedit
 \editor_alternatives textparagraph gedit
-\editor_alternatives beamer.info gedit
-\editor_alternatives asciichess leafpad
-\editor_alternatives asciiimage leafpad
-\editor_alternatives asciixfig leafpad
-\editor_alternatives dateout leafpad
-\editor_alternatives docbook leafpad
-\editor_alternatives docbook-xml leafpad
-\editor_alternatives dot leafpad
-\editor_alternatives platex leafpad
-\editor_alternatives literate leafpad
-\editor_alternatives sweave leafpad
-\editor_alternatives r leafpad
-\editor_alternatives knitr leafpad
-\editor_alternatives lilypond leafpad
-\editor_alternatives lilypond-book leafpad
-\editor_alternatives latex leafpad
-\editor_alternatives luatex leafpad
-\editor_alternatives pdflatex leafpad
-\editor_alternatives dviluatex leafpad
-\editor_alternatives xetex leafpad
-\editor_alternatives text leafpad
-\editor_alternatives text2 leafpad
-\editor_alternatives text3 leafpad
-\editor_alternatives text4 leafpad
-\editor_alternatives textparagraph leafpad
-\editor_alternatives beamer.info leafpad
-\Format asciichess asc    "Plain text (chess output)"  "" ""	"gedit"	""
-\Format asciiimage asc    "Plain text (image)"         "" ""	"gedit"	""
-\Format asciixfig  asc    "Plain text (Xfig output)"   "" ""	"gedit"	""
-\Format dateout    tmp    "date (output)"         "" ""	"gedit"	""
-\Format docbook    sgml    DocBook                B  ""	"gedit"	"document,menu=export"
-\Format docbook-xml xml   "DocBook (XML)"         "" ""	"gedit"	"document,menu=export"
-\Format dot        dot    "Graphviz Dot"          "" ""	"gedit"	"vector"
-\Format platex     tex    "LaTeX (pLaTeX)"        "" "" "gedit"    "document,menu=export"
-\Format literate   nw      NoWeb                  N  ""	"gedit"	"document,menu=export"
-\Format sweave     Rnw    "Sweave"                S  "" "gedit"    "document,menu=export"
-\Format r          R      "R/S code"              "" "" "gedit"    "document,menu=export"
-\Format knitr      Rnw    "Rnw (knitr)"           "" "" "gedit"  "document,menu=export"
-\Format lilypond   ly     "LilyPond music"        "" ""	"gedit"	"vector"
-\Format lilypond-book    lytex "LilyPond book (LaTeX)"   "" ""	"gedit"	"document,menu=export"
-\Format latex      tex    "LaTeX (plain)"         L  ""	"gedit"	"document,menu=export"
-\Format luatex     tex    "LaTeX (LuaTeX)"        "" ""	"gedit"	"document,menu=export"
-\Format pdflatex   tex    "LaTeX (pdflatex)"      "" ""	"gedit"	"document,menu=export"
-\Format dviluatex  tex    "LaTeX (dviluatex)"     "" "" "gedit"	"document,menu=export"	""
-\Format xetex      tex    "LaTeX (XeTeX)"         "" ""	"gedit"	"document,menu=export"
-\Format text       txt    "Plain text"            a  ""	"gedit"	"document,menu=export"
-\Format text2      txt    "Plain text (pstotext)" "" ""	"gedit"	"document"
-\Format text3      txt    "Plain text (ps2ascii)" "" ""	"gedit"	"document"
-\Format text4      txt    "Plain text (catdvi)"   "" ""	"gedit"	"document"
-\Format textparagraph txt "Plain Text, Join Lines" "" ""	"gedit"	"document"
-\Format beamer.info pdf.info   "Info (Beamer)"         "" ""	"gedit"	"document,menu=export"
+\Format asciichess asc    "Plain text (chess output)"  "" ""	"gvim"	""
+\Format asciiimage asc    "Plain text (image)"         "" ""	"gvim"	""
+\Format asciixfig  asc    "Plain text (Xfig output)"   "" ""	"gvim"	""
+\Format dateout    tmp    "date (output)"         "" ""	"gvim"	""
+\Format docbook    sgml    DocBook                B  ""	"gvim"	"document,menu=export"
+\Format docbook-xml xml   "DocBook (XML)"         "" ""	"gvim"	"document,menu=export"
+\Format dot        dot    "Graphviz Dot"          "" ""	"gvim"	"vector"
+\Format platex     tex    "LaTeX (pLaTeX)"        "" "" "gvim"    "document,menu=export"
+\Format literate   nw      NoWeb                  N  ""	"gvim"	"document,menu=export"
+\Format sweave     Rnw    "Sweave"                S  "" "gvim"    "document,menu=export"
+\Format r          R      "R/S code"              "" "" "gvim"    "document,menu=export"
+\Format knitr      Rnw    "Rnw (knitr)"           "" "" "gvim"  "document,menu=export"
+\Format lilypond   ly     "LilyPond music"        "" ""	"gvim"	"vector"
+\Format lilypond-book    lytex "LilyPond book (LaTeX)"   "" ""	"gvim"	"document,menu=export"
+\Format latex      tex    "LaTeX (plain)"         L  ""	"gvim"	"document,menu=export"
+\Format luatex     tex    "LaTeX (LuaTeX)"        "" ""	"gvim"	"document,menu=export"
+\Format pdflatex   tex    "LaTeX (pdflatex)"      "" ""	"gvim"	"document,menu=export"
+\Format xetex      tex    "LaTeX (XeTeX)"         "" ""	"gvim"	"document,menu=export"
+\Format text       txt    "Plain text"            a  ""	"gvim"	"document,menu=export"
+\Format text2      txt    "Plain text (pstotext)" "" ""	"gvim"	"document"
+\Format text3      txt    "Plain text (ps2ascii)" "" ""	"gvim"	"document"
+\Format text4      txt    "Plain text (catdvi)"   "" ""	"gvim"	"document"
+\Format textparagraph txt "Plain Text, Join Lines" "" ""	"gvim"	"document"
+\viewer_alternatives asciichess "gvim"
+\viewer_alternatives asciiimage "gvim"
+\viewer_alternatives asciixfig "gvim"
+\viewer_alternatives dateout "gvim"
+\viewer_alternatives docbook "gvim"
+\viewer_alternatives docbook-xml "gvim"
+\viewer_alternatives dot "gvim"
+\viewer_alternatives platex "gvim"
+\viewer_alternatives literate "gvim"
+\viewer_alternatives sweave "gvim"
+\viewer_alternatives r "gvim"
+\viewer_alternatives knitr "gvim"
+\viewer_alternatives lilypond "gvim"
+\viewer_alternatives lilypond-book "gvim"
+\viewer_alternatives latex "gvim"
+\viewer_alternatives luatex "gvim"
+\viewer_alternatives pdflatex "gvim"
+\viewer_alternatives xetex "gvim"
+\viewer_alternatives text "gvim"
+\viewer_alternatives text2 "gvim"
+\viewer_alternatives text3 "gvim"
+\viewer_alternatives text4 "gvim"
+\viewer_alternatives textparagraph "gvim"
 \viewer_alternatives asciichess "gedit"
 \viewer_alternatives asciiimage "gedit"
 \viewer_alternatives asciixfig "gedit"
@@ -116,105 +143,65 @@ Format 1
 \viewer_alternatives latex "gedit"
 \viewer_alternatives luatex "gedit"
 \viewer_alternatives pdflatex "gedit"
-\viewer_alternatives dviluatex "gedit"
 \viewer_alternatives xetex "gedit"
 \viewer_alternatives text "gedit"
 \viewer_alternatives text2 "gedit"
 \viewer_alternatives text3 "gedit"
 \viewer_alternatives text4 "gedit"
 \viewer_alternatives textparagraph "gedit"
-\viewer_alternatives beamer.info "gedit"
-\viewer_alternatives asciichess "leafpad"
-\viewer_alternatives asciiimage "leafpad"
-\viewer_alternatives asciixfig "leafpad"
-\viewer_alternatives dateout "leafpad"
-\viewer_alternatives docbook "leafpad"
-\viewer_alternatives docbook-xml "leafpad"
-\viewer_alternatives dot "leafpad"
-\viewer_alternatives platex "leafpad"
-\viewer_alternatives literate "leafpad"
-\viewer_alternatives sweave "leafpad"
-\viewer_alternatives r "leafpad"
-\viewer_alternatives knitr "leafpad"
-\viewer_alternatives lilypond "leafpad"
-\viewer_alternatives lilypond-book "leafpad"
-\viewer_alternatives latex "leafpad"
-\viewer_alternatives luatex "leafpad"
-\viewer_alternatives pdflatex "leafpad"
-\viewer_alternatives dviluatex "leafpad"
-\viewer_alternatives xetex "leafpad"
-\viewer_alternatives text "leafpad"
-\viewer_alternatives text2 "leafpad"
-\viewer_alternatives text3 "leafpad"
-\viewer_alternatives text4 "leafpad"
-\viewer_alternatives textparagraph "leafpad"
-\viewer_alternatives beamer.info "leafpad"
 \Format gnumeric gnumeric "Gnumeric spreadsheet" "" ""    "auto"   "document"
 \Format excel      xls    "Excel spreadsheet"      "" "" "auto"    "document"
 \Format oocalc     ods    "OpenOffice spreadsheet" "" "" "auto"    "document"
 \Format xhtml      xhtml   "LyXHTML"              y "firefox" ""    "document,menu=export"
 \viewer_alternatives xhtml "firefox"
-\Format bibtex bib    "BibTeX"         "" ""	"gedit"	""
+\Format bibtex bib    "BibTeX"         "" ""	"gvim"	""
+\editor_alternatives bibtex gvim
 \editor_alternatives bibtex gedit
-\editor_alternatives bibtex leafpad
-\Format eps        eps     EPS                    "" "okular"	""	"vector"
-\Format ps         ps      Postscript             t  "okular"	""	"document,vector,menu=export"
+\Format eps        eps     EPS                    "" "xdg-open"	""	"vector"
+\Format ps         ps      Postscript             t  "xdg-open"	""	"document,vector,menu=export"
+\viewer_alternatives eps "xdg-open"
+\viewer_alternatives ps "xdg-open"
 \viewer_alternatives eps "okular"
 \viewer_alternatives ps "okular"
-\viewer_alternatives eps "evince"
-\viewer_alternatives ps "evince"
-\Format pdf        pdf    "PDF (ps2pdf)"          P  "okular"	""	"document,vector,menu=export"
-\Format pdf2       pdf    "PDF (pdflatex)"        F  "okular"	""	"document,vector,menu=export"
-\Format pdf3       pdf    "PDF (dvipdfm)"         m  "okular"	""	"document,vector,menu=export"
-\Format pdf4       pdf    "PDF (XeTeX)"           X  "okular"	""	"document,vector,menu=export"
-\Format pdf5       pdf    "PDF (LuaTeX)"          u  "okular"	""	"document,vector,menu=export"
+\Format pdf        pdf    "PDF (ps2pdf)"          P  "xdg-open"	""	"document,vector,menu=export"
+\Format pdf2       pdf    "PDF (pdflatex)"        F  "xdg-open"	""	"document,vector,menu=export"
+\Format pdf3       pdf    "PDF (dvipdfm)"         m  "xdg-open"	""	"document,vector,menu=export"
+\Format pdf4       pdf    "PDF (XeTeX)"           X  "xdg-open"	""	"document,vector,menu=export"
+\Format pdf5       pdf    "PDF (LuaTeX)"          u  "xdg-open"	""	"document,vector,menu=export"
+\viewer_alternatives pdf "xdg-open"
+\viewer_alternatives pdf2 "xdg-open"
+\viewer_alternatives pdf3 "xdg-open"
+\viewer_alternatives pdf4 "xdg-open"
+\viewer_alternatives pdf5 "xdg-open"
 \viewer_alternatives pdf "okular"
 \viewer_alternatives pdf2 "okular"
 \viewer_alternatives pdf3 "okular"
 \viewer_alternatives pdf4 "okular"
 \viewer_alternatives pdf5 "okular"
-\viewer_alternatives pdf "evince"
-\viewer_alternatives pdf2 "evince"
-\viewer_alternatives pdf3 "evince"
-\viewer_alternatives pdf4 "evince"
-\viewer_alternatives pdf5 "evince"
-\Format dvi        dvi     DVI                    D  "xdvi"	""	"document,vector,menu=export"
-\Format dvi3       dvi     "DVI (LuaTeX)"          V  "xdvi"	""	"document,vector,menu=export"
+\Format dvi        dvi     DVI                    D  "xdg-open"	""	"document,vector,menu=export"
+\Format dvi3       dvi     "DVI (LuaTeX)"          V  "xdg-open"	""	"document,vector,menu=export"
+\viewer_alternatives dvi "xdg-open"
+\viewer_alternatives dvi3 "xdg-open"
 \viewer_alternatives dvi "xdvi"
 \viewer_alternatives dvi3 "xdvi"
 \viewer_alternatives dvi "okular"
 \viewer_alternatives dvi3 "okular"
-\Format html       html    HTML                   H  "firefox"	""	"document,menu=export"
+\Format html       html    HTML                   H  "xdg-open"	""	"document,menu=export"
+\viewer_alternatives html "xdg-open"
 \viewer_alternatives html "firefox"
 \Format noteedit   not     Noteedit               "" "auto"	"auto"	"vector"
-\editor_alternatives odt libreoffice
-\editor_alternatives sxw libreoffice
-\editor_alternatives odt lowriter
-\editor_alternatives sxw lowriter
-\editor_alternatives odt abiword
-\editor_alternatives sxw abiword
-\Format odt        odt     OpenDocument           "" "libreoffice"	"libreoffice"	"document,vector,menu=export"
+\editor_alternatives odt xdg-open
+\editor_alternatives sxw xdg-open
+\Format odt        odt     OpenDocument           "" "xdg-open"	"xdg-open"	"document,vector,menu=export"
 \Format sxw        sxw    "OpenOffice.Org (sxw)"  "" ""	""	"document,vector"
-\viewer_alternatives odt "libreoffice"
-\viewer_alternatives sxw "libreoffice"
-\viewer_alternatives odt "lowriter"
-\viewer_alternatives sxw "lowriter"
-\viewer_alternatives odt "abiword"
-\viewer_alternatives sxw "abiword"
-\editor_alternatives rtf libreoffice
-\editor_alternatives word libreoffice
-\editor_alternatives rtf lowriter
-\editor_alternatives word lowriter
-\editor_alternatives rtf abiword
-\editor_alternatives word abiword
-\Format rtf        rtf    "Rich Text Format"      "" "libreoffice"	"libreoffice"	"document,vector,menu=export"
-\Format word       doc    "MS Word"               W  "libreoffice"	"libreoffice"	"document,vector,menu=export"
-\viewer_alternatives rtf "libreoffice"
-\viewer_alternatives word "libreoffice"
-\viewer_alternatives rtf "lowriter"
-\viewer_alternatives word "lowriter"
-\viewer_alternatives rtf "abiword"
-\viewer_alternatives word "abiword"
+\viewer_alternatives odt "xdg-open"
+\viewer_alternatives sxw "xdg-open"
+\editor_alternatives rtf xdg-open
+\editor_alternatives word xdg-open
+\Format rtf        rtf    "Rich Text Format"      "" "xdg-open"	"xdg-open"	"document,vector,menu=export"
+\Format word       doc    "MS Word"               W  "xdg-open"	"xdg-open"	"document,vector,menu=export"
+\viewer_alternatives rtf "xdg-open"
+\viewer_alternatives word "xdg-open"
 \Format date       ""     "date command"          "" ""	""	""
 \Format csv        csv    "Table (CSV)"  "" ""	""	"document"
 \Format fax        ""      Fax                    "" ""	""	"document"
@@ -240,8 +227,8 @@ Format 1
 \converter xetex      pdf4       ""	"latex=xelatex"
 \converter luatex      pdf5       "lualatex"	"latex=lualatex"
 \converter luatex      dvi3        "dvilualatex"	"latex=dvilualatex"
-\converter latex      lyx        "tex2lyx2.0 -f $$i $$o"	""
-\converter literate   lyx        "tex2lyx2.0 -n -f $$i $$o"	""
+\converter latex      lyx        "tex2lyx -f $$i $$o"	""
+\converter literate   lyx        "tex2lyx -n -f $$i $$o"	""
 \converter literate   latex      ""	""
 \converter literate   pdflatex      ""	""
 \converter sweave   latex      ""	""
@@ -268,10 +255,9 @@ Format 1
 \converter ps         pdf        "ps2pdf13 $$i $$o"	""
 \converter ps         text2      ""	""
 \converter ps         text3      "ps2ascii $$i $$o"	""
-\converter ps         eps      ""	""
+\converter ps         eps      "ps2eps $$i"	""
 \converter pdf         ps        "pdf2ps $$i $$o"	""
 \converter pdf         eps        "pdftops -eps -f 1 -l 1 $$i $$o"	""
-\converter pdf2         beamer.info        ""	""
 \converter dvi        text4      ""	""
 \converter dvi        ps         "dvips -o $$o $$i"	""
 \converter dvi        pdf3       "dvipdfmx -o $$o $$i"	""
@@ -280,6 +266,7 @@ Format 1
 \converter ps         fax        ""	""
 \converter wmf        eps        ""	""
 \converter emf        eps        ""	""
+\converter eps        pdf        "epstopdf --outfile=$$o $$i"	""
 \converter eps        png        "convert $$i $$o"	""
 \converter dia        png        ""	""
 \converter dia        eps        ""	""
@@ -304,8 +291,8 @@ Format 1
 \converter jlyx       lyx        "python -tt $$s/lyx2lyx/lyx2lyx -c euc_jp $$i > $$o"	""
 \converter klyx       lyx        "python -tt $$s/lyx2lyx/lyx2lyx -c euc_kr $$i > $$o"	""
 
-\converter docbook    dvi        "db2dvi $$i"	""
-\converter docbook    html       "db2html $$i"	""
+\converter docbook    dvi        ""	""
+\converter docbook    html       ""	""
 \tex_allows_spaces true
 \chktex_command ""
 \bibtex_command "bibtex"

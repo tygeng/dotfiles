@@ -1,20 +1,19 @@
 #PS1="\[\e[1;32m\]\t \w \$\[\e[0m\] "
 #zsh below
-setopt extendedglob
+setopt extendedglob auto_list auto_param_slash auto_remove_slash
 autoload -U colors && colors
 autoload -U compinit promptinit
 compinit
 promptinit
 setopt completealiases
+setopt auto_pushd pushd_ignore_dups
 eval `dircolors /media/sda3/Dropbox/productivity/colors`
 PS1="%{$fg_bold[green]%}%T %{$fg_bold[yellow]%}%~%{$fg[green]%} $%{$reset_color%} "
 # PS1="[%{$fg_bold[green]%}%T%{$reset_color%}] %{$fg_bold[yellow]%}%~%{$fg[green]%} $%{$fg[red]%} "
 HISTFILE=$HOME/.zhistory
-setopt INC_APPEND_HISTORY
 HISTSIZE=1200
 SAVEHIST=1000
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST INC_APPEND_HISTORY hist_ignore_alldups EXTENDED_HISTORY share_history
 export PYTHONSTARTUP='/media/sda3/Dropbox/productivity/python/pythonstartup'
 #PATH="/usr/java/jdk1.7.0_09/bin:$PATH:/home/tony1/bin:." 
 alias ls='ls --color=auto'
@@ -32,7 +31,9 @@ lgnb()
 {
 	ssh CS4414S13@bio.cs.vt.edu
 }
+alias P="pwd | tr -d '\n' | xclip"
 alias gcc='gcc'
+alias C=clear
 alias compa='gcc -std=c99 -o ${PWD##*/} *.c *.o'
 alias compac='gcc -o ${PWD##*/} *.c'
 alias gdbcompac='gcc -std=c99 -O0 -ggdb3 -m32 -o ${PWD##*/} *.c && gdb ${PWD##*/}'
@@ -47,6 +48,11 @@ alias mm='sudo fdisk -l | grep "sd[bcde]" && echo "================= MOUNTED ===
 alias mat='matlab -nodesktop'
 alias -g xclip='xclip -selection c'
 alias pig='~/dev/pig/pig-0.11.1/bin/pig -x local'
+alias todo='vim /home/tony1/Dropbox/ideas/todo'
+alias trm='trash-rm'
+killn() {
+    kill `ps -e | grep $1 | awk '{print $1}'`
+}
 m()
 {
     udisks --mount /dev/sd$1
@@ -80,6 +86,7 @@ alias hiber='sudo pm-hibernate'
 alias rbt='sudo reboot'
 alias d='mysdcv'
 alias gvim='vim -g'
+alias vimdiff='vim -d'
 alias cd='cl'
 mysdcv()
 {
@@ -93,7 +100,7 @@ mysdcv()
 
 alias cdd='cl /media/sda3/Dropbox'
 alias cddl='cl ~/Dropbox'
-alias cds='cl ~/Dropbox/Semester_8/'
+alias cds='cl ~/Dropbox/Semester_9/'
 alias cdf='cl /media/sda3/Dropbox/FINANCE/'
 alias cdi='cl ~/Dropbox/ideas/'
 alias cdg='cl ~/Dropbox/git/'
@@ -101,6 +108,7 @@ alias cdq='cl /media/sda3/Dropbox/思琪/'
 alias mv='mv -i'
 alias cp='cp -i'
 alias gc='gcalcli'
+alias make='make -j 4'
 #export LANG=C
 submit() {
 	~/Dropbox/Semester_8/cs3214/submit.pl $1 $2
@@ -170,3 +178,15 @@ getb() {
 	scp -r CS4414S13@bio.cs.vt.edu:~/SVD1/$1 $local_dir
 }
 source ~/bin/bashmarks.sh 
+export EDITOR=/usr/bin/vim
+# bindkey -v
+# ===========================================
+# GNUstep initialization
+. /usr/GNUstep/System/Library/Makefiles/GNUstep.sh
+# set up the color
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
+fi
+

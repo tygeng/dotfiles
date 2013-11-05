@@ -1,7 +1,7 @@
 <!DOCTYPE kpartgui SYSTEM 'kpartgui.dtd'>
-<kpartgui version="32" name="okular_part">
+<kpartgui version="33" name="okular_part">
  <MenuBar>
-  <Menu noMerge="1" name="file">
+  <Menu name="file">
    <text>&amp;File</text>
    <Action group="file_open" name="get_new_stuff"/>
    <Action group="file_open" name="import_ps"/>
@@ -14,7 +14,7 @@
    <Action group="file_print" name="embedded_files"/>
    <Action group="file_print" name="file_export_as"/>
   </Menu>
-  <Menu noMerge="1" name="edit">
+  <Menu name="edit">
    <text>&amp;Edit</text>
    <Action name="edit_copy"/>
    <Separator/>
@@ -24,7 +24,7 @@
    <Action name="edit_find_next"/>
    <Action name="edit_find_prev"/>
   </Menu>
-  <Menu noMerge="1" name="view">
+  <Menu name="view">
    <text>&amp;View</text>
    <Action name="presentation"/>
    <Separator/>
@@ -32,12 +32,11 @@
    <Action name="view_zoom_out"/>
    <Action name="view_fit_to_width"/>
    <Action name="view_fit_to_page"/>
-   <Action name="zoom_fit_rect"/>
    <Separator/>
    <Action name="view_continuous"/>
    <Action name="view_render_mode"/>
    <Separator/>
-   <Menu noMerge="1" name="view_orientation">
+   <Menu name="view_orientation">
     <text>&amp;Orientation</text>
     <Action name="view_orientation_rotate_ccw"/>
     <Action name="view_orientation_rotate_cw"/>
@@ -48,7 +47,7 @@
    <Separator/>
    <Action name="view_toggle_forms"/>
   </Menu>
-  <Menu noMerge="1" name="go">
+  <Menu name="go">
    <text>&amp;Go</text>
    <Action name="go_previous"/>
    <Action name="go_next"/>
@@ -61,7 +60,7 @@
    <Separator/>
    <Action name="go_goto_page"/>
   </Menu>
-  <Menu noMerge="1" name="bookmarks">
+  <Menu name="bookmarks">
    <text>&amp;Bookmarks</text>
    <Action name="bookmark_add"/>
    <Action name="rename_bookmark"/>
@@ -70,7 +69,7 @@
    <Separator/>
    <ActionList name="bookmarks_currentdocument"/>
   </Menu>
-  <Menu noMerge="1" name="tools">
+  <Menu name="tools">
    <text>&amp;Tools</text>
    <Action name="mouse_drag"/>
    <Action name="mouse_zoom"/>
@@ -84,14 +83,14 @@
    <Action name="speak_current_page"/>
    <Action name="speak_stop_all"/>
   </Menu>
-  <Menu noMerge="1" name="settings">
+  <Menu name="settings">
    <text>&amp;Settings</text>
    <Action group="show_merge" name="show_leftpanel"/>
    <Action group="show_merge" name="show_bottombar"/>
    <Action group="configure_merge" name="options_configure_generators"/>
    <Action name="options_configure"/>
   </Menu>
-  <Menu noMerge="1" name="help">
+  <Menu name="help">
    <text>&amp;Help</text>
    <Action group="about_merge" name="help_about_backend"/>
   </Menu>
@@ -109,13 +108,15 @@
   <Action name="switch_blackscreen_mode"/>
   <Action name="view_render_mode"/>
  </ToolBar>
- <ActionProperties scheme="Default">
-  <Action iconText="Hand" name="mouse_drag"/>
-  <Action iconText="Text" name="mouse_selecttools"/>
-  <Action iconText="Text" name="mouse_textselect"/>
-  <Action iconText="Table" name="mouse_tableselect"/>
+ <ActionProperties>
+  <Action shortcut="Ctrl+S" name="file_save_as"/>
+  <Action shortcut="Ctrl+Shift+S" name="file_save_copy"/>
   <Action shortcut="Back; Alt+Left" name="go_document_back"/>
   <Action shortcut="Forward; Alt+Right" name="go_document_forward"/>
+  <Action iconText="Hand" name="mouse_drag"/>
+  <Action iconText="Text" name="mouse_selecttools"/>
+  <Action iconText="Table" name="mouse_tableselect"/>
+  <Action iconText="Text" name="mouse_textselect"/>
   <Action shortcut="Ctrl+=; =" name="view_zoom_in"/>
   <Action shortcut="Ctrl+-; -" name="view_zoom_out"/>
  </ActionProperties>

@@ -20,7 +20,7 @@ exec xcompmgr
 exec blueman-applet
 exec xfsettingsd
 
-exec guake
+exec terra
 set $mod Mod4
 set border none
 # use tab tab tab tab+++++++++++++++++++++++++++++++++++++++++++++++
@@ -38,25 +38,30 @@ bindsym XF86AudioRaiseVolume exec sh ~/bin/increase_volume.sh
 bindsym XF86AudioLowerVolume exec sh ~/bin/decrease_volume.sh
 # bindsym XF86AudioMute exec sh ~/bin/toggle_mute.sh
 bindsym XF86WebCam exec sh ~/bin/play_through_bluetooth.sh
-bindsym $mod+c split h; exec google-chrome
+bindsym $mod+c split h; exec google-chrome --enable-plugins
+bindsym $mod+q exec google-chrome --user-data-dir=/home/tony1/.config/qq
 bindsym $mod+Shift+C split v; exec google-chrome
 bindsym $mod+t exec nautilus
-bindsym Mod1+F3 exec xfce4-appfinder
+bindsym $mod+F3 exec xfce4-appfinder
 bindsym XF86LaunchA exec sh ~/.toggle_touchpad.sh
+bindsym XF86ScreenSaver exec sudo pm-suspend
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return split h; exec xfce4-terminal
 bindsym $mod+Shift+Return split v; exec xfce4-terminal
-for_window [class="Guake"] floating enable
+bindsym Shift+Find exec restart-Tuake
+for_window [class="Terra"] floating enable border 1pixel move down 11 px
 for_window [title="^Application Finder"] floating enable
 for_window [title="^qtcreator"] floating enable
-for_window [title="^QQ2012"] floating enable border none
+# for_window [title="^QQ2012"] floating enable border none
 for_window [title="^cv:"] floating enable
+for_window [title="^Figure"] floating enable
 for_window [title=".*Preference.*"] floating enable
 for_window [class="Pidgin"] floating enable
 for_window [title="File Operation Progress"] floating enable
 for_window [title="File Operations"] floating enable
 for_window [title="^Volume Control"] floating enable
+for_window [title="^swing"] floating enable
 for_window [title="^xfce4-notifyd$"] floating enable border none
 for_window [title="^Yakuake"] floating enable
 for_window [title="^DDD"] floating enable
@@ -75,7 +80,8 @@ bindsym $mod+Shift+Q kill
 bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
-bindsym Break exec dmenu_run
+# bindsym Break exec dmenu_run
+bindsym Break exec xboomx
 
 # change focus
 bindsym $mod+j focus left

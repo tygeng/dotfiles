@@ -5,7 +5,7 @@
 \textclass report
 \begin_preamble
 \usepackage{lmodern}
-\renewcommand\theenumi{(\alph{enumi})} 	
+\renewcommand{\theenumi}{(\alph{enumi})} \renewcommand{\theenumii}{\arabic{enumii}} \renewcommand{\labelenumii}{\theenumii.}
 \renewcommand\labelenumi{\theenumi}
 \usepackage{qtree}
 \usepackage{datetime}
@@ -16,26 +16,14 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \lhead{Tianyu Geng}
-\chead{\mmddyyyydate \today \space CS3304 Project 3}
+\chead{\mmddyyyydate \today \space Fall 2013 - Math 4425 Fourier Series PDE Assignment 7}
 \rhead{Page \thepage}
 \lfoot{}
 \cfoot{}
 \rfoot{}
 
-\lstdefinestyle{codestyle}{%
-  frame=single,
-  framerule=1pt,
-  basicstyle=\ttfamily,
-  breaklines=true,
-  columns=fullflexible,
- numbers=left,
-  stepnumber=1,    
-  firstnumber=1,
-  numberfirstline=true
-}
-\newcommand{\mylisting}[2][]{%
-    \lstinputlisting[style=codestyle,caption={\texttt{\detokenize{#2}}},#1]{#2}%
-}
+
+
 
 \renewcommand{\theequation}{\theproblem--\arabic{equation}}
 \end_preamble
@@ -106,7 +94,7 @@ figs-within-sections
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
-\listings_params "frame=single"
+\listings_params "basicstyle={\ttfamily},breaklines=true,columns=fullflexible,firstnumber=1,frame=single,framerule=1pt,numberfirstline=true,numbers=left,stepnumber=1"
 \tracking_changes false
 \output_changes false
 \html_math_output 0

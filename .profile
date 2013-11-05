@@ -19,7 +19,7 @@ fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$PATH:$HOME/bin"
-	PATH="/usr/local/Trolltech/Qt-4.8.4/bin:$PATH:/home/tony1/dev/scheme/racket/bin:/home/tony1/dev/java/jdk1.7.0_21/bin:."
+	PATH="/usr/local/Trolltech/Qt-4.8.4/bin:$PATH:/home/tony1/dev/scheme/racket/bin:/home/tony1/dev/java/jdk1.7.0_21/bin:/usr/local/texlive/2013/bin/x86_64-linux:."
 	export PATH
 fi
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
@@ -27,8 +27,8 @@ export PKG_CONFIG_PATH
 CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/usr/local/include
 export CPLUS_INCLUDE_PATH
 MANPATH=`manpath`
-MANPATH=$MANPATH:/home/tony1/dev/java/jdk1.7.0_21/man
+MANPATH=$MANPATH:/home/tony1/dev/java/jdk1.7.0_21/man:/usr/local/texlive/2013/texmf-dist/doc/man 
 export MANPATH
-JAVA_HOME='/home/tony1/dev/java/jdk1.7.0_21/jre'
+JAVA_HOME='/home/tony1/dev/java/jdk1.7.0_21'
 export JAVA_HOME
 

@@ -1,2 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/usr/GNUstep/System/Library/Headers/Foundation'
+let g:netrw_dirhist_2='/home/tony1/dev/java/dom4j-1.6.1/build'
+let g:netrw_dirhist_3='/home/tony1/Dropbox/dotfiles/vim/.vim/bundle/nerdtree/doc'

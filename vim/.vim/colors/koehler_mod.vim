@@ -69,7 +69,7 @@ hi link SpecialChar		Special
 hi link Delimiter		Special
 hi link SpecialComment	Special
 hi link Debug			Special
-highlight PmenuSel ctermfg=black ctermbg=white guifg=black guibg=grey
-highlight Pmenu ctermfg=grey ctermbg=blue guifg=grey guibg=RoyalBlue3
+highlight PmenuSel ctermfg=0 ctermbg=255 guifg=black guibg=lightgrey
+highlight Pmenu ctermfg=255 ctermbg=26 guifg=lightgrey guibg=RoyalBlue3
 hi CursorLine   cterm=NONE ctermbg=NONE  guibg=NONE gui=underline  cterm=underline
 hi CursorColumn cterm=NONE ctermbg=NONE  guibg=#505050 

@@ -1,8 +1,6 @@
-xinput disable 11
-pacmd set-default-sink 0
-sleep 2
-xinput set-prop 13 "Device Accel Velocity Scaling" 100
-xinput set-prop 13 "Device Accel Profile" 2
+xinput disable "SynPS/2 Synaptics TouchPad"
+xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Velocity Scaling" 250
+xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Profile" 2
 synclient PalmDetect=1
 synclient PalmMinWidth=2
 synclient PalmMinZ=20
@@ -11,5 +9,5 @@ synclient ClickFinger3=3
 synclient TapButton3=3
 synclient TapButton2=2
 synclient SingleTapTimeout=50
-
+pacmd set-default-sink 0
 

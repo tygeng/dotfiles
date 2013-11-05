@@ -14,12 +14,14 @@ vnoremap i k
 vnoremap j h
 vnoremap k j
 vnoremap ; $
+vnoremap <Space> c
 
 nnoremap U :redo<CR>
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
-nnoremap w viw
-nnoremap W viW
+nnoremap w lbve
+vnoremap w e
+nnoremap W lBvE
 nnoremap D diw
 nnoremap C ciw
 nnoremap Y yiw

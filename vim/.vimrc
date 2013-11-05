@@ -1,8 +1,24 @@
-" set file make program according to file type
+"set up color
+if !has("gui_running")
+    set t_Co=256
+endif
+" set file make program according to file type. Even if vim is closed the
+" history will still be kept
 au FileType markdown set makeprg=multimarkdown\ %\ -o\ %.html
-
+" au FileType tex set makeprg=latexmk\ -pdfdvi\ %
+au FileType tex set makeprg=pdflatex\ %
+inoremap <M-4> <nop>
+au FileType tex inoremap <M-4> $$<Left>
+set tw=0
+au FileType cpp,c,java,tex,text  set tw=79
+syntax sync minlines=256
+" set mouse=a
 
 "=========================
+" set encoding priority
+set encoding=utf-8
+set fileencodings=utf-8,gb2312,gb18030,gbk,cp936,latin1,ucs-bom
+set termencoding=utf-8
 " tell it to use an undo file
 set undofile
 " set a directory to store the undo history
@@ -36,6 +52,8 @@ syntax on
 filetype plugin indent on
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+au FileType c let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf_c.py'
+au FileType objc let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf_objc.py'
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:EclimCompletionMethod = 'omnifunc'
@@ -44,9 +62,9 @@ let g:EclimCompletionMethod = 'omnifunc'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_signs=1
 let g:syntastic_loc_list_height=5
-" let g:syntastic_mode_map = { 'mode': 'active',
-"                            \ 'active_filetypes': ['c'],
-"                            \ 'passive_filetypes': [] }
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': ['c'],
+                           \ 'passive_filetypes': ["tex"] }
 
 set statusline=%<\ %n:%f\ %m%r%y%{SyntasticStatuslineFlag()}%=(%l\ ,\ %c%V)\ Total:\ %L\ 
 " work around for the location list bug
@@ -78,6 +96,10 @@ vnoremap ; g$
 vnoremap <Space> c
 nnoremap <Up> <C-y>
 nnoremap <Down> <C-e>
+inoremap <Home> <Esc>g^i
+nnoremap H ;
+
+
 " inoremap <S-Left> <Esc>v<Left>
 " inoremap <S-Right> <Esc>v<Right>
 " inoremap <S-Up> <Esc>v<Up>
@@ -103,39 +125,38 @@ filetype indent on
 "=========================
 "simple comment
 map <silent> s :call Co(&ft)<CR>
-so ~/vimscripts/simple_comment.vim
 "=========================
 "set F2 to toggle paste mode
 nnoremap <F3> :set hlsearch!<CR>
-nnoremap <F2> :set invpaste paste?<CR>
-inoremap <F2> <Esc>:set invpaste paste?<CR>a
+nnoremap <Silent> <F2> :set invpaste paste?<CR>
+inoremap <Silent> <F2> <Esc>:set invpaste paste?<CR>a
 set pastetoggle=<F2>
 set showmode
 "=========================
 "c support for jump among files
-" nmap <F9> <C-T>
-" imap <F9> <Esc><F9>a
-map <A-F10> :vsp<CR>:wincmd l<CR>:exec("tag ".expand("<cword>"))<CR>:wincmd h<CR>
-nmap <F10> <C-]>
-imap <F10> <Esc><F10>a
-nmap <F8> :w<CR>:FSHere<CR>
+" nmap <F7> <C-T>
+" imap <F7> <Esc><F7>a
+map <S-F8> :vsp<CR>:wincmd l<CR>:exec("tag ".expand("<cword>"))<CR>:wincmd h<CR>
+nmap <F8> <C-]>
 imap <F8> <Esc><F8>a
-map <A-F8> :w<CR>:vsp<CR>:FSRight<CR>:wincmd h<CR>
+nmap <F9> :w<CR>:FSHere<CR>
+imap <F9> <Esc><F9>a
+map <S-F9> :w<CR>:vsp<CR>:FSRight<CR>:wincmd h<CR>
 set tags=./tags;/
 nnoremap S :w<CR>
 autocmd FileType c,cpp,python nnoremap S :w<CR>:silent !ctags -R --fields=+iaS --extra=+f .<CR>:redraw!<CR>
-nmap <S-F10> gf
-imap <S-F10> <Esc><S-F10>a
-nmap <F9> <C-o>
-imap <F9> <Esc><S-F9>a
+" autocmd FileType tex set nocursorcolumn 
+" nmap <S-F8> gf
+" imap <S-F8> <Esc><S-F8>a
+nmap <F7> <C-o>
+imap <F7> <Esc><S-F7>a
 
 "=========================
-noremap <F12> mz:%!astyle --style=java<CR>`z
+noremap <F12> mz:%!astyle --style=java -fjxpUd -k3 <CR>`z
 imap <F12> <Esc><F12>
 "=========================
 nnoremap <F1> :set wrap!<CR>
 inoremap <F1> <Esc><F1>a
-cnoremap <F1> <C-x><C-f>
 "=========================
 "next error for errormarker
 " let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
@@ -166,6 +187,7 @@ nnoremap U :redo<CR>
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 nnoremap w viw
+vnoremap w e
 nnoremap W viW
 nnoremap D diw
 nnoremap C ciw
@@ -180,38 +202,39 @@ nnoremap v{ vi{
 nnoremap v} va}
 nnoremap v[ vi[
 nnoremap v] va]
-nnoremap d( di(
-nnoremap d) da(
-nnoremap d" di"
-nnoremap d' di'
-nnoremap d< di<
-nnoremap d> da>
-nnoremap d{ di{
-nnoremap d} da}
-nnoremap d[ di[
-nnoremap d] da]
-nnoremap c( ci(
-nnoremap c) ca(
-nnoremap c" ci"
-nnoremap c' ci'
-nnoremap c< ci<
-nnoremap c> ca>
-nnoremap c{ ci{
-nnoremap c} ca}
-nnoremap c[ ci[
-nnoremap c] ca]
-nnoremap y( yi(
-nnoremap y) ya(
-nnoremap y" yi"
-nnoremap y' yi'
-nnoremap y< yi<
-nnoremap y> ya>
-nnoremap y{ yi{
-nnoremap y} ya}
-nnoremap y[ yi[
-nnoremap y] ya]
+cnoremap <Space><Space> <Space><Bar><Space>
+" nnoremap d( di(
+" nnoremap d) da(
+" nnoremap d" di"
+" nnoremap d' di'
+" nnoremap d< di<
+" nnoremap d> da>
+" nnoremap d{ di{
+" nnoremap d} da}
+" nnoremap d[ di[
+" nnoremap d] da]
+" nnoremap c( ci(
+" nnoremap c) ca(
+" nnoremap c" ci"
+" nnoremap c' ci'
+" nnoremap c< ci<
+" nnoremap c> ca>
+" nnoremap c{ ci{
+" nnoremap c} ca}
+" nnoremap c[ ci[
+" nnoremap c] ca]
+" nnoremap y( yi(
+" nnoremap y) ya(
+" nnoremap y" yi"
+" nnoremap y' yi'
+" nnoremap y< yi<
+" nnoremap y> ya>
+" nnoremap y{ yi{
+" nnoremap y} ya}
+" nnoremap y[ yi[
+" nnoremap y] ya]
 
-nnoremap R :%s/\<<C-r><C-w>\>/
+nnoremap R :%s/\<<C-r><C-w>\>//g<Left><Left>
 "=========================
 "yank and paste to system clipboard
 " autocmd CursorHold * :set number
@@ -241,6 +264,8 @@ nmap <C-e> :vsp<bar>e
 colorscheme koehler_mod
 set guioptions=  
 set cursorline cursorcolumn
+syntax sync minlines=64
+set re=1
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Monospace\ 9
@@ -248,4 +273,12 @@ if has("gui_running")
     set guifont=Consolas:h11:cANSI
   endif
 endif
+autocmd InsertEnter * set nocul nocursorcolumn
+autocmd InsertLeave * set cul cursorcolumn
 "=======================
+set backspace=indent,eol,start
+set foldmethod=syntax
+set foldnestmax=2      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+"==========

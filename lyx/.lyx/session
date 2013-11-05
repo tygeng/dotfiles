@@ -2,27 +2,29 @@
 ## Editing this file manually may cause lyx to crash.
 
 [recent files]
-/home/tony1/Dropbox/Semester_8/cs3214/prep.lyx
-/home/tony1/Dropbox/Semester_8/Math4134/notes.lyx
-/home/tony1/Dropbox/Semester_8/phys2306/prep.lyx
-/home/tony1/temp/table.lyx
-/home/tony1/Dropbox/Semester_8/CS4414/proj/report/report_tony.lyx
-/home/tony1/Dropbox/Semester_8/CS3304/proj3/prolog/print.lyx
-/home/tony1/temp/newfile1.lyx
-/home/tony1/Dropbox/Semester_8/Math4134/hw11.lyx
-/home/tony1/Dropbox/Semester_8/CS4414/hw4/hw4_report.lyx
-/home/tony1/Dropbox/Semester_8/CS3304/hw4.lyx
-/home/tony1/Dropbox/Semester_8/Math4134/hw6.lyx
-/home/tony1/Dropbox/Semester_8/Math4134/hw10.lyx
-/home/tony1/Dropbox/Semester_8/Math4134/hw9.lyx
-/home/tony1/Dropbox/Semester_8/Math4134/hw8.lyx
-/home/tony1/Dropbox/Semester_8/CS3304/hw6.lyx
-/home/tony1/Dropbox/Semester_8/Math4134/hw7.lyx
-/home/tony1/Dropbox/Semester_8/CS3304/hw5.lyx
-/usr/share/lyx/examples/splash.lyx
+/home/tony1/Dropbox/Semester_9/CS4104/notes.lyx
+/home/tony1/Dropbox/Semester_9/CS4234/pj2.lyx
+/home/tony1/Dropbox/Semester_9/Math4445/notes.lyx
+/home/tony1/Dropbox/Semester_9/Math4225/notes.lyx
+/home/tony1/Dropbox/Semester_9/CS4234/hw3.lyx
+/home/tony1/Dropbox/Semester_9/Math4425/notes.lyx
+/home/tony1/Dropbox/Semester_9/CS4234/notes.lyx
+/home/tony1/Dropbox/Semester_9/Math4425/assignment6.lyx
+/home/tony1/Dropbox/Semester_9/Math4425/assignment5.lyx
+/home/tony1/Dropbox/Semester_9/Math4425/assignment7.lyx
+/home/tony1/Dropbox/Semester_9/Math4225/assignment7.lyx
+/home/tony1/Dropbox/Semester_9/CS4104/hw6-aux.lyx
+/home/tony1/Dropbox/Semester_9/Math4445/hw3.lyx
+/home/tony1/Dropbox/Semester_9/Math4225/assignment6.lyx
+/home/tony1/Dropbox/Semester_9/CS4104/hw5-aux.lyx
+/home/tony1/Dropbox/Semester_9/CS4234/pj1.lyx
+/home/tony1/Dropbox/Semester_9/Math4225/assignment5.lyx
+/home/tony1/Dropbox/Semester_9/Math4425/test1.lyx
+/home/tony1/Dropbox/Semester_9/CS4104/hw4-aux.lyx
+/home/tony1/Dropbox/Semester_9/Math4445/hw2.lyx
 
 [last opened files]
-1, /home/tony1/Dropbox/Semester_8/cs3214/prep.lyx
+1, /home/tony1/good.lyx
 
 [cursor positions]
 29, 4, /home/tony1/Dropbox/Semester_8/CS3304/hw4.lyx
@@ -40,10 +42,41 @@
 403, 15, /home/tony1/Dropbox/Semester_8/Math4134/notes.lyx
 37, 452, /home/tony1/Dropbox/Semester_8/cs3214/prep.lyx
 14, 1, /home/tony1/Dropbox/Semester_8/phys2306/prep.lyx
-0, 0, /home/tony1/temp/newfile1.lyx
-0, 0, /home/tony1/temp/table.lyx
-0, 0, /tmp/lyx_tmpdir.T15654.S15654_embedded.internal
-0, 0, /tmp/lyx_tmpdir.T15654.n15654_embedded.internal
+16, 1, /home/tony1/Dropbox/Semester_9/CS4104/hw3-aux.lyx
+0, 0, /home/tony1/Dropbox/Semester_9/CS4104/hw4-aux.lyx
+39, 7, /home/tony1/Dropbox/Semester_9/CS4104/hw5-aux.lyx
+0, 0, /home/tony1/Dropbox/Semester_9/CS4104/hw6-aux.lyx
+400, 166, /home/tony1/Dropbox/Semester_9/CS4104/notes.lyx
+2, 0, /home/tony1/Dropbox/Semester_9/CS4104/p1-equations.lyx
+73, 223, /home/tony1/Dropbox/Semester_9/CS4234/hw1.lyx
+7, 116, /home/tony1/Dropbox/Semester_9/CS4234/hw2.lyx
+26, 77, /home/tony1/Dropbox/Semester_9/CS4234/hw3.lyx
+188, 0, /home/tony1/Dropbox/Semester_9/CS4234/notes.lyx
+20, 0, /home/tony1/Dropbox/Semester_9/CS4234/pj1.lyx
+0, 0, /home/tony1/Dropbox/Semester_9/CS4234/pj2.lyx
+11, 114, /home/tony1/Dropbox/Semester_9/Math4225/assignment1.lyx
+23, 7, /home/tony1/Dropbox/Semester_9/Math4225/assignment2.lyx
+26, 12, /home/tony1/Dropbox/Semester_9/Math4225/assignment3.lyx
+3, 9, /home/tony1/Dropbox/Semester_9/Math4225/assignment4.lyx
+23, 112, /home/tony1/Dropbox/Semester_9/Math4225/assignment5.lyx
+6, 69, /home/tony1/Dropbox/Semester_9/Math4225/assignment6.lyx
+25, 310, /home/tony1/Dropbox/Semester_9/Math4225/assignment7.lyx
+620, 0, /home/tony1/Dropbox/Semester_9/Math4225/notes.lyx
+18, 72, /home/tony1/Dropbox/Semester_9/Math4425/assignment3.lyx
+19, 167, /home/tony1/Dropbox/Semester_9/Math4425/assignment4.lyx
+25, 85, /home/tony1/Dropbox/Semester_9/Math4425/assignment5.lyx
+14, 0, /home/tony1/Dropbox/Semester_9/Math4425/assignment6.lyx
+10, 402, /home/tony1/Dropbox/Semester_9/Math4425/assignment7.lyx
+126, 0, /home/tony1/Dropbox/Semester_9/Math4425/notes.lyx
+28, 1, /home/tony1/Dropbox/Semester_9/Math4425/test1.lyx
+12, 27, /home/tony1/Dropbox/Semester_9/Math4445/hw1.lyx
+19, 209, /home/tony1/Dropbox/Semester_9/Math4445/hw2.lyx
+16, 0, /home/tony1/Dropbox/Semester_9/Math4445/hw3.lyx
+681, 119, /home/tony1/Dropbox/Semester_9/Math4445/notes.lyx
+0, 0, /home/tony1/good.lyx
+0, 0, /tmp/lyx_tmpdir.T20825.S20825_embedded.internal
+0, 0, /tmp/lyx_tmpdir.T20825.n20825_embedded.internal
+14, 0, /usr/share/lyx/doc/Additional.lyx
 1, 15, /usr/share/lyx/doc/Intro.lyx
 120, 13, /usr/share/lyx/doc/Math.lyx
 122, 36, /usr/share/lyx/doc/Tutorial.lyx
@@ -53,4 +86,4 @@
 [last commands]
 
 [bookmarks]
-0, 36, 10, /home/tony1/Dropbox/Semester_8/cs3214/prep.lyx
+0, 399, 94, /home/tony1/Dropbox/Semester_9/CS4104/notes.lyx
