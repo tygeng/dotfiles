@@ -1,3 +1,7 @@
+map s 10h
+map d 10j
+map f 10l
+map e 10k
 map k 10j
 map i 10k
 map h H
