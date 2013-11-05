@@ -1,7 +1,12 @@
-map s 10h
+map s gT
 map d 10j
-map f 10l
+map f gt
 map e 10k
+map a H
+map v D
+map z [[
+map x ]]
+
 map k 10j
 map i 10k
 map h H
