@@ -1,3 +1,23 @@
+"==========
+"" adjust configuration for such hostile environment as Windows {{{
+if has("mac") 
+set clipboard=unnamed
+map [A <Up>
+map [B <Down>
+map [D <Left>
+map [C <Right>
+imap [A <Up>
+imap [B <Down>
+imap [D <Left>
+imap [C <Right>
+vmap [A <Up>
+vmap [B <Down>
+vmap [D <Left>
+vmap [C <Right>
+else
+set clipboard=unnamedplus
+set guifont=Monospace\ 9
+endif
 "set up color
 if !has("gui_running")
     set t_Co=256
@@ -9,6 +29,8 @@ au FileType markdown set makeprg=multimarkdown\ %\ -o\ %.html
 au FileType tex set makeprg=pdflatex\ %
 inoremap <M-4> <nop>
 au FileType tex inoremap <M-4> $$<Left>
+au FileType tex inoremap <M-k> <CR>\[<CR>\]<Up><CR>
+
 set tw=0
 au FileType cpp,c,java,tex,text  set tw=79
 syntax sync minlines=256
@@ -22,7 +44,7 @@ set termencoding=utf-8
 " tell it to use an undo file
 set undofile
 " set a directory to store the undo history
-set undodir=/home/tony1/.vimundo/
+set undodir=~/.vimundo/
 set undolevels=1000
 set undoreload=10000
 " remember last position
@@ -152,11 +174,11 @@ nmap <F7> <C-o>
 imap <F7> <Esc><S-F7>a
 
 "=========================
-noremap <F12> mz:%!astyle --style=java -fjxpUd -k3 <CR>`z
-imap <F12> <Esc><F12>
+noremap <F1> mz:%!astyle --style=java -fjxpUd -k3 <CR>`z
+imap <F1> <Esc><F1>
 "=========================
-nnoremap <F1> :set wrap!<CR>
-inoremap <F1> <Esc><F1>a
+" nnoremap <F1> :set wrap!<CR>
+" inoremap <F1> <Esc><F1>a
 "=========================
 "next error for errormarker
 " let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
@@ -254,7 +276,6 @@ nnoremap R :%s/\<<C-r><C-w>\>//g<Left><Left>
 inoremap <C-p> <Esc>pa
 nnoremap x "xx
 inoremap <C-P> <Esc>Pa
-set clipboard=unnamedplus
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
 "=========================
 nnoremap Q {gq}
@@ -266,13 +287,6 @@ set guioptions=
 set cursorline cursorcolumn
 syntax sync minlines=64
 set re=1
-if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Monospace\ 9
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
-  endif
-endif
 autocmd InsertEnter * set nocul nocursorcolumn
 autocmd InsertLeave * set cul cursorcolumn
 "=======================
@@ -281,4 +295,3 @@ set foldmethod=syntax
 set foldnestmax=2      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
-"==========

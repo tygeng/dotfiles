@@ -15,10 +15,10 @@ exec autokey-gtk
 exec fcitx
 exec zsh /home/tony1/startup.sh
 exec feh --bg-fill ~/Pictures/wallpaper.png
-exec HOME=$HOME/.dropbox-linux /usr/bin/dropbox start -i
 exec xcompmgr
 exec blueman-applet
 exec xfsettingsd
+exec HOME=$HOME/.dropbox-linux /usr/bin/dropbox start -i
 
 exec terra
 set $mod Mod4

@@ -55,11 +55,11 @@ killn() {
 }
 m()
 {
-    udisks --mount /dev/sd$1
+    udisksctl mount --block-device /dev/sd$1
 }
 um()
 {
-    udisks --unmount /dev/sd$1
+    udisksctl unmount --block-device /dev/sd$1
 }
 ffo()
 {

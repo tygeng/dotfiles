@@ -23,4 +23,5 @@ map , [[
 map . ]]
 unmap <M-d>
 unmap <C-f>
+unmap <C-p>
 

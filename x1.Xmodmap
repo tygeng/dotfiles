@@ -23,4 +23,5 @@ keycode 156	=	XF86LaunchA
 keycode 107 =	Super_R
 keycode 110 =   Find
 keycode 115 =   Break
+keycode 55  =   v       V       F13
 
