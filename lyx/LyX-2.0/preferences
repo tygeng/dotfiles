@@ -1,0 +1,103 @@
+# LyX 2.0.6 generated this file. If you want to make your own
+# modifications you should do them from inside LyX and save.
+
+Format 1
+
+
+#
+# MISC SECTION ######################################
+#
+
+\user_name "Tianyu Geng,,,"
+\user_email ""
+
+#
+# SCREEN & FONTS SECTION ############################
+#
+
+\screen_zoom 220
+\screen_font_sizes 5 7 8 9 10 12 14.4 17.260000000000002 20.739999999999998 24.879999999999999
+\single_instance false
+
+#
+# COLOR SECTION ###################################
+#
+
+\set_color "background" "#ebfae5"
+\set_color "mathbg" "#ebfae5"
+
+#
+# PRINTER SECTION ###################################
+#
+
+
+#
+# TEX SECTION #######################################
+#
+
+
+#
+# FILE SECTION ######################################
+#
+
+\completion_inline_delay 0.10
+\autocorrection_math true
+\completion_popup_delay 0.10
+\completion_cursor_text false
+
+#
+# PLAIN TEXT EXPORT SECTION ##############################
+#
+
+
+#
+# SPELLCHECKER SECTION ##############################
+#
+
+\accept_compound true
+
+#
+# LANGUAGE SUPPORT SECTION ##########################
+#
+
+\spellcheck_continuously true
+\language_package_selection 3
+
+#
+# 2nd MISC SUPPORT SECTION ##########################
+#
+
+\gui_language english
+
+#
+# FORMATS SECTION ##########################
+#
+
+\format "bmp" "bmp" "BMP" "" "xdg-open" "auto" ""
+\format "dia" "dia" "DIA" "" "auto" "auto" "vector"
+\format "fen" "fen" "FEN" "" "auto" "auto" ""
+\format "fig" "fig" "FIG" "" "auto" "auto" "vector"
+\format "gif" "gif" "GIF" "" "xdg-open" "auto" ""
+\format "gnumeric" "gnumeric" "Gnumeric spreadsheet" "" "" "auto" "document"
+\format "agr" "agr" "Grace" "" "auto" "auto" "vector"
+\format "jpg" "jpg" "JPEG" "" "xdg-open" "auto" ""
+\format "noteedit" "not" "Noteedit" "" "auto" "auto" "vector"
+\format "pbm" "pbm" "PBM" "" "xdg-open" "auto" ""
+\format "pgm" "pgm" "PGM" "" "xdg-open" "auto" ""
+\format "png" "png" "PNG" "" "xdg-open" "auto" ""
+\format "ppm" "ppm" "PPM" "" "xdg-open" "auto" ""
+\format "tiff" "tif" "TIFF" "" "xdg-open" "auto" ""
+\format "xbm" "xbm" "XBM" "" "xdg-open" "auto" ""
+\format "xpm" "xpm" "XPM" "" "xdg-open" "auto" ""
+
+#
+# CONVERTERS SECTION ##########################
+#
+
+\converter "eps" "pdf" "epspdf $$i $$o\"" ""
+\converter "eps" "pdf5" "epspdf $$i $$o\"" ""
+
+#
+# COPIERS SECTION ##########################
+#
+

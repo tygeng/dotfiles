@@ -1,9 +1,9 @@
 ec
 enumitem
-endnotes
-endnotes
 fancyhdr
 fancyvrb
+endnotes
+endnotes
 accents
 algorithm
 amstext
@@ -55,6 +55,7 @@ slashed
 soul
 splitidx
 subfig
+Sweave
 textcomp
 subscript
 ulem

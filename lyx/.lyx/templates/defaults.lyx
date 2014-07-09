@@ -5,7 +5,10 @@
 \textclass report
 \begin_preamble
 \usepackage{lmodern}
-\renewcommand{\theenumi}{(\alph{enumi})} \renewcommand{\theenumii}{\arabic{enumii}} \renewcommand{\labelenumii}{\theenumii.}
+\usepackage{enumitem}
+\setenumerate{label=Q\arabic*.}
+\setenumerate[2]{label*=\arabic*.}
+\setenumerate[3]{label*=\arabic*.}
 \renewcommand\labelenumi{\theenumi}
 \usepackage{qtree}
 \usepackage{datetime}
@@ -16,7 +19,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \lhead{Tianyu Geng}
-\chead{\mmddyyyydate \today \space Fall 2013 - Math 4425 Fourier Series PDE Assignment 7}
+\chead{\mmddyyyydate \today \space Sprint 2014 - CS4604 Assignment 6}
 \rhead{Page \thepage}
 \lfoot{}
 \cfoot{}

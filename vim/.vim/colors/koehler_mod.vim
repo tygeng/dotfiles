@@ -10,12 +10,12 @@ if exists("syntax_on")
   syntax reset
 endif
 let g:colors_name = "koehler"
-hi Normal		  guifg=white  guibg=black gui=underline guisp=#333333
+hi Normal		  guifg=white  guibg=#101010 gui=underline guisp=#333333
 hi Scrollbar	  guifg=darkcyan guibg=cyan
 hi Menu			  guifg=black guibg=cyan
 hi SpecialKey	  term=bold  cterm=bold  ctermfg=darkred  guifg=#cc0000
 hi NonText		  term=bold  cterm=bold  ctermfg=darkred  gui=bold      guifg=#cc0000
-hi Directory	  term=bold  cterm=bold  ctermfg=brown  guifg=#cc8000
+hi Directory	  term=bold  cterm=bold  ctermfg=214  guifg=#cc8000
 hi ErrorMsg		  term=standout  cterm=bold  ctermfg=grey  ctermbg=red  guifg=White  guibg=Red
 hi Search		  term=reverse  ctermfg=white  ctermbg=red      guifg=white  guibg=Red
 hi MoreMsg		  term=bold  cterm=bold  ctermfg=darkgreen	gui=bold  guifg=SeaGreen
@@ -32,17 +32,18 @@ hi Cursor		  guifg=bg	guibg=Green
 hi Comment		  term=bold  cterm=bold ctermfg=cyan  guifg=#00ffff gui=bold
 hi Constant		  term=underline  cterm=bold ctermfg=magenta  guifg=#ffa0a0
 hi Special		  term=bold  cterm=bold ctermfg=red  guifg=Orange
-hi Identifier	  term=underline   ctermfg=brown  guifg=#a0ffff
+hi Identifier	  term=underline   ctermfg=214  guifg=#cc8822 gui=bold
 hi Statement	  term=bold  cterm=bold ctermfg=yellow	gui=bold  guifg=#ffff60
 hi PreProc		  term=underline  ctermfg=darkmagenta   guifg=#ff80ff
 hi Type			  term=underline  cterm=bold ctermfg=lightgreen  gui=bold  guifg=#60ff60
-hi Error		  term=reverse	ctermfg=darkcyan  ctermbg=black  guifg=Red	guibg=Black
+hi Error		  term=reverse	ctermfg=darkcyan  ctermbg=black  guifg=Red	guibg=#101010
 hi Todo			  term=standout  ctermfg=black	ctermbg=darkcyan  guifg=Blue  guibg=Yellow
-hi MatchParen	  term=reverse  ctermfg=blue guibg=Blue
+" hi MatchParen	  term=reverse  ctermfg=white guibg=White
+hi MatchParen     cterm=bold ctermbg=none ctermfg=51 gui=bold guifg=#00ffff guibg=#101010
 hi TabLine		  term=bold,reverse  cterm=bold ctermfg=lightblue ctermbg=white gui=bold guifg=blue guibg=white
 hi TabLineFill	  term=bold,reverse  cterm=bold ctermfg=lightblue ctermbg=white gui=bold guifg=blue guibg=white
 hi TabLineSel	  term=reverse	ctermfg=white ctermbg=lightblue guifg=white guibg=blue
-hi SpellCap       ctermbg=brown guisp=orange
+hi SpellCap       ctermbg=214 guisp=orange
 hi SpellBad       ctermbg=red 
 hi link IncSearch		Visual
 hi link String			Constant
@@ -71,5 +72,5 @@ hi link SpecialComment	Special
 hi link Debug			Special
 highlight PmenuSel ctermfg=0 ctermbg=255 guifg=black guibg=lightgrey
 highlight Pmenu ctermfg=255 ctermbg=26 guifg=lightgrey guibg=RoyalBlue3
-hi CursorLine   cterm=NONE ctermbg=NONE  guibg=NONE gui=underline  cterm=underline
-hi CursorColumn cterm=NONE ctermbg=NONE  guibg=#505050 
+hi CursorLine   gui=underline  cterm=underline guibg=#101010
+hi CursorColumn ctermbg=237  guibg=#505050 

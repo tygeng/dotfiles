@@ -1,0 +1,162 @@
+
+source ~/Dropbox/dotfiles/zsh/git-prompt/zshrc.sh
+#PS1="\[\e[1;32m\]\t \w \$\[\e[0m\] "
+#zsh below
+setopt extendedglob auto_list auto_param_slash auto_remove_slash
+autoload -U colors && colors
+autoload -U compinit promptinit
+compinit
+promptinit
+setopt completealiases
+setopt auto_pushd pushd_ignore_dups
+PROMPT='%{$fg_bold[green]%}%T %{$fg_bold[yellow]%}%~%b$(git_super_status) %{$fg_bold[green]%}$ %{$reset_color%}'
+# PS1="%{$fg_bold[green]%}%T %{$fg_bold[yellow]%}%~%{$fg[green]%} $%{$reset_color%} "
+# PS1="[%{$fg_bold[green]%}%T%{$reset_color%}] %{$fg_bold[yellow]%}%~%{$fg[green]%} $%{$fg[red]%} "
+HISTFILE=$HOME/.zhistory
+HISTSIZE=1200
+SAVEHIST=1000
+setopt HIST_EXPIRE_DUPS_FIRST INC_APPEND_HISTORY hist_ignore_alldups EXTENDED_HISTORY share_history
+setopt extended_glob
+#PATH="/usr/java/jdk1.7.0_09/bin:$PATH:/home/tony1/bin:." 
+alias lgn='ssh tony1@rlogin.cs.vt.edu'
+alias lgng='ssh tony1@tincan6.cs.vt.edu'
+alias P="pwd | tr -d '\n' | xclip"
+alias C=clear
+# alias compa='gcc -std=c99 -o ${PWD##*/} *.c *.o'
+# alias compac='gcc -o ${PWD##*/} *.c'
+# alias gdbcompac='gcc -std=c99 -O0 -ggdb3 -m32 -o ${PWD##*/} *.c && gdb ${PWD##*/}'
+# alias gdbcompa='gcc -std=c99 -O0 -ggdb3 -m32 -o ${PWD##*/} *.c *.o && gdb ${PWD##*/}'
+# alias dddcompac='gcc -std=c99 -O0 -ggdb3 -m32 -o ${PWD##*/} *.c && ddd ${PWD##*/}'
+alias tree='tree -C'
+alias treel='tree -C|less -R'
+alias mat='matlab -nodesktop'
+alias todo='vim ~/Dropbox/ideas/todo'
+alias talk='vim ~/Dropbox/ideas/talk'
+killn() {
+    kill `ps -e | grep $1 | awk '{print $1}'`
+}
+m()
+{
+    udisks --mount /dev/sd$1
+}
+um()
+{
+    udisks --unmount /dev/sd$1
+}
+cl()
+{
+	cd $1 && ls -G $2
+    echo $PWD>~/.current_pwd
+}
+cdlast() {
+    current_pwd=`cat ~/.current_pwd`
+    cl $current_pwd
+}
+alias vimdiff='vim -d'
+alias cd='cl'
+alias cddl='cl ~/Dropbox'
+alias cds='cl ~/Dropbox/Semester_9/'
+alias cdf='cl /media/sda3/Dropbox/FINANCE/'
+alias cdi='cl ~/Dropbox/ideas/'
+alias cdg='cl ~/Dropbox/git/'
+alias cdq='cl /media/sda3/Dropbox/思琪/'
+alias mv='mv -i'
+alias cp='cp -i'
+alias make='make -j 4'
+zmodload -i zsh/complist
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' completer _complete _correct _expand
+
+# zmodload zsh/complist
+bindkey -M menuselect ' ' accept-and-infer-next-history
+bindkey -M menuselect '^?' undo
+
+if [[ ${+debian_missing_features} == 1 ]]
+then
+        function zle-line-init () {
+        }
+        function zle-line-finish () {
+        }
+fi
+## case-insensitive (all),partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
+    'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+ZLS_COLORS="no=00:fi=00:di=01;34:ln=01;36:\ 
+pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:\ 
+or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:\ 
+*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:\ 
+*.z=01;31:*.Z=01;31:*.gz=01;31:*.deb=01;31:\ 
+*.jpg=01;35:*.gif=01;35:*.bmp=01;35:*.ppm=01;35:\ 
+*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:\ 
+*.mpg=01;37:*.avi=01;37:*.gl=01;37:*.dl=01;37:"
+# end of zsh completion
+
+google() {
+    search=""
+    echo "Googling: $@"
+    for term in $@; do
+        search="$search%20$term"
+    done
+    w3m "http://www.google.com/search?q=$search"
+}
+alias lgc='ssh tygeng@128.173.237.170'
+putc() {
+	scp -r $1 tygeng@128.173.237.170:$2
+}
+getc() {
+	if [[ $2 == "" ]]; then
+		local_dir=".";
+	else
+		local_dir=$2;
+
+	fi
+	scp -r tygeng@128.173.237.170:$1 $local_dir
+}
+putr() {
+	scp -r $1 tony1@rlogin.cs.vt.edu:$2
+}
+getr() {
+	if [[ $2 == "" ]]; then
+		local_dir=".";
+	else
+		local_dir=$2;
+
+	fi
+	scp -r tony1@rlogin.cs.vt.edu:$1 $local_dir
+}
+putb() {
+	scp -r $1 CS4414S13@bio.cs.vt.edu:$2
+}
+getb() {
+	if [[ $2 == "" ]]; then
+		local_dir=".";
+	else
+		local_dir=$2;
+
+	fi
+	scp -r CS4414S13@bio.cs.vt.edu:~/SVD1/$1 $local_dir
+}
+source ~/bin/bashmarks.sh 
+export EDITOR=/usr/bin/vim
+source ~/Dropbox/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/Dropbox/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+# bind UP and DOWN arrow keys
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+# Setup zsh-autosuggestions
+source ~/Dropbox/dotfiles/zsh/zsh-autosuggestions/autosuggestions.zsh
+
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
+
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle
+export AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=7'
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=red,fg=white,bold'

@@ -31,4 +31,3 @@ MANPATH=$MANPATH:/home/tony1/dev/java/jdk1.7.0_21/man:/usr/local/texlive/2013/te
 export MANPATH
 JAVA_HOME='/home/tony1/dev/java/jdk1.7.0_21'
 export JAVA_HOME
-

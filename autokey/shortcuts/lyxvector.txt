@@ -1,3 +1,0 @@
-<shift>+<left>
-<ctrl>+b
-<right><right>

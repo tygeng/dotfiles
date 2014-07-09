@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $(date +%y\ %m\ %d\ %H\ %M) $1 >> ~/Dropbox/mood.data

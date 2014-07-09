@@ -8,7 +8,7 @@
 " boisvertmaxime@gmail.com
 
 fun! Co(ft)
-    let dic = {'objc':'//','matlab':'%','cpp':'//','tex':'%','java':'//','haskell':'--','c':'//', 'cuda':'//', 'ruby':'#', 'vim':'"', 'perl':'#', 'sh':'#', 'zsh':'#', 'python':'#', 'lua':'--', 'markdown':'>', 'scheme':';', 'xmodmap':'!', 'conf':'#', 'make':'#'}
+    let dic = {'xkb':'//','objc':'//','matlab':'%','cpp':'//','tex':'%','java':'//','haskell':'--','c':'//', 'cuda':'//', 'ruby':'#', 'vim':'"', 'perl':'#', 'sh':'#', 'zsh':'#', 'python':'#', 'lua':'--', 'markdown':'>', 'scheme':';', 'xmodmap':'!', 'conf':'#', 'make':'#','php':'//','css':'//'}
     if has_key(dic, a:ft)
         let c = dic[a:ft]
         exe "s@^@".c." @ | s@^".c." ".c." @@e"

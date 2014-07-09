@@ -7,11 +7,14 @@
 
 Format 1
 
+\converter platex   dvi       "platex"   "latex=platex"
 \converter latex      dvi        "latex"	"latex"
 \Format tgif       obj     Tgif                   "" "auto"	"auto"	"vector"
 \Format fig        fig     FIG                    "" "auto"	"auto"	"vector"
 \Format dia        dia     DIA                    "" "auto"	"auto"	"vector"
-\Format agr        agr     Grace                  "" "auto"	"auto"	"vector"
+\editor_alternatives agr xmgrace
+\Format agr        agr     Grace                  "" "xmgrace"	"xmgrace"	"vector"
+\viewer_alternatives agr "xmgrace"
 \Format fen        fen     FEN                    "" "auto"	"auto"	""
 \Format svg        svg     SVG                    "" "auto" "auto"	"vector"
 \viewer_alternatives bmp "xdg-open"
@@ -24,16 +27,36 @@ Format 1
 \viewer_alternatives tiff "xdg-open"
 \viewer_alternatives xbm "xdg-open"
 \viewer_alternatives xpm "xdg-open"
-\Format bmp        bmp     BMP                    "" "xdg-open"	"auto"	""
-\Format gif        gif     GIF                    "" "xdg-open"	"auto"	""
-\Format jpg        jpg     JPEG                   "" "xdg-open"	"auto"	""
-\Format pbm        pbm     PBM                    "" "xdg-open"	"auto"	""
-\Format pgm        pgm     PGM                    "" "xdg-open"	"auto"	""
-\Format png        png     PNG                    "" "xdg-open"	"auto"	""
-\Format ppm        ppm     PPM                    "" "xdg-open"	"auto"	""
-\Format tiff       tif     TIFF                   "" "xdg-open"	"auto"	""
-\Format xbm        xbm     XBM                    "" "xdg-open"	"auto"	""
-\Format xpm        xpm     XPM                    "" "xdg-open"	"auto"	""
+\viewer_alternatives bmp "gimp"
+\viewer_alternatives gif "gimp"
+\viewer_alternatives jpg "gimp"
+\viewer_alternatives pbm "gimp"
+\viewer_alternatives pgm "gimp"
+\viewer_alternatives png "gimp"
+\viewer_alternatives ppm "gimp"
+\viewer_alternatives tiff "gimp"
+\viewer_alternatives xbm "gimp"
+\viewer_alternatives xpm "gimp"
+\editor_alternatives bmp gimp
+\editor_alternatives gif gimp
+\editor_alternatives jpg gimp
+\editor_alternatives pbm gimp
+\editor_alternatives pgm gimp
+\editor_alternatives png gimp
+\editor_alternatives ppm gimp
+\editor_alternatives tiff gimp
+\editor_alternatives xbm gimp
+\editor_alternatives xpm gimp
+\Format bmp        bmp     BMP                    "" "xdg-open"	"gimp"	""
+\Format gif        gif     GIF                    "" "xdg-open"	"gimp"	""
+\Format jpg        jpg     JPEG                   "" "xdg-open"	"gimp"	""
+\Format pbm        pbm     PBM                    "" "xdg-open"	"gimp"	""
+\Format pgm        pgm     PGM                    "" "xdg-open"	"gimp"	""
+\Format png        png     PNG                    "" "xdg-open"	"gimp"	""
+\Format ppm        ppm     PPM                    "" "xdg-open"	"gimp"	""
+\Format tiff       tif     TIFF                   "" "xdg-open"	"gimp"	""
+\Format xbm        xbm     XBM                    "" "xdg-open"	"gimp"	""
+\Format xpm        xpm     XPM                    "" "xdg-open"	"gimp"	""
 \editor_alternatives asciichess gvim
 \editor_alternatives asciiimage gvim
 \editor_alternatives asciixfig gvim
@@ -57,6 +80,52 @@ Format 1
 \editor_alternatives text3 gvim
 \editor_alternatives text4 gvim
 \editor_alternatives textparagraph gvim
+\editor_alternatives asciichess kwrite
+\editor_alternatives asciiimage kwrite
+\editor_alternatives asciixfig kwrite
+\editor_alternatives dateout kwrite
+\editor_alternatives docbook kwrite
+\editor_alternatives docbook-xml kwrite
+\editor_alternatives dot kwrite
+\editor_alternatives platex kwrite
+\editor_alternatives literate kwrite
+\editor_alternatives sweave kwrite
+\editor_alternatives r kwrite
+\editor_alternatives knitr kwrite
+\editor_alternatives lilypond kwrite
+\editor_alternatives lilypond-book kwrite
+\editor_alternatives latex kwrite
+\editor_alternatives luatex kwrite
+\editor_alternatives pdflatex kwrite
+\editor_alternatives xetex kwrite
+\editor_alternatives text kwrite
+\editor_alternatives text2 kwrite
+\editor_alternatives text3 kwrite
+\editor_alternatives text4 kwrite
+\editor_alternatives textparagraph kwrite
+\editor_alternatives asciichess kate
+\editor_alternatives asciiimage kate
+\editor_alternatives asciixfig kate
+\editor_alternatives dateout kate
+\editor_alternatives docbook kate
+\editor_alternatives docbook-xml kate
+\editor_alternatives dot kate
+\editor_alternatives platex kate
+\editor_alternatives literate kate
+\editor_alternatives sweave kate
+\editor_alternatives r kate
+\editor_alternatives knitr kate
+\editor_alternatives lilypond kate
+\editor_alternatives lilypond-book kate
+\editor_alternatives latex kate
+\editor_alternatives luatex kate
+\editor_alternatives pdflatex kate
+\editor_alternatives xetex kate
+\editor_alternatives text kate
+\editor_alternatives text2 kate
+\editor_alternatives text3 kate
+\editor_alternatives text4 kate
+\editor_alternatives textparagraph kate
 \editor_alternatives asciichess gedit
 \editor_alternatives asciiimage gedit
 \editor_alternatives asciixfig gedit
@@ -126,6 +195,52 @@ Format 1
 \viewer_alternatives text3 "gvim"
 \viewer_alternatives text4 "gvim"
 \viewer_alternatives textparagraph "gvim"
+\viewer_alternatives asciichess "kwrite"
+\viewer_alternatives asciiimage "kwrite"
+\viewer_alternatives asciixfig "kwrite"
+\viewer_alternatives dateout "kwrite"
+\viewer_alternatives docbook "kwrite"
+\viewer_alternatives docbook-xml "kwrite"
+\viewer_alternatives dot "kwrite"
+\viewer_alternatives platex "kwrite"
+\viewer_alternatives literate "kwrite"
+\viewer_alternatives sweave "kwrite"
+\viewer_alternatives r "kwrite"
+\viewer_alternatives knitr "kwrite"
+\viewer_alternatives lilypond "kwrite"
+\viewer_alternatives lilypond-book "kwrite"
+\viewer_alternatives latex "kwrite"
+\viewer_alternatives luatex "kwrite"
+\viewer_alternatives pdflatex "kwrite"
+\viewer_alternatives xetex "kwrite"
+\viewer_alternatives text "kwrite"
+\viewer_alternatives text2 "kwrite"
+\viewer_alternatives text3 "kwrite"
+\viewer_alternatives text4 "kwrite"
+\viewer_alternatives textparagraph "kwrite"
+\viewer_alternatives asciichess "kate"
+\viewer_alternatives asciiimage "kate"
+\viewer_alternatives asciixfig "kate"
+\viewer_alternatives dateout "kate"
+\viewer_alternatives docbook "kate"
+\viewer_alternatives docbook-xml "kate"
+\viewer_alternatives dot "kate"
+\viewer_alternatives platex "kate"
+\viewer_alternatives literate "kate"
+\viewer_alternatives sweave "kate"
+\viewer_alternatives r "kate"
+\viewer_alternatives knitr "kate"
+\viewer_alternatives lilypond "kate"
+\viewer_alternatives lilypond-book "kate"
+\viewer_alternatives latex "kate"
+\viewer_alternatives luatex "kate"
+\viewer_alternatives pdflatex "kate"
+\viewer_alternatives xetex "kate"
+\viewer_alternatives text "kate"
+\viewer_alternatives text2 "kate"
+\viewer_alternatives text3 "kate"
+\viewer_alternatives text4 "kate"
+\viewer_alternatives textparagraph "kate"
 \viewer_alternatives asciichess "gedit"
 \viewer_alternatives asciiimage "gedit"
 \viewer_alternatives asciixfig "gedit"
@@ -149,13 +264,18 @@ Format 1
 \viewer_alternatives text3 "gedit"
 \viewer_alternatives text4 "gedit"
 \viewer_alternatives textparagraph "gedit"
-\Format gnumeric gnumeric "Gnumeric spreadsheet" "" ""    "auto"   "document"
-\Format excel      xls    "Excel spreadsheet"      "" "" "auto"    "document"
-\Format oocalc     ods    "OpenOffice spreadsheet" "" "" "auto"    "document"
+\Format gnumeric gnumeric "Gnumeric spreadsheet" "" ""    "gnumeric"   "document"
+\Format excel      xls    "Excel spreadsheet"      "" "" "gnumeric"    "document"
+\Format oocalc     ods    "OpenOffice spreadsheet" "" "" "gnumeric"    "document"
+\viewer_alternatives gnumeric "gnumeric"
+\viewer_alternatives excel "gnumeric"
+\viewer_alternatives oocalc "gnumeric"
 \Format xhtml      xhtml   "LyXHTML"              y "firefox" ""    "document,menu=export"
 \viewer_alternatives xhtml "firefox"
 \Format bibtex bib    "BibTeX"         "" ""	"gvim"	""
 \editor_alternatives bibtex gvim
+\editor_alternatives bibtex kwrite
+\editor_alternatives bibtex kate
 \editor_alternatives bibtex gedit
 \Format eps        eps     EPS                    "" "xdg-open"	""	"vector"
 \Format ps         ps      Postscript             t  "xdg-open"	""	"document,vector,menu=export"
@@ -163,6 +283,8 @@ Format 1
 \viewer_alternatives ps "xdg-open"
 \viewer_alternatives eps "okular"
 \viewer_alternatives ps "okular"
+\viewer_alternatives eps "evince"
+\viewer_alternatives ps "evince"
 \Format pdf        pdf    "PDF (ps2pdf)"          P  "xdg-open"	""	"document,vector,menu=export"
 \Format pdf2       pdf    "PDF (pdflatex)"        F  "xdg-open"	""	"document,vector,menu=export"
 \Format pdf3       pdf    "PDF (dvipdfm)"         m  "xdg-open"	""	"document,vector,menu=export"
@@ -178,6 +300,11 @@ Format 1
 \viewer_alternatives pdf3 "okular"
 \viewer_alternatives pdf4 "okular"
 \viewer_alternatives pdf5 "okular"
+\viewer_alternatives pdf "evince"
+\viewer_alternatives pdf2 "evince"
+\viewer_alternatives pdf3 "evince"
+\viewer_alternatives pdf4 "evince"
+\viewer_alternatives pdf5 "evince"
 \Format dvi        dvi     DVI                    D  "xdg-open"	""	"document,vector,menu=export"
 \Format dvi3       dvi     "DVI (LuaTeX)"          V  "xdg-open"	""	"document,vector,menu=export"
 \viewer_alternatives dvi "xdg-open"
@@ -192,16 +319,24 @@ Format 1
 \Format noteedit   not     Noteedit               "" "auto"	"auto"	"vector"
 \editor_alternatives odt xdg-open
 \editor_alternatives sxw xdg-open
+\editor_alternatives odt abiword
+\editor_alternatives sxw abiword
 \Format odt        odt     OpenDocument           "" "xdg-open"	"xdg-open"	"document,vector,menu=export"
 \Format sxw        sxw    "OpenOffice.Org (sxw)"  "" ""	""	"document,vector"
 \viewer_alternatives odt "xdg-open"
 \viewer_alternatives sxw "xdg-open"
+\viewer_alternatives odt "abiword"
+\viewer_alternatives sxw "abiword"
 \editor_alternatives rtf xdg-open
 \editor_alternatives word xdg-open
+\editor_alternatives rtf abiword
+\editor_alternatives word abiword
 \Format rtf        rtf    "Rich Text Format"      "" "xdg-open"	"xdg-open"	"document,vector,menu=export"
 \Format word       doc    "MS Word"               W  "xdg-open"	"xdg-open"	"document,vector,menu=export"
 \viewer_alternatives rtf "xdg-open"
 \viewer_alternatives word "xdg-open"
+\viewer_alternatives rtf "abiword"
+\viewer_alternatives word "abiword"
 \Format date       ""     "date command"          "" ""	""	""
 \Format csv        csv    "Table (CSV)"  "" ""	""	"document"
 \Format fax        ""      Fax                    "" ""	""	"document"
@@ -224,23 +359,23 @@ Format 1
 \Format wordhtml   html   "HTML (MS Word)"        "" "" ""	"document"
 
 \converter pdflatex   pdf2       "pdflatex $$i"	"latex=pdflatex"
-\converter xetex      pdf4       ""	"latex=xelatex"
+\converter xetex      pdf4       "xelatex $$i"	"latex=xelatex"
 \converter luatex      pdf5       "lualatex"	"latex=lualatex"
 \converter luatex      dvi3        "dvilualatex"	"latex=dvilualatex"
 \converter latex      lyx        "tex2lyx -f $$i $$o"	""
 \converter literate   lyx        "tex2lyx -n -f $$i $$o"	""
 \converter literate   latex      ""	""
 \converter literate   pdflatex      ""	""
-\converter sweave   latex      ""	""
-\converter sweave   pdflatex   ""	""
-\converter sweave   xetex      ""	""
-\converter sweave   luatex     ""	""
-\converter knitr   latex      ""	""
-\converter knitr   pdflatex   ""	""
-\converter knitr   xetex      ""	""
-\converter knitr   luatex     ""	""
-\converter sweave      r      ""    ""
-\converter knitr      r      ""    ""
+\converter sweave   latex      "Rscript --verbose --no-save --no-restore $$s/scripts/lyxsweave.R $$p$$i $$p$$o $$e $$r"	""
+\converter sweave   pdflatex   "Rscript --verbose --no-save --no-restore $$s/scripts/lyxsweave.R $$p$$i $$p$$o $$e $$r"	""
+\converter sweave   xetex      "Rscript --verbose --no-save --no-restore $$s/scripts/lyxsweave.R $$p$$i $$p$$o $$e $$r"	""
+\converter sweave   luatex     "Rscript --verbose --no-save --no-restore $$s/scripts/lyxsweave.R $$p$$i $$p$$o $$e $$r"	""
+\converter knitr   latex      "Rscript --verbose --no-save --no-restore $$s/scripts/lyxknitr.R $$p$$i $$p$$o $$e $$r"	""
+\converter knitr   pdflatex   "Rscript --verbose --no-save --no-restore $$s/scripts/lyxknitr.R $$p$$i $$p$$o $$e $$r"	""
+\converter knitr   xetex      "Rscript --verbose --no-save --no-restore $$s/scripts/lyxknitr.R $$p$$i $$p$$o $$e $$r"	""
+\converter knitr   luatex     "Rscript --verbose --no-save --no-restore $$s/scripts/lyxknitr.R $$p$$i $$p$$o $$e $$r"	""
+\converter sweave      r      "Rscript --verbose --no-save --no-restore $$s/scripts/lyxstangle.R $$i $$e $$r"    ""
+\converter knitr      r      "Rscript --verbose --no-save --no-restore $$s/scripts/lyxknitr.R $$p$$i $$p$$o $$e $$r tangle"    ""
 \converter html       latex      ""	""
 \converter word       latex      ""	""
 \converter lyx      html       "elyxer --directory $$r $$i $$o"	""
@@ -249,7 +384,7 @@ Format 1
 \copier    wordhtml       "python -tt $$s/scripts/ext_copy.py -e html,png,jpg,jpeg,css $$i $$o"
 \converter sxw        latex      ""	""
 \converter odt        latex      ""	""
-\converter latex      odt        ""	"needaux"
+\converter latex      odt        "mk4ht oolatex $$i"	"needaux"
 \converter latex      rtf        ""	"needaux"
 \converter rtf      html        ""	""
 \converter ps         pdf        "ps2pdf13 $$i $$o"	""
@@ -268,11 +403,20 @@ Format 1
 \converter emf        eps        ""	""
 \converter eps        pdf        "epstopdf --outfile=$$o $$i"	""
 \converter eps        png        "convert $$i $$o"	""
+\converter agr        eps        "gracebat -hardcopy -printfile $$o -hdevice EPS $$i 2>/dev/null"	""
+\converter agr        png        "gracebat -hardcopy -printfile $$o -hdevice PNG $$i 2>/dev/null"	""
+\converter agr        jpg        "gracebat -hardcopy -printfile $$o -hdevice JPEG $$i 2>/dev/null"	""
+\converter agr        ppm        "gracebat -hardcopy -printfile $$o -hdevice PNM $$i 2>/dev/null"	""
+\converter dot        eps        "dot -Teps $$i -o $$o"	""
+\converter dot        png        "dot -Tpng $$i -o $$o"	""
 \converter dia        png        ""	""
 \converter dia        eps        ""	""
 \converter svg        pdf        ""	""
 \converter svg        eps        ""	""
 \converter svg        png        ""	""
+\converter gnumeric latex "ssconvert --export-type=Gnumeric_html:latex $$i $$o" ""
+\converter oocalc latex "ssconvert --export-type=Gnumeric_html:latex $$i $$o" ""
+\converter excel  latex "ssconvert --export-type=Gnumeric_html:latex $$i $$o" ""
 \Format lyxgz      gz     "LyX Archive (tar.gz)"  "" "" ""  "document,menu=export"
 \converter lyx lyxgz "python -tt $$s/scripts/lyxpak.py $$r/$$f" ""
 \converter lyxpreview-platex ppm        "python -tt $$s/scripts/lyxpreview-platex2bitmap.py"	""
@@ -291,16 +435,19 @@ Format 1
 \converter jlyx       lyx        "python -tt $$s/lyx2lyx/lyx2lyx -c euc_jp $$i > $$o"	""
 \converter klyx       lyx        "python -tt $$s/lyx2lyx/lyx2lyx -c euc_kr $$i > $$o"	""
 
-\converter docbook    dvi        ""	""
-\converter docbook    html       ""	""
+\converter docbook    dvi        "db2dvi $$i"	""
+\converter docbook    html       "db2html $$i"	""
 \tex_allows_spaces true
-\chktex_command ""
+\chktex_command "chktex -n1 -n3 -n6 -n9 -n22 -n25 -n30 -n38"
 \bibtex_command "bibtex"
 \bibtex_alternatives "bibtex"
 \bibtex_alternatives "bibtex8"
+\bibtex_alternatives "biber"
 \jbibtex_command "pbibtex"
-\index_command "makeindex -c -q"
+\index_command "texindy"
+\index_alternatives "texindy"
 \index_alternatives "makeindex -c -q"
+\index_alternatives "xindy"
 \jindex_command "mendex -c -q"
 \splitindex_command "splitindex"
 \nomencl_command "makeindex -s nomencl.ist"

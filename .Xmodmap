@@ -18,6 +18,6 @@ keycode 0x3B =	comma		less		less
 keycode 0x3C =	period		greater		greater
 keycode 0x30 =	apostrophe	quotedbl	quotedbl
 keycode 0x3A =	m		M		Menu
-keycode 0x41 =	space	NoSymbol	Escape
+keycode 0x41 =	space	NoSymbol Break
 keycode 156	=	XF86LaunchA
 keycode 135 =	Super_R

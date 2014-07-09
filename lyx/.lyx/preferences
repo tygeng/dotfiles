@@ -10,11 +10,15 @@ Format 1
 
 \user_name "Tianyu Geng,,,"
 \user_email ""
+\preview on
 
 #
 # SCREEN & FONTS SECTION ############################
 #
 
+\cursor_follows_scrollbar true
+\scroll_below_document true
+\paragraph_markers true
 \screen_font_sizes 5 7 8 9 10 12 14.4 17.260000000000002 20.739999999999998 24.879999999999999
 \single_instance false
 
@@ -72,33 +76,18 @@ Format 1
 # FORMATS SECTION ##########################
 #
 
-\format "bmp" "bmp" "BMP" "" "xdg-open" "auto" ""
 \format "dia" "dia" "DIA" "" "auto" "auto" "vector"
-\format "excel" "xls" "Excel spreadsheet" "" "" "auto" "document"
 \format "fen" "fen" "FEN" "" "auto" "auto" ""
 \format "fig" "fig" "FIG" "" "auto" "auto" "vector"
-\format "gif" "gif" "GIF" "" "xdg-open" "auto" ""
-\format "gnumeric" "gnumeric" "Gnumeric spreadsheet" "" "" "auto" "document"
-\format "agr" "agr" "Grace" "" "auto" "auto" "vector"
-\format "jpg" "jpg" "JPEG" "" "xdg-open" "auto" ""
 \format "noteedit" "not" "Noteedit" "" "auto" "auto" "vector"
-\format "oocalc" "ods" "OpenOffice spreadsheet" "" "" "auto" "document"
-\format "pbm" "pbm" "PBM" "" "xdg-open" "auto" ""
-\format "pgm" "pgm" "PGM" "" "xdg-open" "auto" ""
-\format "png" "png" "PNG" "" "xdg-open" "auto" ""
-\format "ppm" "ppm" "PPM" "" "xdg-open" "auto" ""
 \format "svg" "svg" "SVG" "" "auto" "auto" "vector"
-\format "tiff" "tif" "TIFF" "" "xdg-open" "auto" ""
 \format "tgif" "obj" "Tgif" "" "auto" "auto" "vector"
-\format "xbm" "xbm" "XBM" "" "xdg-open" "auto" ""
-\format "xpm" "xpm" "XPM" "" "xdg-open" "auto" ""
 
 #
 # CONVERTERS SECTION ##########################
 #
 
 \converter "eps" "pdf5" "epspdf $$i $$o\"" ""
-\converter "eps" "pdf" "epspdf $$i $$o\"" ""
 
 #
 # COPIERS SECTION ##########################

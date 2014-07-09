@@ -14,6 +14,14 @@ vmap [A <Up>
 vmap [B <Down>
 vmap [D <Left>
 vmap [C <Right>
+nmap [A <Up>
+nmap [B <Down>
+nmap [D <Left>
+nmap [C <Right>
+cmap [A <Up>
+cmap [B <Down>
+cmap [D <Left>
+cmap [C <Right>
 else
 set clipboard=unnamedplus
 set guifont=Monospace\ 9
@@ -26,18 +34,22 @@ endif
 " history will still be kept
 au FileType markdown set makeprg=multimarkdown\ %\ -o\ %.html
 " au FileType tex set makeprg=latexmk\ -pdfdvi\ %
-au FileType tex set makeprg=pdflatex\ %
+au FileType tex set makeprg=pdflatex\ -halt-on-error\ %
 inoremap <M-4> <nop>
 au FileType tex inoremap <M-4> $$<Left>
+au FileType tex inoremap <D-Space> $$<Left>
 au FileType tex inoremap <M-k> <CR>\[<CR>\]<Up><CR>
+au FileType tex inoremap <D-k> <CR>\[<CR>\]<Up><CR>
 
 set tw=0
-au FileType cpp,c,java,tex,text  set tw=79
+au FileType cpp,c,java,tex,text  set tw=80
+set formatoptions=cq textwidth=80 foldignore= wildignore+=*.py[co]
 syntax sync minlines=256
-" set mouse=a
+set mouse=a
 
 "=========================
 " set encoding priority
+set so=3
 set encoding=utf-8
 set fileencodings=utf-8,gb2312,gb18030,gbk,cp936,latin1,ucs-bom
 set termencoding=utf-8
@@ -49,6 +61,7 @@ set undolevels=1000
 set undoreload=10000
 " remember last position
 set viminfo='10,\"100,:20,%,n~/.viminfo
+set timeoutlen=200
 "---------------------------
 function! ResCur()
   if line("'\"") <= line("$")
@@ -69,13 +82,14 @@ set incsearch
 set smartcase ignorecase
 "=========================
 " for pathogen
+call pathogen#helptags()
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
-au FileType c let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf_c.py'
-au FileType objc let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf_objc.py'
+let g:ycm_global_ycm_extra_conf = '~/Dropbox/dotfiles/vim/.vim/.ycm_extra_conf.py'
+au FileType c let g:ycm_global_ycm_extra_conf = '~/Dropbox/dotfiles/vim/.vim/.ycm_extra_conf_c.py'
+au FileType objc let g:ycm_global_ycm_extra_conf = '~/Dropbox/dotfiles/vim/.vim/.ycm_extra_conf_objc.py'
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:EclimCompletionMethod = 'omnifunc'
@@ -91,22 +105,68 @@ let g:syntastic_mode_map = { 'mode': 'active',
 set statusline=%<\ %n:%f\ %m%r%y%{SyntasticStatuslineFlag()}%=(%l\ ,\ %c%V)\ Total:\ %L\ 
 " work around for the location list bug
 nnoremap ZQ :lcl<bar>q!<CR>
+vnoremap ZQ v:lcl<bar>q!<CR>
 nnoremap ZZ :lcl<bar>w<bar>lcl<bar>q<CR>
+vnoremap ZZ v:lcl<bar>w<bar>lcl<bar>q<CR>
 " end for syntastic
 " powerline
 " let g:Powerline_symbols = 'fancy'
 let g:Powerline_stl_path_style = 'short'
 set laststatus=2
+" for indent highlight
+set background=dark
+nmap <silent> <C-j> <Plug>IndentGuidesToggle
+autocmd FileType c,python,java,cpp,objc,ruby IndentGuidesEnable
+let g:indent_guides_auto_colors = 0
+" let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#555555  ctermbg=240
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333333   ctermbg=235
+" For Emma html
+let g:user_emmet_leader_key='<C-f>'
+let g:user_emmet_install_global = 0
+autocmd Filetype html,css,eruby call SetEmmetHTML()
+function SetEmmetHTML()
+    map <C-f> <nop>
+    EmmetInstall
+    imap hh <C-f>,
+    vmap hh <C-f>,
+    nmap s <C-f>/
+    set tabstop=2 shiftwidth=2
+
+endfunction
+" let g:user_emmet_settings = {
+"   \  'php' : {
+"   \    'extends' : 'html',
+"   \    'filters' : 'c',
+"   \  },
+"   \  'xml' : {
+"   \    'extends' : 'html',
+"   \  },
+"   \  'haml' : {
+"   \    'extends' : 'html',
+"   \  },
+"   \  'eruby' : {
+"   \    'extends' : 'html',
+"   \  },
+"   \}
+" Rails-Autoformat
+autocmd Filetype ruby,css,scss,eruby nnoremap <silent> <F1> :silent call AutoFormatRails()<CR>
+autocmd Filetype ruby,css,scss,eruby inoremap <silent> <F1> <Esc>:silent call AutoFormatRails()<CR>a
 " =========================
 " remap keys
 " :set virtualedit=all
+call arpeggio#map('i', '', 0, 'jk', '<Esc>')
+call arpeggio#map('n', '', 0, '<Space>o', 'i<CR>')
 nnoremap <Right> *
 nnoremap <Left> #
 nnoremap h g^
+nnoremap hh ^
 nnoremap i gk
 nnoremap j h
 nnoremap k gj
 nnoremap ; g$
+nnoremap ;; $
 nnoremap <Space> i
 nnoremap <Right> *
 nnoremap <Left> #
@@ -115,11 +175,16 @@ vnoremap i gk
 vnoremap j h
 vnoremap k gj
 vnoremap ; g$
-vnoremap <Space> c
-nnoremap <Up> <C-y>
-nnoremap <Down> <C-e>
-inoremap <Home> <Esc>g^i
+vnoremap <space> c
+nnoremap <up> <c-y>
+nnoremap <down> <c-e>
+inoremap <home> <esc>g^i
+map <c-d> <delete>
+imap <c-d> <Delete>
+nmap <C-d> <Delete>
+vmap <C-d> <Delete>
 nnoremap H ;
+
 
 
 " inoremap <S-Left> <Esc>v<Left>
@@ -165,17 +230,14 @@ nmap <F9> :w<CR>:FSHere<CR>
 imap <F9> <Esc><F9>a
 map <S-F9> :w<CR>:vsp<CR>:FSRight<CR>:wincmd h<CR>
 set tags=./tags;/
-nnoremap S :w<CR>
-autocmd FileType c,cpp,python nnoremap S :w<CR>:silent !ctags -R --fields=+iaS --extra=+f .<CR>:redraw!<CR>
-" autocmd FileType tex set nocursorcolumn 
-" nmap <S-F8> gf
-" imap <S-F8> <Esc><S-F8>a
+nnoremap <C-s> :w<CR>
+autocmd FileType c,cpp,python nnoremap <C-s> :w<CR>:silent !ctags -R --fields=+iaS --extra=+f .<CR>:redraw!<CR>
 nmap <F7> <C-o>
 imap <F7> <Esc><S-F7>a
 
 "=========================
-noremap <F1> mz:%!astyle --style=java -fjxpUd -k3 <CR>`z
-imap <F1> <Esc><F1>
+" noremap <F1> mz:%!astyle --style=java -fjxpUd -k3 <CR>`z
+" imap <F1> <Esc><F1>
 "=========================
 " nnoremap <F1> :set wrap!<CR>
 " inoremap <F1> <Esc><F1>a
@@ -185,12 +247,12 @@ imap <F1> <Esc><F1>
 " nnoremap > :cn<CR>
 " nnoremap < :cp<CR>
 "=========================
-noremap <F5> :w<CR>:silent make<CR>:redraw!<CR>
-imap <F5> <Esc><F5>a
-nmap <A-F5> :SyntasticCheck<CR>
-imap <A-F5> <Esc><A-F5>a
-nmap <A-F6> :SyntasticToggleMode<CR>
-imap <A-F6> <Esc><A-F6>
+" noremap <F5> :w<CR>:silent make<CR>:redraw!<CR>
+" imap <F5> <Esc><F5>a
+" nmap <A-F5> :SyntasticCheck<CR>
+" imap <A-F5> <Esc><A-F5>a
+" nmap <A-F6> :SyntasticToggleMode<CR>
+" imap <A-F6> <Esc><A-F6>
 "=========================
 "switch among opened windows
 nnoremap <silent> <S-Up> :wincmd k<CR>
@@ -224,7 +286,7 @@ nnoremap v{ vi{
 nnoremap v} va}
 nnoremap v[ vi[
 nnoremap v] va]
-cnoremap <Space><Space> <Space><Bar><Space>
+" cnoremap <Space><Space> <Space><Bar><Space>
 " nnoremap d( di(
 " nnoremap d) da(
 " nnoremap d" di"
@@ -256,7 +318,6 @@ cnoremap <Space><Space> <Space><Bar><Space>
 " nnoremap y[ yi[
 " nnoremap y] ya]
 
-nnoremap R :%s/\<<C-r><C-w>\>//g<Left><Left>
 "=========================
 "yank and paste to system clipboard
 " autocmd CursorHold * :set number
@@ -282,16 +343,29 @@ nnoremap Q {gq}
 vnoremap Q gq
 nmap <C-e> :vsp<bar>e 
 "=========================
-colorscheme koehler_mod
+colorscheme molokai_mod
 set guioptions=  
-set cursorline cursorcolumn
+set cul
 syntax sync minlines=64
 set re=1
-autocmd InsertEnter * set nocul nocursorcolumn
-autocmd InsertLeave * set cul cursorcolumn
+" augroup vimrc_autocmds
+"   autocmd BufEnter * highlight OverLength cterm=underline gui=underline
+"   autocmd BufEnter * match OverLength /\%81v./
+" augroup END
+
+" autocmd InsertEnter * set nocul
+" autocmd InsertLeave * set cul
 "=======================
 set backspace=indent,eol,start
 set foldmethod=syntax
 set foldnestmax=2      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
+
+nnoremap R :%s/\<<C-r><C-w>\>//g<Left><Left>
+vmap R *N:%s///g<Left><Left>
+vmap <Right> *
+vmap <Left> #
+" Search for selected text, forwards or backwards.
+nnoremap T :Tab /
+vnoremap T :Tab /
