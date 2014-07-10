@@ -479,7 +479,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>9.9618139266967773</real>
+			<real>15</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1746,7 +1746,7 @@
 			<key>Terminal Type</key>
 			<string>rxvt</string>
 			<key>Transparency</key>
-			<real>0.24434633553028107</real>
+			<real>0.316031813621521</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -1812,7 +1812,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-07-09T01:11:05Z</date>
+	<date>2014-07-10T01:25:38Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>

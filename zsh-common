@@ -1,22 +1,64 @@
+# ================= Oh my zsh selection =================
+alias ls='ls -G'
+source ~/Dropbox/dotfiles/zsh/oh-my-zsh/lib/directories.zsh
+source ~/Dropbox/dotfiles/zsh/oh-my-zsh/lib/correction.zsh
+source ~/Dropbox/dotfiles/zsh/oh-my-zsh/lib/grep.zsh
+source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/extract/extract.plugin.zsh
+source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/colored-man/colored-man.plugin.zsh
+source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/compleat/compleat.plugin.zsh
+source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/copydir/copydir.plugin.zsh
+alias cpd=copydir
+source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/cp/cp.plugin.zsh
+source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/per-directory-history/per-directory-history.zsh
 
+
+
+# ======================== My Stuff =======================
+# ----------- Go Up/Down dirs with Shift+Up/Down
+go-up-dir() {
+LAST_DIR=`basename $PWD`
+cd ..
+echo "$LAST_DIR" > ./$LAST_DIR_FILE
+}
+go-up-dir-action () { 
+    zle push-line; LBUFFER='go-up-dir'; zle accept-line;
+}
+zle -N go-up-dir-action
+bindkey "[1;2D" go-up-dir-action
+bindkey "[1;2A" go-up-dir-action
+
+LAST_DIR_FILE='.last_dir_entered'
+go-down-dir() {
+if [[ -e $LAST_DIR_FILE ]]; then
+    cd "`cat $LAST_DIR_FILE`"
+else
+    echo No more directories.
+fi
+}
+go-down-dir-action () { 
+    zle push-line; LBUFFER='go-down-dir'; zle accept-line;
+}
+zle -N go-down-dir-action
+bindkey "[1;2C" go-down-dir-action
+bindkey "[1;2B" go-down-dir-action
+# -------- Git Prompt
 source ~/Dropbox/dotfiles/zsh/git-prompt/zshrc.sh
-#PS1="\[\e[1;32m\]\t \w \$\[\e[0m\] "
-#zsh below
+# ========= about completition
 setopt extendedglob auto_list auto_param_slash auto_remove_slash
+setopt completealiases
 autoload -U colors && colors
 autoload -U compinit promptinit
 compinit
 promptinit
-setopt completealiases
 setopt auto_pushd pushd_ignore_dups
 PROMPT='%{$fg_bold[green]%}%T %{$fg_bold[yellow]%}%~%b$(git_super_status) %{$fg_bold[green]%}$ %{$reset_color%}'
+RPROMPT='%{$fg_no_bold[blue]%}`[[ -f $LAST_DIR_FILE ]] && cat $LAST_DIR_FILE`%{$reset_color%}'
 # PS1="%{$fg_bold[green]%}%T %{$fg_bold[yellow]%}%~%{$fg[green]%} $%{$reset_color%} "
 # PS1="[%{$fg_bold[green]%}%T%{$reset_color%}] %{$fg_bold[yellow]%}%~%{$fg[green]%} $%{$fg[red]%} "
 HISTFILE=$HOME/.zhistory
-HISTSIZE=1200
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt HIST_EXPIRE_DUPS_FIRST INC_APPEND_HISTORY hist_ignore_alldups EXTENDED_HISTORY share_history
-setopt extended_glob
 #PATH="/usr/java/jdk1.7.0_09/bin:$PATH:/home/tony1/bin:." 
 alias lgn='ssh tony1@rlogin.cs.vt.edu'
 alias lgng='ssh tony1@tincan6.cs.vt.edu'
@@ -43,17 +85,19 @@ um()
 {
     udisks --unmount /dev/sd$1
 }
-cl()
-{
-	cd $1 && ls -G $2
-    echo $PWD>~/.current_pwd
-}
 cdlast() {
-    current_pwd=`cat ~/.current_pwd`
-    cl $current_pwd
+    cd "`cat ~/.current_pwd`"
+    ls
+}
+cl() {
+    if [[ -d "./$*" ]] && ! [[ "$*" =~ '\.*\/*.*' ]]; then
+        echo $* > ./$LAST_DIR_FILE
+    fi
+    cd $*
+    ls .
+    echo `pwd` > ~/.current_pwd
 }
 alias vimdiff='vim -d'
-alias cd='cl'
 alias cddl='cl ~/Dropbox'
 alias cds='cl ~/Dropbox/Semester_9/'
 alias cdf='cl /media/sda3/Dropbox/FINANCE/'
@@ -68,7 +112,7 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' completer _complete _correct _expand
 
-# zmodload zsh/complist
+zmodload zsh/complist
 bindkey -M menuselect ' ' accept-and-infer-next-history
 bindkey -M menuselect '^?' undo
 
@@ -139,7 +183,6 @@ getb() {
 	scp -r CS4414S13@bio.cs.vt.edu:~/SVD1/$1 $local_dir
 }
 source ~/bin/bashmarks.sh 
-export EDITOR=/usr/bin/vim
 source ~/Dropbox/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/Dropbox/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys

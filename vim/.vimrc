@@ -104,24 +104,15 @@ let g:syntastic_mode_map = { 'mode': 'active',
 
 set statusline=%<\ %n:%f\ %m%r%y%{SyntasticStatuslineFlag()}%=(%l\ ,\ %c%V)\ Total:\ %L\ 
 " work around for the location list bug
-nnoremap ZQ :lcl<bar>q!<CR>
-vnoremap ZQ v:lcl<bar>q!<CR>
-nnoremap ZZ :lcl<bar>w<bar>lcl<bar>q<CR>
-vnoremap ZZ v:lcl<bar>w<bar>lcl<bar>q<CR>
+autocmd FileType c,cpp,objc nnoremap ZQ :lcl<bar>q!<CR>
+vmap ZQ vZQ
+autocmd FileType c,cpp,objc nnoremap ZZ :lcl<bar>w<bar>lcl<bar>q<CR>
+vmap ZZ vZZ
 " end for syntastic
 " powerline
 " let g:Powerline_symbols = 'fancy'
 let g:Powerline_stl_path_style = 'short'
 set laststatus=2
-" for indent highlight
-set background=dark
-nmap <silent> <C-j> <Plug>IndentGuidesToggle
-autocmd FileType c,python,java,cpp,objc,ruby IndentGuidesEnable
-let g:indent_guides_auto_colors = 0
-" let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#555555  ctermbg=240
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333333   ctermbg=235
 " For Emma html
 let g:user_emmet_leader_key='<C-f>'
 let g:user_emmet_install_global = 0
@@ -133,8 +124,16 @@ function SetEmmetHTML()
     vmap hh <C-f>,
     nmap s <C-f>/
     set tabstop=2 shiftwidth=2
-
 endfunction
+" for indent highlight
+set background=dark
+nmap <silent> <C-j> <Plug>IndentGuidesToggle
+autocmd FileType c,python,java,cpp,objc,ruby IndentGuidesEnable
+let g:indent_guides_auto_colors = 0
+" let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#555555  ctermbg=240
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333333   ctermbg=235
 " let g:user_emmet_settings = {
 "   \  'php' : {
 "   \    'extends' : 'html',
@@ -153,11 +152,14 @@ endfunction
 " Rails-Autoformat
 autocmd Filetype ruby,css,scss,eruby nnoremap <silent> <F1> :silent call AutoFormatRails()<CR>
 autocmd Filetype ruby,css,scss,eruby inoremap <silent> <F1> <Esc>:silent call AutoFormatRails()<CR>a
+" For DelimitMate
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
 " =========================
 " remap keys
 " :set virtualedit=all
 call arpeggio#map('i', '', 0, 'jk', '<Esc>')
-call arpeggio#map('n', '', 0, '<Space>o', 'i<CR>')
+call arpeggio#map('n', '', 0, '<Space>o', 'i<CR><Esc>ko')
 nnoremap <Right> *
 nnoremap <Left> #
 nnoremap h g^
