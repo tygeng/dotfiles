@@ -24,4 +24,4 @@ map . ]]
 unmap <M-d>
 unmap <C-f>
 unmap <C-p>
-
+set disablesites=www.bilibili.tv

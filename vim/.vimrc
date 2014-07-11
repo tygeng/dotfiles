@@ -213,7 +213,9 @@ filetype plugin on
 filetype indent on
 "=========================
 "simple comment
-map <silent> s :call Co(&ft)<CR>
+noremap <silent> s :call ToggleComment()<CR>
+noremap <silent> gc :call Comment()<CR>
+noremap <silent> gu :call UnComment()<CR>
 "=========================
 "set F2 to toggle paste mode
 nnoremap <F3> :set hlsearch!<CR>
@@ -226,16 +228,18 @@ set showmode
 " nmap <F7> <C-T>
 " imap <F7> <Esc><F7>a
 map <S-F8> :vsp<CR>:wincmd l<CR>:exec("tag ".expand("<cword>"))<CR>:wincmd h<CR>
-nmap <F8> <C-]>
-imap <F8> <Esc><F8>a
+nmap gd <C-]>
 nmap <F9> :w<CR>:FSHere<CR>
 imap <F9> <Esc><F9>a
 map <S-F9> :w<CR>:vsp<CR>:FSRight<CR>:wincmd h<CR>
 set tags=./tags;/
 nnoremap <C-s> :w<CR>
-autocmd FileType c,cpp,python nnoremap <C-s> :w<CR>:silent !ctags -R --fields=+iaS --extra=+f .<CR>:redraw!<CR>
-nmap <F7> <C-o>
-imap <F7> <Esc><S-F7>a
+inoremap <C-s> <Esc>:w<CR>
+vnoremap <C-s> v:w<CR>
+" ============= ctags ===============
+nnoremap gt :!ctags -R --fields=+iaS --extra=+f --exclude=.git --exclude=log *<CR>:redraw!<CR>
+
+nmap gb <C-o>
 
 "=========================
 " noremap <F1> mz:%!astyle --style=java -fjxpUd -k3 <CR>`z

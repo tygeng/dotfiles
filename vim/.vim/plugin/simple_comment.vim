@@ -1,17 +1,67 @@
-" simple_comment.vim v0.1
-" simple_comment.vim is a small script (eight lines) to toggle line comment. 
-" You can easily add more langages, take a look at the .vim.
+" Written by Emmanuel Branlard - October 2012
+" Uses the idea of a plugin named simple_comment, where commet_leader is
+" defined for each language
 " 
-" Uncomment this next line to use s as trigger key.
-" map <silent> s :call Co(&ft)<CR>
+" Updates: May 2013: improved indent in Boxed comment
 " 
-" boisvertmaxime@gmail.com
 
-fun! Co(ft)
-    let dic = {'xkb':'//','objc':'//','matlab':'%','cpp':'//','tex':'%','java':'//','haskell':'--','c':'//', 'cuda':'//', 'ruby':'#', 'vim':'"', 'perl':'#', 'sh':'#', 'zsh':'#', 'python':'#', 'lua':'--', 'markdown':'>', 'scheme':';', 'xmodmap':'!', 'conf':'#', 'make':'#','php':'//','css':'//'}
-    if has_key(dic, a:ft)
-        let c = dic[a:ft]
-        exe "s@^@".c." @ | s@^".c." ".c." @@e"
-    endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Definition of comment character
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let b:comment_leader ='#' 
+autocmd FileType c,cpp,java,scala,php,css,scss    let b:comment_leader = '//'
+autocmd FileType sh,ruby,python,perl     let b:comment_leader = '#'
+autocmd FileType conf,fstab,gtkrc        let b:comment_leader = '#'
+autocmd FileType gitconfig               let b:comment_leader = '#'
+autocmd FileType make,apache             let b:comment_leader = '#'
+autocmd FileType fortran                 let b:comment_leader = '!'
+autocmd FileType tex,matlab,bib          let b:comment_leader = '%'
+autocmd FileType mail                    let b:comment_leader = '>'
+autocmd FileType vim                     let b:comment_leader = '"'
+autocmd FileType markdown                let b:comment_leader = '<---'
+autocmd FileType htc                     let b:comment_leader = ';'
+autocmd FileType oin                     let b:comment_leader = '!'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Definition of functions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! Comment()
+    let c=b:comment_leader
+    exe "s@^@".c." @"
 endfun
+" kdjfksj
+function! UnComment()
+    let c=b:comment_leader
+    exe "s@^[\ ]*".c." @@e"
+endfun
+function! ToggleComment()
+    let c=b:comment_leader
+    exe "s@^@".c." @ | s@^".c." ".c." @@e"
+    "     exe "s@^@".c."@"
+endfun
+" Insert a line below the cursor filled with "-", just like below
+" --------------------------------------------------------------------------------
+function! LineComment()
+    let c=b:comment_leader
+    normal o
+    exe "normal 0i".c." "
+    normal 80A-
+    normal ==
+endfun
+" --------------------------------------------------------------------------------
+" --- Create box like this one, below the cursor, and ready to insert the title
+" --------------------------------------------------------------------------------
+fun! BoxedComment()
+    let c=b:comment_leader
+    normal o
+    exe "normal 0i".c." "
+    normal 80A-
+    normal o
+    exe "normal 0i".c." "
+    normal 80A-
+    exe "normal ko".c.' ---  '
+    normal jVkk=j$
+    startinsert
+endfun
+
 
