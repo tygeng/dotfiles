@@ -1,8 +1,6 @@
 rm ~/.vimrc
-
-rm -r ~/.vim 
-rm -r ~/vimscripts
-ln -s `pwd`/.vimrc ~/
-ln -sd `pwd`/.vim ~/
-ln -sd `pwd`/vimscripts ~/
+rm ~/.vim 
+ln -s `pwd`/vim_folder ~/.vim
+ln -s `pwd`/vim-main ~/.vimrc
+mkdir ~/.vimundo
 

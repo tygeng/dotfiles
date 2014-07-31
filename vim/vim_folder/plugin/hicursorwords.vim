@@ -47,7 +47,7 @@ endif
 
 
 " highlight! link WordUnderTheCursor Underlined
-highlight WordUnderTheCursor ctermbg=238 guibg=#505D5D
+highlight WordUnderTheCursor ctermbg=58 guibg=#606000
 
 augroup HiCursorWords
     autocmd!

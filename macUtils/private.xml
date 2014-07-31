@@ -5,9 +5,52 @@
         <equal>com.google.Chrome</equal>
     </appdef>
     <appdef>
+        <appname>FINDER</appname>
+        <equal>com.apple.finder</equal>
+    </appdef>
+    <appdef>
         <appname>LYX</appname>
         <equal>org.lyx.lyx</equal>
     </appdef>
+    <appdef>
+        <appname>ITERM2</appname>
+        <equal>com.googlecode.iterm2</equal>
+    </appdef>
+    <item>
+        <name>Emacs Navigation Shortcuts</name>
+        <identifier>tianyu_finder</identifier>
+        <autogen>
+            __KeyToKey__
+            KeyCode::F,  ModifierFlag::CONTROL_R,
+            KeyCode::CURSOR_RIGHT
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::B,  ModifierFlag::CONTROL_R,
+            KeyCode::CURSOR_LEFT
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::N,  ModifierFlag::CONTROL_R,
+            KeyCode::CURSOR_DOWN
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::P,  ModifierFlag::CONTROL_R,
+            KeyCode::CURSOR_UP
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::A,  ModifierFlag::CONTROL_R,
+            KeyCode::HOME
+        </autogen>
+        <autogen>
+            __KeyToKey__
+            KeyCode::E,  ModifierFlag::CONTROL_R,
+            KeyCode::END
+        </autogen>
+
+    </item>
     <item>
         <name>Lyx shortcuts</name>
         <identifier>tianyu_lyx</identifier>
@@ -41,22 +84,22 @@
         </autogen>
         <autogen>
             __KeyToKey__
-            KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+            KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
             KeyCode::W, ModifierFlag::COMMAND_L
         </autogen>
         <autogen>
             __KeyToKey__
-            KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+            KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
             KeyCode::Z, ModifierFlag::COMMAND_L
         </autogen>
         <autogen>
             __KeyToKey__
-            KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+            KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
             KeyCode::TAB, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
         </autogen>
         <autogen>
             __KeyToKey__
-            KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+            KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
             KeyCode::TAB, ModifierFlag::CONTROL_L 
         </autogen>
         <autogen>
@@ -66,7 +109,7 @@
         </autogen>
         <autogen>
             __KeyToKey__
-            KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+            KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
             KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L
         </autogen>
         <autogen>
@@ -87,23 +130,23 @@
         </autogen>
         <autogen>
             __KeyToKey__
-            KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+            KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
             KeyCode::W, ModifierFlag::COMMAND_L
         </autogen>
         <autogen>
             __KeyToKey__
-            KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+            KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
             KeyCode::T, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
         </autogen>
         <autogen>
             __KeyToKey__
-            KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
-            KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+            KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+            KeyCode::TAB, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
         </autogen>
         <autogen>
             __KeyToKey__
-            KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
-            KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+            KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+            KeyCode::TAB, ModifierFlag::CONTROL_L 
         </autogen>
         <autogen>
             __KeyToKey__
@@ -112,7 +155,7 @@
         </autogen>
         <autogen>
             __KeyToKey__
-            KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+            KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
             KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L
         </autogen>
         <autogen>
@@ -130,11 +173,6 @@
             __KeyToKey__
             KeyCode::J, ModifierFlag::CONTROL_R,
             KeyCode::CURSOR_LEFT
-        </autogen>
-        <autogen>
-            __KeyToKey__
-            KeyCode::M, ModifierFlag::CONTROL_R,
-            KeyCode::PC_APPLICATION
         </autogen>
         <autogen>
             __KeyToKey__
@@ -172,16 +210,6 @@
             KeyCode::END
         </autogen>
 
-        <autogen>
-            __KeyToKey__
-            KeyCode::SPACE, ModifierFlag::CONTROL_R,
-            KeyCode::ESCAPE
-        </autogen>
-        <autogen>
-            __KeyToKey__
-            KeyCode::TAB, ModifierFlag::FN,
-            KeyCode::CAPSLOCK
-        </autogen>
     </item>
 
 

@@ -1,15 +1,15 @@
 # ================= Oh my zsh selection =================
 alias ls='ls -G'
-source ~/Dropbox/dotfiles/zsh/oh-my-zsh/lib/directories.zsh
-source ~/Dropbox/dotfiles/zsh/oh-my-zsh/lib/correction.zsh
-source ~/Dropbox/dotfiles/zsh/oh-my-zsh/lib/grep.zsh
-source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/extract/extract.plugin.zsh
-source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/colored-man/colored-man.plugin.zsh
-source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/compleat/compleat.plugin.zsh
-source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/copydir/copydir.plugin.zsh
+source $BASE_DIR/dotfiles/zsh/oh-my-zsh/lib/directories.zsh
+source $BASE_DIR/dotfiles/zsh/oh-my-zsh/lib/correction.zsh
+source $BASE_DIR/dotfiles/zsh/oh-my-zsh/lib/grep.zsh
+source $BASE_DIR/dotfiles/zsh/oh-my-zsh/plugins/extract/extract.plugin.zsh
+source $BASE_DIR/dotfiles/zsh/oh-my-zsh/plugins/colored-man/colored-man.plugin.zsh
+source $BASE_DIR/dotfiles/zsh/oh-my-zsh/plugins/compleat/compleat.plugin.zsh
+source $BASE_DIR/dotfiles/zsh/oh-my-zsh/plugins/copydir/copydir.plugin.zsh
 alias cpd=copydir
-source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/cp/cp.plugin.zsh
-source ~/Dropbox/dotfiles/zsh/oh-my-zsh/plugins/per-directory-history/per-directory-history.zsh
+source $BASE_DIR/dotfiles/zsh/oh-my-zsh/plugins/cp/cp.plugin.zsh
+source $BASE_DIR/dotfiles/zsh/oh-my-zsh/plugins/per-directory-history/per-directory-history.zsh
 
 
 
@@ -24,8 +24,7 @@ go-up-dir-action () {
     zle push-line; LBUFFER='go-up-dir'; zle accept-line;
 }
 zle -N go-up-dir-action
-bindkey "[1;2D" go-up-dir-action
-bindkey "[1;2A" go-up-dir-action
+bindkey 'p' go-up-dir-action
 
 LAST_DIR_FILE='.last_dir_entered'
 go-down-dir() {
@@ -39,10 +38,9 @@ go-down-dir-action () {
     zle push-line; LBUFFER='go-down-dir'; zle accept-line;
 }
 zle -N go-down-dir-action
-bindkey "[1;2C" go-down-dir-action
-bindkey "[1;2B" go-down-dir-action
+bindkey 'n' go-down-dir-action
 # -------- Git Prompt
-source ~/Dropbox/dotfiles/zsh/git-prompt/zshrc.sh
+source $BASE_DIR/dotfiles/zsh/git-prompt/zshrc.sh
 # ========= about completition
 setopt extendedglob auto_list auto_param_slash auto_remove_slash
 setopt completealiases
@@ -72,8 +70,8 @@ alias C=clear
 alias tree='tree -C'
 alias treel='tree -C|less -R'
 alias mat='matlab -nodesktop'
-alias todo='vim ~/Dropbox/ideas/todo'
-alias talk='vim ~/Dropbox/ideas/talk'
+alias todo='vim $BASE_DIR/ideas/todo'
+alias talk='vim $BASE_DIR/ideas/talk'
 killn() {
     kill `ps -e | grep $1 | awk '{print $1}'`
 }
@@ -90,7 +88,7 @@ cdlast() {
     ls
 }
 cl() {
-    if [[ -d "./$*" ]] && ! [[ "$*" =~ '\.*\/*.*' ]]; then
+    if [[ -d "./$*" ]] && ! [[ "$*" =~ '^\.*\/+.*' ]]; then
         echo $* > ./$LAST_DIR_FILE
     fi
     cd $*
@@ -98,12 +96,7 @@ cl() {
     echo `pwd` > ~/.current_pwd
 }
 alias vimdiff='vim -d'
-alias cddl='cl ~/Dropbox'
-alias cds='cl ~/Dropbox/Semester_9/'
-alias cdf='cl /media/sda3/Dropbox/FINANCE/'
-alias cdi='cl ~/Dropbox/ideas/'
-alias cdg='cl ~/Dropbox/git/'
-alias cdq='cl /media/sda3/Dropbox/思琪/'
+alias cddl='cl $BASE_DIR'
 alias mv='mv -i'
 alias cp='cp -i'
 alias make='make -j 4'
@@ -146,18 +139,6 @@ google() {
     w3m "http://www.google.com/search?q=$search"
 }
 alias lgc='ssh tygeng@128.173.237.170'
-putc() {
-	scp -r $1 tygeng@128.173.237.170:$2
-}
-getc() {
-	if [[ $2 == "" ]]; then
-		local_dir=".";
-	else
-		local_dir=$2;
-
-	fi
-	scp -r tygeng@128.173.237.170:$1 $local_dir
-}
 putr() {
 	scp -r $1 tony1@rlogin.cs.vt.edu:$2
 }
@@ -183,14 +164,15 @@ getb() {
 	scp -r CS4414S13@bio.cs.vt.edu:~/SVD1/$1 $local_dir
 }
 source ~/bin/bashmarks.sh 
-source ~/Dropbox/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/Dropbox/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $BASE_DIR/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $BASE_DIR/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey  history-substring-search-up
+bindkey  history-substring-search-down
 # Setup zsh-autosuggestions
-source ~/Dropbox/dotfiles/zsh/zsh-autosuggestions/autosuggestions.zsh
+source $BASE_DIR/dotfiles/zsh/zsh-autosuggestions/autosuggestions.zsh
 
 # Enable autosuggestions automatically
 zle-line-init() {

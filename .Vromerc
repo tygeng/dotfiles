@@ -1,19 +1,10 @@
-map s gT
-map d 10j
-map f gt
-map e 10k
-map a H
-map v D
-map z [[
-map x ]]
-
-map k 10j
-map i 10k
+map j 10j
+map k 10k
 map h H
-map ; L
-map j gT
-map l gt
-map o t
+map l L
+map u gT
+map i gt
+
 map n D
 set useletters=1
 set hintkeys=hjkluionmp
@@ -22,6 +13,10 @@ map <Enter> F
 map , [[
 map . ]]
 unmap <M-d>
-unmap <C-f>
-unmap <C-p>
-set disablesites=www.bilibili.tv
+unmap <M-f>
+set disablesites=www.bilibili.com
+set disablesites=cmbc.com.cn
+unmap <M-p>
+
+
+

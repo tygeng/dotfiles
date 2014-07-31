@@ -9,7 +9,7 @@
 """ Definition of comment character
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let b:comment_leader ='#' 
-autocmd FileType c,cpp,java,scala,php,css,scss    let b:comment_leader = '//'
+autocmd FileType c,cpp,java,scala,php,css,scss,javascript    let b:comment_leader = '//'
 autocmd FileType sh,ruby,python,perl     let b:comment_leader = '#'
 autocmd FileType conf,fstab,gtkrc        let b:comment_leader = '#'
 autocmd FileType gitconfig               let b:comment_leader = '#'

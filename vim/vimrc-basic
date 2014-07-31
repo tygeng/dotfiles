@@ -1,0 +1,156 @@
+set tw=0
+au FileType cpp,c,java,tex,text  set tw=80
+set formatoptions=cq textwidth=80 foldignore= wildignore+=*.py[co]
+syntax sync minlines=256
+set mouse=a
+
+"=========================
+" set encoding priority
+set so=3
+set encoding=utf-8
+set fileencodings=utf-8,gb2312,gb18030,gbk,cp936,latin1,ucs-bom
+set termencoding=utf-8
+" tell it to use an undo file
+set undofile
+" set a directory to store the undo history
+set undodir=~/.vimundo/
+set undolevels=1000
+set undoreload=10000
+" remember last position
+set viminfo='10,\"100,:20,%,n~/.viminfo
+set timeoutlen=200
+"---------------------------
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
+"=========================
+" set tab
+set ai nowrap nu tabstop=4 shiftwidth=4 expandtab
+setlocal spelllang=en_us
+set incsearch
+set smartcase ignorecase
+" =========================
+" remap keys
+" :set virtualedit=all
+call arpeggio#map('iv', '', 0, 'jk', '<Esc>')
+call arpeggio#map('n', '', 0, '<Space>o', 'i<CR><Esc>ko')
+" nnoremap h g^
+" nnoremap hh ^
+" nnoremap i gk
+" nnoremap j h
+" nnoremap k gj
+" nnoremap ; g$
+" nnoremap ;; $
+" nnoremap <Space> i
+nnoremap <Right> *
+nnoremap <Left> #
+" vnoremap h g^
+" vnoremap i gk
+" vnoremap j h
+" vnoremap k gj
+" vnoremap ; g$
+" vnoremap <space> c
+nnoremap <up> 3<c-y>
+nnoremap <down> 4<c-e>
+inoremap <Home> <esc>^i
+noremap <Home> ^
+inoremap <End> <esc>$a
+noremap <End> $
+map <c-d> <delete>
+imap <c-d> <Delete>
+nmap <C-d> <Delete>
+vmap <C-d> <Delete>
+map <C-a> <Home>
+map <C-e> <End>
+map <C-f> <Right>
+map <C-b> <Left>
+map <C-n> <Down>
+map <C-p> <Up>
+
+imap <C-a> <Home>
+imap <C-e> <End>
+imap <C-f> <Right>
+imap <C-b> <Left>
+imap <C-n> <Down>
+imap <C-p> <Up>
+imap <C-l> <Right>
+imap <C-h> <Left>
+imap <C-j> <Down>
+imap <C-k> <Up>
+noremap <C-z> <C-a>
+"=========================
+"simple comment
+noremap <silent> s :call ToggleComment()<CR>
+noremap <silent> gc :call Comment()<CR>
+noremap <silent> gu :call UnComment()<CR>
+"=========================
+"set F2 to toggle paste mode
+nnoremap <F3> :set hlsearch!<CR>
+nnoremap <Silent> <F2> :set invpaste paste?<CR>
+inoremap <Silent> <F2> <Esc>:set invpaste paste?<CR>a
+set pastetoggle=<F2>
+set showmode
+"=========================
+"c support for jump among files
+" nmap <F7> <C-T>
+" imap <F7> <Esc><F7>a
+map <S-F8> :vsp<CR>:wincmd l<CR>:exec("tag ".expand("<cword>"))<CR>:wincmd h<CR>
+nmap gd <C-]>
+nmap <F9> :w<CR>:FSHere<CR>
+imap <F9> <Esc><F9>a
+map <S-F9> :w<CR>:vsp<CR>:FSRight<CR>:wincmd h<CR>
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>
+vnoremap <C-s> v:w<CR>
+"=========================
+nnoremap <F4> :set spell!<CR>
+inoremap <F4>  <Esc>:set spell!<CR>a
+nnoremap U :redo<CR>
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+nnoremap w viw
+vnoremap w e
+nnoremap W viW
+
+"=========================
+nnoremap x "xx
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
+"=========================
+nnoremap Q <nop>
+vnoremap Q gq
+"=========================
+colorscheme molokai_mod
+set guioptions=  
+set cul
+syntax sync minlines=64
+set re=1
+" augroup vimrc_autocmds
+"   autocmd BufEnter * highlight OverLength cterm=underline gui=underline
+"   autocmd BufEnter * match OverLength /\%81v./
+" augroup END
+
+" autocmd InsertEnter * set nocul
+" autocmd InsertLeave * set cul
+"=======================
+set backspace=indent,eol,start
+set foldmethod=syntax
+set foldnestmax=2      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
+nnoremap R :%s/\<<C-r><C-w>\>//g<Left><Left>
+vmap R *N:%s///g<Left><Left>
+vmap <Right> *
+vmap <Left> #
+" Search for selected text, forwards or backwards.
+nnoremap T :Tab /
+vnoremap T :Tab /
+set guifont=Menlo:h13
